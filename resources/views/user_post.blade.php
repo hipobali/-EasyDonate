@@ -1,0 +1,137 @@
+@extends('layouts.app')
+@extends('layouts.nav')
+@section('content')
+    <link href="{{ asset('css/user_post.css')}}" rel="stylesheet">
+    <link href="{{ asset('fa/css/all.css') }}" rel="stylesheet">
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h2 class="text-light txt"> Project Summary</h2>
+                <div class="divider">
+                    <span></span>
+                    <span><i class="fa fa-star"></i> </span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card card-shadow card-mg">
+                    <div class="card-header">
+                        <h5 class="txt">
+
+                            Please fill exactly why you need for help.
+                        </h5>
+                    </div>
+                    <form class="form-mg" method="post" action="{{route('user_post_form',Auth::user()->id)}}" enctype="multipart/form-data">
+                        <div class="card-body">
+                            @if(Session('success'))
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{Session('success')}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            @endif
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                            <div class="form-group" {{ $errors->has('title') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/one.png') }} class="digit-size">
+                                <label for="title">&nbsp;Title of the project</label>
+                                <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}">
+                                <span class="text-danger">{{ $errors->first('title') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('location') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/two.png') }} class="digit-size">
+                                <label for="location">&nbsp;Project Location</label>
+                                <input type="text" name="location" id="location" class="form-control" value="{{old('location')}}">
+                                <span class="text-danger">{{ $errors->first('location') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('name') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/three.png') }} class="digit-size">
+                                <label for="name">&nbsp;Applicant - Person/organization name</label>
+                                <input type="text" name="name" id="name" class="form-control" value="{{old('name')}}">
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('items-requested') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/four.png') }} class="digit-size">
+                                <label for="items-requested">&nbsp;Items(s) Requested</label>
+                                <textarea class="form-control" name="items-requested" id="items-requested" rows="3">{!! old('items-requested') !!} </textarea>
+                                <span class="text-danger">{{ $errors->first('items-requested') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('cost') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/five.png') }} class="digit-size">
+                                <label for="cost">&nbsp;Estimated cost</label>
+                                <input type="text" name="cost" id="cost" class="form-control" value="{{old('cost')}}">
+                                <span class="text-danger">{{ $errors->first('cost') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('significance') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/six.png') }} class="digit-size">
+                                <label for="significance">&nbsp;Significance of the project</label>
+                                <textarea class="form-control" name="significance" id="significance" rows="3" >{!! old('significance') !!} </textarea>
+                                <span class="text-danger">{{ $errors->first('significance') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('phone') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/seven.png') }} class="digit-size">
+                                <label for="phone">&nbsp;Phone</label>
+                                <input type="text" name="phone" id="phone" class="form-control" value="{{old('phone')}}">
+                                <span class="text-danger">{{ $errors->first('phone') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('image') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/eight.png') }} class="digit-size">
+                                <label for="image">&nbsp;Choose image</label>
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input form-control" id="image" name="image">
+                                    <label class="custom-file-label form-control">Choose file</label>
+                                </div>
+                                <span class="text-danger">{{ $errors->first('image') }}</span>
+                            </div>
+                            <div class="form-group" {{ $errors->has('remark') ? 'has-error' : '' }}>
+                                <img src={{ asset('img/digits/nine.png') }} class="digit-size">
+                                <label for="remark">&nbsp;Remark (Optional)</label>
+                                <input type="text" name="remark" id="remark" class="form-control" value="{{old('remark')}}">
+                                <span class="text-danger">{{ $errors->first('remark') }}</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="form-group row justify-content-center">
+                                <div class="col-6 col-md-4">
+                                    <a  href="/home" class="btn form-control btn-danger">
+                                        Cancel &nbsp
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <button type="submit" class="btn form-control btn-primary">
+                                        Send &nbsp
+                                        <i class="fa fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        @csrf
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <p class="font-weight-bold tip">
+                    <img src="/img/light.png" class="img-light">
+                    Tip: The submitted request forms are shown to foundation.
+                    If the foundation accept your request, this will be post to 'news'.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // to appear the name of the file on select
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+@endsection
+

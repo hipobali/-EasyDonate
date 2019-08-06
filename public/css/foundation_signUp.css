@@ -1,0 +1,146 @@
+body{
+    background-color: #e6e5ff;
+}
+
+h1{
+    font-size: 40px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.text{
+    color: deepskyblue;
+}
+.btn_register1{
+    background-color: white;
+}
+.btn_register2{
+    background-color: white;
+}
+.btn_register1:hover {
+    background-color:#3F8ED6; /* Green */
+    color: white;
+    border: 1px solid #3F8ED6;
+}
+
+.btn_register2:hover {
+    background-color: #DE5C5C; /* Green */
+    color: white;
+    border: 1px solid #DE5C5C;
+}
+
+h3{
+    margin-top: 20%;
+    color: white;
+}
+
+.box-shadow{
+    box-shadow: 0px 0px 50px  #333333;
+}
+
+.card{
+    margin-top: 80px;
+}
+
+.card-header{
+    background-color: #010c1e;
+}
+
+.card-body{
+    background-color:white;
+}
+
+.card-footer{
+    background-color:#010c1e;
+    color: white;
+}
+
+.form-group{
+    color:#010c1e;
+}
+
+.account_login_link{
+    text-align:center;
+}
+
+.image_upload{
+    position: relative;
+}
+
+.user_profile{
+    opacity: 1;
+    width:38%;
+    height: 200px;
+    transition: .5s ease;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: -100px;
+    left: 30%;
+    border: 15px solid #010c1e;
+}
+
+.camera{
+    opacity: 0;
+    position: absolute;
+    transition: .5s ease;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.image_upload:hover .user_profile{
+    opacity: 0.3;
+    border: 3px solid black;
+}
+
+.image_upload:hover .camera{
+    opacity: 1;
+    color: white;
+    border: 3px solid black;
+}
+
+.form-group .form-control{
+    border: 1px solid gray;
+}
+
+.certificate_file{
+    padding-bottom: 36px;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        display: none;
+    }
+    p {
+        display: none;
+    }
+
+    .pp {
+        display: none;
+    }
+
+    .left_side {
+        display: none;
+    }
+    .user_profile {
+        width:39%;
+        height: 8rem;
+        top: -71px;
+        padding-top: 0.1rem;
+    }
+    .certificate_file{
+        padding-bottom: 2.2rem;
+    }
+}
+
+/*For Tablet*/
+@media (min-width: 768px) and (max-width: 1200px) {
+    .user_profile{
+        height: 10rem;
+        padding-top: 0.1rem;
+    }
+}

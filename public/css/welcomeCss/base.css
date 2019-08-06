@@ -1,0 +1,241 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite,
+code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer,
+header, hgroup, menu, nav, section, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: 'Roboto',Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+    line-height: 1;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #22325f;
+}
+article, aside, dialog, figure, footer, header, hgroup, nav, section {
+    display:block;
+}
+br{
+    line-height: 0;
+}
+ul li {
+    list-style: none;
+}
+a,
+a:hover,
+a:focus,
+a:active{
+    text-decoration:none;
+    color: #22325f;
+}
+input,select,textarea,button{
+    margin:0;
+    padding:0;
+    border:0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    font-family: "ヒラギノ明朝 Pro","Hiragino Mincho Pro", "游明朝体", "Yu Mincho", YuMincho, serif;
+}
+button{
+    cursor: pointer;
+}
+img{
+    vertical-align:middle;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after {
+    height: 0;
+    display: block;
+    clear: both;
+    content: "";
+}
+.only_pc, .only_tb{
+    display: block;
+}
+.only_sp{
+    display: none;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 979px) {
+    .only_pc, .only_tb{
+        display: block;
+    }
+    .only_sp{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite,
+    code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
+    form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer,
+    header, hgroup, menu, nav, section, time, mark, audio, video {
+        font-size:.12rem;
+    }
+    body{
+        width: 100%;
+        /*padding-top: .88rem;*/
+    }
+    .inner{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .only_pc{
+        display: none;
+    }
+    .only_sp,
+    .only_tb{
+        display: block;
+    }
+
+}
+.grid_01,
+.grid_02,
+.grid_03,
+.grid_04,
+.grid_05,
+.grid_tb_01,
+.grid_tb_02,
+.grid_tb_03,
+.grid_tb_04,
+.grid_tb_05,
+.grid_sp_01,
+.grid_sp_02,
+.grid_sp_03,
+.grid_sp_04,
+.grid_sp_05{
+    position: relative;
+    min-height: 1px;
+}
+
+/*For PC*/
+@media only screen and (min-width: 980px) {
+    .grid_01,
+    .grid_02,
+    .grid_03,
+    .grid_04,
+    .grid_05{
+        float: left;
+    }
+    .grid_01{
+        width: 100%;
+    }
+    .grid_02{
+        width: 50%;
+    }
+    .grid_03{
+        width: 33.33333333%;
+    }
+    .grid_04{
+        width: 25%;
+    }
+    .grid_05{
+        width: 20%;
+    }
+    .only_pc{
+        display: block;
+    }
+    .only_tb,
+    .only_sp{
+        display: none;
+    }
+}
+
+/*For Tablet*/
+@media only screen and (min-width: 768px) and (max-width: 979px) {
+    .grid_tb_01,
+    .grid_tb_02,
+    .grid_tb_03,
+    .grid_tb_04,
+    .grid_tb_05{
+        float: left;
+    }
+    .grid_tb_01{
+        width: 100%;
+    }
+    .grid_tb_02{
+        width: 50%;
+    }
+    .grid_tb_03{
+        width: 33.33333333%;
+    }
+    .grid_tb_04{
+        width: 25%;
+    }
+    .grid_tb_05{
+        width: 20%;
+    }
+    .only_pc, .only_tb{
+        display: block;
+    }
+    .only_sp{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite,
+    code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
+    form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer,
+    header, hgroup, menu, nav, section, time, mark, audio, video {
+        font-size:.12rem;
+    }
+    body{
+        width: 100%;
+        overflow: hidden;
+    }
+    .inner{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .grid_sp_01,
+    .grid_sp_02,
+    .grid_sp_03,
+    .grid_sp_04,
+    .grid_sp_05{
+        float: left;
+    }
+    .grid_sp_01{
+        width: 100%;
+    }
+    .grid_sp_02{
+        width: 50%;
+    }
+    .grid_sp_03{
+        width: 33.33333333%;
+    }
+    .grid_sp_04{
+        width: 25%;
+    }
+    .grid_sp_05{
+        width: 20%;
+    }
+    .only_pc{
+        display: none;
+    }
+    .only_sp,
+    .only_tb{
+        display: block;
+    }
+
+}

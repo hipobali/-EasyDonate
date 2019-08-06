@@ -1,0 +1,21 @@
+/* For the overall documentation */
+.container-fluid
+{
+	text-align: center;
+	margin-top: 25%;
+}
+/* For the overall documentation */
+
+/* For modal header */
+.modal-header
+{
+	background: orange;
+}
+/* For modal header */
+
+/* For modal footer */
+.modal-footer
+{
+	background: orange;
+}
+/* For modal footer */

@@ -1,0 +1,32 @@
+body{
+    background-color: #e6e5ff;
+}
+.card-header{
+    background-color: #010c1e;
+    color: white;
+}
+
+.card-footer{
+    background-color: #010c1e;
+    color: white;
+}
+.btnCancel{
+    background-color: white;
+}
+.btnSave{
+    background-color: white;
+}
+.card-footer .btnCancel:hover{
+    background-color: #DE5C5C;
+    color: white;
+}
+
+.card-footer .btnSave:hover{
+    background-color: #3F8ED6;
+    color: white;
+}
+@media only screen and (max-width: 767px){
+    .left-side{
+        display: none;
+    }
+}

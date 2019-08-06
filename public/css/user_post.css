@@ -1,0 +1,143 @@
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+.stars, .twinkling, .clouds {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:500px;
+    display:block;
+}
+
+.stars {
+    background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    z-index:-99;
+}
+
+.twinkling{
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    z-index:-9;
+
+    -moz-animation:move-twink-back 200s linear infinite;
+    -ms-animation:move-twink-back 200s linear infinite;
+    -o-animation:move-twink-back 200s linear infinite;
+    -webkit-animation:move-twink-back 200s linear infinite;
+    animation:move-twink-back 200s linear infinite;
+}
+
+body{
+    /*background: linear-gradient(to bottom, #788bff 40%, #e6e5ff 40%);*/
+    /*background: linear-gradient(to bottom, #010c1e 40%, #e6e5ff 40%);*/
+    background-color: #e6e5ff
+}
+.txt{
+    font-family: Roboto;
+}
+
+.container{
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+.card-header{
+    padding-top: 1.3rem;
+    background-color: #e0a800;
+    border-color: #e0a800;
+    color: white;
+}
+
+.card-mg{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-mg{
+    margin-bottom: 0;
+}
+
+.card-shadow{
+    box-shadow: 1px 5px 18px #040505;
+}
+
+.card{
+    border: none;
+}
+
+.card .card-body{
+    margin:auto 1rem;
+}
+
+.card-body .digit-size{
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: top;
+}
+
+.img-light{
+    width: 30px;
+    height: 30px;
+    vertical-align: baseline;
+}
+
+.form-group .form-control {
+    border: 1px solid #b2b2b2;
+    border-radius: 0.5rem;
+}
+
+.form-group .btn-danger, .form-group .btn-primary{
+    border: none;
+}
+
+.tip{
+    font-family: Roboto;
+}
+
+.card-footer{
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+/*custom divider*/
+.divider {								/* minor cosmetics */
+    display: table;
+    font-size: 24px;
+    text-align: center;
+    width: 75%; 						/* divider width */
+    margin: 10px auto;					/* spacing above/below */
+}
+.divider span { display: table-cell; position: relative; }
+.divider span:first-child, .divider span:last-child {
+    width: 50%;
+    top: 13px;							/* adjust vertical align */
+    -moz-background-size: 100% 2px; 	/* line width */
+    background-size: 100% 2px; 			/* line width */
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+}
+.divider span:first-child {				/* color changes in here */
+    background-image: linear-gradient(90deg, transparent, #ffffff);
+}
+.divider span:nth-child(2) {
+    color: #ffffff; padding: 0px 5px; width: auto; white-space: nowrap;
+}
+.divider span:last-child {				/* color changes in here */
+    background-image: linear-gradient(90deg, #ffffff, transparent);
+}
+/*end custom divider*/
