@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
-                <h2 class="text-light txt"> Project Summary</h2>
+                <h2 class="text-light txt">{{__('user.project_summary')}}</h2>
                 <div class="divider">
                     <span></span>
                     <span><i class="fa fa-star"></i> </span>
@@ -21,8 +21,7 @@
                 <div class="card card-shadow card-mg">
                     <div class="card-header">
                         <h5 class="txt">
-
-                            Please fill exactly why you need for help.
+                            {{__('user.please_fill')}}
                         </h5>
                     </div>
                     <form class="form-mg" method="post" action="{{route('user_post_form',Auth::user()->id)}}" enctype="multipart/form-data">
@@ -39,7 +38,7 @@
 
                             <div class="form-group" {{ $errors->has('title') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/one.png') }} class="digit-size">
-                                <label for="title">&nbsp;Title of the project</label>
+                                <label for="title">&nbsp;{{__('user.title')}}</label>
                                 <select name="title" class="form-control request_textarea"  required>
                                     <option>Orphan</option>
                                     <option>Old Age Home</option>
@@ -57,52 +56,52 @@
                             </div>
                             <div class="form-group" {{ $errors->has('location') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/two.png') }} class="digit-size">
-                                <label for="location">&nbsp;Project Location</label>
+                                <label for="location">&nbsp;{{__('user.location')}}</label>
                                 <input type="text" name="location" id="location" class="form-control" value="{{old('location')}}">
                                 <span class="text-danger">{{ $errors->first('location') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('name') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/three.png') }} class="digit-size">
-                                <label for="name">&nbsp;Applicant - Person/organization name</label>
+                                <label for="name">&nbsp;{{__('user.applicant_name')}}</label>
                                 <input type="text" name="name" id="name" class="form-control" value="{{old('name')}}">
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('items-requested') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/four.png') }} class="digit-size">
-                                <label for="items-requested">&nbsp;Items(s) Requested</label>
+                                <label for="items-requested">&nbsp;{{__('user.items_requested')}}</label>
                                 <textarea class="form-control" name="items-requested" id="items-requested" rows="3">{!! old('items-requested') !!} </textarea>
                                 <span class="text-danger">{{ $errors->first('items-requested') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('cost') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/five.png') }} class="digit-size">
-                                <label for="cost">&nbsp;Estimated cost</label>
+                                <label for="cost">&nbsp;{{__('user.cost')}}</label>
                                 <input type="text" name="cost" id="cost" class="form-control" value="{{old('cost')}}">
                                 <span class="text-danger">{{ $errors->first('cost') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('significance') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/six.png') }} class="digit-size">
-                                <label for="significance">&nbsp;Significance of the project</label>
+                                <label for="significance">&nbsp;{{__('user.significance')}}</label>
                                 <textarea class="form-control" name="significance" id="significance" rows="3" >{!! old('significance') !!} </textarea>
                                 <span class="text-danger">{{ $errors->first('significance') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('phone') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/seven.png') }} class="digit-size">
-                                <label for="phone">&nbsp;Phone</label>
+                                <label for="phone">&nbsp;{{__('user.phone')}}</label>
                                 <input type="text" name="phone" id="phone" class="form-control" value="{{old('phone')}}">
                                 <span class="text-danger">{{ $errors->first('phone') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('image') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/eight.png') }} class="digit-size">
-                                <label for="image">&nbsp;Choose image</label>
+                                <label for="image">&nbsp;{{__('user.choose_image')}}</label>
                                 <div class="custom-file mb-3">
                                     <input type="file" class="custom-file-input form-control" id="image" name="image">
-                                    <label class="custom-file-label form-control">Choose file</label>
+                                    <label class="custom-file-label form-control">{{__('user.choose_file')}}</label>
                                 </div>
                                 <span class="text-danger">{{ $errors->first('image') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('remark') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/nine.png') }} class="digit-size">
-                                <label for="remark">&nbsp;Remark (Optional)</label>
+                                <label for="remark">&nbsp;{{__('user.remark')}}</label>
                                 <input type="text" name="remark" id="remark" class="form-control" value="{{old('remark')}}">
                                 <span class="text-danger">{{ $errors->first('remark') }}</span>
                             </div>
@@ -111,13 +110,13 @@
                             <div class="form-group row justify-content-center">
                                 <div class="col-6 col-md-4">
                                     <a  href="/home" class="btn form-control btn-danger">
-                                        Cancel &nbsp
+                                        {{__('user.cancel')}} &nbsp
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </div>
                                 <div class="col-6 col-md-4">
                                     <button type="submit" class="btn form-control btn-primary">
-                                        Send &nbsp
+                                        {{__('user.send')}} &nbsp
                                         <i class="fa fa-paper-plane"></i>
                                     </button>
                                 </div>
@@ -132,8 +131,7 @@
             <div class="col-md-10 text-center">
                 <p class="font-weight-bold tip">
                     <img src="/img/light.png" class="img-light">
-                    Tip: The submitted request forms are shown to foundation.
-                    If the foundation accept your request, this will be post to 'news'.
+                    {{__('user.note')}}
                 </p>
             </div>
         </div>

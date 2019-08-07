@@ -32,4 +32,13 @@ return[
     'next'=>'Next',
     'donate_now'=>'Donate Now',
     'close'=>'Close',
+    'profile'=>'Profile',
+    'email'=>'Email',
+    'president_name'=>'President Name',
+    'member_count'=>'Member Count',
+    'address'=>'Address',
+    'phone'=>'Phone',
+    'request'=>'Request',
+    'post'=>'Post',
+    'logout'=>'Logout',
 ];

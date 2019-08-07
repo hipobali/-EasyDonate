@@ -121,7 +121,7 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Your Profile</h5>
+                                                    <h5 class="modal-title" id="exampleModalLabel">{{__('common.profile')}}</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -144,22 +144,22 @@
                                                             <!-- Quotation -->
                                                             <form class="form-horizontal">
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">Email</label>
+                                                                    <label class="col-4">{{__('common.email')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;Email</p>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">President name</label>
+                                                                    <label class="col-4">{{__('common.president_name')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->president_name}}</p>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">Member count</label>
+                                                                    <label class="col-4">{{__('common.member_count')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->member_count}}</p>
                                                                 </div><div class="form-group row">
-                                                                    <label class="col-4">Address</label>
+                                                                    <label class="col-4">{{__('common.address')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->address}}</p>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">Phone</label>
+                                                                    <label class="col-4">{{__('common.phone')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->phone}}</p>
                                                                 </div>
                                                             </form>
@@ -195,8 +195,8 @@
                                                 <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary">Donate Now</a>
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary">{{__('common.donate_now')}}</a>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('common.close')}}</button>
                                             </div>
                                         </div>
                                     </div>
