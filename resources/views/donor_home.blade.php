@@ -9,17 +9,22 @@
         @endsection </title>
     <link rel="stylesheet" type="text/css" href="{{asset('css/welcomeCss/slick-theme.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/welcomeCss/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('css/modal_for_details.css')}}">
     <link rel="stylesheet" href="{{asset('css/welcomeCss/news.css')}}">
+    <link rel="stylesheet" href="{{asset('css/btn.css')}}">
     </head>
     <body>
     <div id="news">
-        <div class="news_mv">
+        <div class="news_mv ">
             <div class="mv_parent">
                 <div class="mv_child">
                     <p>“We Rise By Lifting Others”</p>
                 </div>
             </div>
         </div>
+
+        <button class="to-top" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
         <div class="urgent">
             <div class="urgent_ttl">
                 <h2 class="urgent_ttl_txt">{{__('common.urgent_need')}}</h2>
@@ -36,7 +41,8 @@
                             <div class="urgent_txt">
                                 <div class="urgent_txt_ttl">
                                     <img class="foundation_people" src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}"  alt="people" width="50" height="50" style="border-radius: 30px;" >
-                                    <h4>{{$foundation_posts->foundation->foundation_name}}</h4>
+                                    <h4 >{{$foundation_posts->foundation->foundation_name}}</h4>
+
                                 </div>
                                 <p>
                                     {{str_limit($foundation_posts->f_post_detail,100) }}
@@ -60,8 +66,8 @@
                                                     <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <a href="" type="button" class="btn btn-primary">{{__('common.donate_now')}}</a>
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('common.close')}}</button>
+                                                    <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary">Donate Now</a>
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -82,8 +88,9 @@
                     <div class="dropdown foundation_dd">
                         <button class="foundation_btn">{{__('common.foundation_list')}}</button>
                         <div class="dropdown_menu">
+                            <a href="{{route('donor_search_foundation',['id'=>0])}}" name="q">All</a>
                             @foreach($foundation as $foundations)
-                                <a href="">{{$foundations->foundation_name}}</a>
+                                <a href="{{route('donor_search_foundation',[$foundations->id])}}" name="q">{{$foundations->foundation_name}}</a>
                             @endforeach
                         </div>
                     </div>
@@ -91,7 +98,7 @@
                         <button class="category_btn">{{__('common.category')}}</button>
                         <div class="dropdown_menu menu_margin">
                             @foreach($category as $categories)
-                                <a href="">{{$categories->category_name}}</a>
+                                <a href="{{route('donor_search_category',[$categories->category_name])}}" name="q">{{$categories->category_name}}</a>
                             @endforeach
                         </div>
                     </div>
@@ -219,14 +226,14 @@
         </div>
         <footer>
             <a class="logo" href="/">
-                <img class="logo_img" src="../../img/news_post/logo.png" alt="">
+                <img class="logo_img" src="{{asset('img/news_post/logo.png')}}" alt="">
             </a>
             <div class="footer_menu">
                 <a href="/">{{__('common.home')}}</a><a href="#content_about">{{__('common.about')}}</a><a href="">{{__('common.contact')}}</a><a href="#content_terms">{{__('common.terms_and_conditions')}}</a>
             </div>
             <p class="txt_copyright">2019© All Rights Reserved. EasyDonateMyanmar.com</p>
             <div class="social_menu">
-                <a href="#"><img src="../../img/news_post/icon_fb.png" alt="" width="42" height="42"></a><a href="#"><img src="../../img/news_post/icon_twitter.png" alt="" width="42" height="42"></a><a href="#"><img src="../../img/news_post/icon_ig.png" alt="" width="42" height="42"></a>
+                <a href="#"><img src="{{asset('img/news_post/icon_fb.png')}}" alt="" width="42" height="42"></a><a href="#"><img src="{{asset('img/news_post/icon_twitter.png')}}" alt="" width="42" height="42"></a><a href="#"><img src="{{asset('img/news_post/icon_ig.png')}}" alt="" width="42" height="42"></a>
             </div>
         </footer>
         <!-- end of footer -->
@@ -294,10 +301,28 @@
                         }
                     }
                 ],
-                prevArrow: "<img class='a-left control-c prev slick-prev' src='../../img/news_post/slider_arrow_left.png' width='48' height='48'>",
-                nextArrow: "<img class='a-right control-c next slick-next' src='../../img/news_post/slider_arrow_right.png'>"
+                prevArrow: "<img class='a-left control-c prev slick-prev' src='../../../img/news_post/slider_arrow_left.png' width='48' height='48'>",
+                nextArrow: "<img class='a-right control-c next slick-next' src='../../../img/news_post/slider_arrow_right.png'>"
             });
         });
+    </script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
     </script>
     </body>
 @stop

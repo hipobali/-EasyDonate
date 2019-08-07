@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\confirmPost;
 use App\donateForm;
 use App\Foundation;
 use App\foundationPost;
@@ -114,16 +115,26 @@ class FoundationController extends Controller
     }
     public function postFoundationRequest(Request $request){
         $id=$request['id'];
-        $foundation=Foundation::whereId($id)->first();
-        $img_post_name=time().'.'.$request->file('f_post_image')->getClientOriginalExtension();
-        $img_post_file=$request->file('f_post_image');
+        $foundation=Foundation::where('user_id',$id)->first();
+        if($request->hasFile('f_post_image')){
+            $img_post_name=time().'.'.$request->file('f_post_image')->getClientOriginalExtension();
+            $img_post_file=$request->file('f_post_image');
+            $foundation_post=new foundationPost();
+            $foundation_post->foundation_id=$foundation['id'];
+            $foundation_post->user_post_id=$request['user_post_id'];
+            $foundation_post->f_post_detail=$request['f_post_detail'];
+            $foundation_post->f_post_image=$img_post_name;
+            $foundation_post->f_post_category=$request['f_post_category'];
+            $foundation_post->save();
+            Storage::disk('foundation_post_image')->put($img_post_name,file::get($img_post_file));
+            return redirect()->back();
+        }
         $foundation_post=new foundationPost();
-        $foundation_post->foundation_id=$foundation['user_id'];
+        $foundation_post->foundation_id=$foundation['id'];
+        $foundation_post->user_post_id=$request['user_post_id'];
         $foundation_post->f_post_detail=$request['f_post_detail'];
-        $foundation_post->f_post_image=$img_post_name;
         $foundation_post->f_post_category=$request['f_post_category'];
         $foundation_post->save();
-        Storage::disk('foundation_post_image')->put($img_post_name,file::get($img_post_file));
         return redirect()->back();
     }
     public function foundationImagePost($img_post_name)
@@ -141,7 +152,7 @@ class FoundationController extends Controller
         $report_form->report_foundation_name=$request['name'];
         $report_form->report_foundation_option=$request['option'];
         $report_form->save();
-        return redirect()->back();
+        return redirect()->back()   ;
     }
     public function foundationPostDataDelete(Request $request){
         $id=$request['id'];
@@ -149,4 +160,5 @@ class FoundationController extends Controller
         $foundation_post->delete();
         return redirect()->back();
     }
+
 }

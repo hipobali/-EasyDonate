@@ -47,8 +47,23 @@ Route::get('delete/donor/request/{id}',[
 ]);
 
 Route::get('search/category/{q}',[
-   'uses'=>'homeController@getSearchCategory',
-   'as'=>'search_category'
+    'uses'=>'homeController@getSearchCategory',
+    'as'=>'search_category'
+]);
+
+Route::get('search/foundation/{q}',[
+    'uses'=>'homeController@getSearchFoundation',
+    'as'=>'search_foundation'
+]);
+
+Route::get('donor/search/category/{q}',[
+    'uses'=>'donorController@getSearchCategory',
+    'as'=>'donor_search_category'
+]);
+
+Route::get('donor/search/foundation/{q}',[
+    'uses'=>'donorController@getSearchFoundation',
+    'as'=>'donor_search_foundation'
 ]);
 
 Route::group(['prefix'=>'foundation','middleware'=>'foundation'],function (){
@@ -87,6 +102,7 @@ Route::group(['prefix'=>'foundation','middleware'=>'foundation'],function (){
        'uses'=>'FoundationController@postFoundationReport',
        'as'=>'report_form'
     ]);
+
 });
 
 Route::group(['prefix'=>'people','middleware'=>'people'],function (){
@@ -117,6 +133,10 @@ Route::group(['prefix'=>'people','middleware'=>'people'],function (){
     Route::get('/user/post/{image}',[
         'uses'=>'peopleController@getUserPostImage',
         'as'=>'get_user_post_image'
+    ]);
+    Route::get('confirm/user/post/{image}',[
+        'uses'=>'peopleController@getConfirmUserPostImage',
+        'as'=>'confirm_user_post_image'
     ]);
     Route::get('user/data/{user_profile}',[
         'uses'=>"peopleController@getUserProfile",

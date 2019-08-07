@@ -40,7 +40,19 @@
                             <div class="form-group" {{ $errors->has('title') ? 'has-error' : '' }}>
                                 <img src={{ asset('img/digits/one.png') }} class="digit-size">
                                 <label for="title">&nbsp;Title of the project</label>
-                                <input type="text" name="title" id="title" class="form-control" value="{{old('title')}}">
+                                <select name="title" class="form-control request_textarea"  required>
+                                    <option>Orphan</option>
+                                    <option>Old Age Home</option>
+                                    <option>Disabled Peoples</option>
+                                    <option>Education</option>
+                                    <option>Funeral</option>
+                                    <option>Religious</option>
+                                    <option>Urgent</option>
+                                    <option>Others</option>
+
+
+
+                                </select>
                                 <span class="text-danger">{{ $errors->first('title') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('location') ? 'has-error' : '' }}>
