@@ -23,6 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Language Change
+Route::get('locale/{locale}',function ($locale){
+    Session::put('locale',$locale);
+    return redirect()->back();
+});
+
 Route::get('/donor/home/',[
    'uses'=>'donorController@getDonorHome',
    'as'=>'donor_home'
@@ -198,4 +204,6 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
         'as'=>'get_user_post_image'
     ]);
 });
+
+
 

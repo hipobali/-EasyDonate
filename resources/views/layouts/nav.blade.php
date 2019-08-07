@@ -19,11 +19,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('common.login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('common.signup') }}</a>
                         </li>
                     @endif
                 @else
@@ -32,13 +32,13 @@
                             <a class="nav-link" href="{{route('foundation_request_view')}}">Request</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#">{{__('common.about')}}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">Contact</a>
+                            <a class="nav-link" href="">{{__('common.contact')}}</a>
                         </li>
                         <li class="nav-item last">
-                            <a class="nav-link terms" href="#">Terms and Conditions</a>
+                            <a class="nav-link terms" href="#">{{__('common.terms_and_conditions')}}</a>
                         </li>
                     @endif
                 @if(Auth::user()->type=='people')
@@ -46,18 +46,18 @@
                                 <a class="nav-link" href="{{route('request_user_post')}}">Post</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
+                                <a class="nav-link" href="#">{{__('common.about')}}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Contact</a>
+                                <a class="nav-link" href="">{{__('common.contact')}}</a>
                             </li>
                             <li class="nav-item last">
-                                <a class="nav-link terms" href="#">Terms and Conditions</a>
+                                <a class="nav-link terms" href="#">{{__('common.terms_and_conditions')}}</a>
                             </li>
                         @endif
                     @if(Auth::user()->type=='admin')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{url('/home')}}">Home</a>
+                                <a class="nav-link" href="{{url('/home')}}">{{__('common.home')}}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('admin_foundation_data')}}">Foundation_Data</a>

@@ -19,36 +19,36 @@
                 <!-- Authentication Links -->
 
                     <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
+                        <a class="nav-link" href="">{{__('common.home')}}</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">{{__('common.about')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Contact</a>
+                        <a class="nav-link" href="">{{__('common.contact')}}</a>
                     </li>
                     <li class="nav-item last">
-                        <a class="nav-link terms" href="#">Terms and Conditions</a>
+                        <a class="nav-link terms" href="#">{{__('common.terms_and_conditions')}}</a>
                     </li>
                     <li class="nav-item dropdown dropdown-menu-right">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Login <span class="caret"></span>
+                            {{__('common.login')}} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item " href="{{url('people/login')}}">User Login</a>
+                            <a class="dropdown-item " href="{{url('people/login')}}">{{__('common.user_login')}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{url('foundation/login')}}">Foundation Login</a>
+                            <a class="dropdown-item" href="{{url('foundation/login')}}">{{__('common.foundation_login')}}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            SignUp <span class="caret"></span>
+                            {{__('common.signup')}} <span class="caret"></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item " href="{{route('people_register_view')}}">User SignUp</a>
+                            <a class="dropdown-item " href="{{route('people_register_view')}}">{{__('common.user_signup')}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('foundation_register_view')}}">Foundation SignUp</a>
+                            <a class="dropdown-item" href="{{route('foundation_register_view')}}">{{__('common.foundation_signup')}}</a>
                         </div>
                     </li>
             </ul>
