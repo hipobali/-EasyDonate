@@ -12,4 +12,7 @@ class userPost extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    public function foundationPost(){
+        return $this->hasMany('App\foundationPost','id');
+    }
 }

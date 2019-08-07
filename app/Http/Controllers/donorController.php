@@ -51,4 +51,26 @@ class donorController extends Controller
         $donorForm->delete();
         return redirect()->back();
     }
+    public function getSearchCategory(Request $request){
+        $q=$request['q'];
+        $foundation=Foundation::all();
+        $category=Category::all();
+        if($q=='All'){
+            $foundation_post=foundationPost::all()->first()->orderBy('id','desc')->paginate(6);
+            return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['category'=>$category])->with(['foundation'=>$foundation]);
+        }
+        $foundation_post=foundationPost::orderBy('id','desc')->where('f_post_category',"LIKE","%$q%")->paginate(6);
+        return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['category'=>$category])->with(['foundation'=>$foundation]);
+    }
+    public function getSearchFoundation(Request $request){
+        $q=$request['q'];
+        $foundation=Foundation::all();
+        $category=Category::all();
+        if($q=='0'){
+            $foundation_post=foundationPost::all()->first()->orderBy('id','desc')->paginate(6);
+            return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['category'=>$category])->with(['foundation'=>$foundation]);
+        }
+        $foundation_post=foundationPost::orderBy('id','desc')->where('foundation_id',"LIKE","%$q%")->paginate(6);
+        return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['category'=>$category])->with(['foundation'=>$foundation]);
+    }
 }

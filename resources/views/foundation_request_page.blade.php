@@ -187,6 +187,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="card request_card ">
+                                                        <div class="card-header">
+                                                            <img class="card-img-top rounded-0" src="{{route('get_user_post_image',[$user_posts->image])}}" alt="Card image cap">
+                                                        </div>
                                                         <div class="card-body">
                                                             <form method="post" action="{{route('foundation_request_post',Auth::user()->id)}}" enctype="multipart/form-data">
                                                                 <div class="form-group">
@@ -200,13 +203,11 @@
                                                                         </textarea>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <input value="{{route('get_user_post_image',[$user_posts->image])}}" type="file" name="f_post_image" class="request_file form-control" required style=" padding-bottom: 3.3vw;">
+                                                                    <input type="text" name="user_post_id" value="{{$user_posts->id}}" style="display: none;">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <select name="f_post_category" class="form-control request_textarea" placeholder="Write about donation details" required>
-                                                                        @foreach($category as $categories)
-                                                                            <option>{{$categories->category_name}}</option>
-                                                                        @endforeach
+                                                                            <option>{{$user_posts->title}}</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
@@ -218,7 +219,6 @@
                                                                             <button type="submit" class="myButton btn btn-block" >Post</button>
                                                                         </div>
                                                                     </div>
-
                                                                 </div>
                                                                 @csrf
                                                             </form>
@@ -254,11 +254,12 @@
 
                             </div>
                             <div class="card-footer">
+                                <p id="showText1"></p>
                                 <div class="row">
                                     <div class="col-md-4 offset-4">
-                                        <buttton class="btn myButton btn1 btn-block "  data-toggle="modal" data-target="#accept"><b>Accept</b></buttton>
+                                        <button class="btn myButton btn1 btn-block "  data-toggle="modal" data-target="#accept{{$donateForms->id}}"><b>Accept</b></button>
                                         <!-- Modal -->
-                                        <div class="modal right fade " id="accept" tabindex="-1" role="dialog" aria-labelledby="accept" aria-hidden="true" data-backdrop="true">
+                                        <div class="modal right fade " id="accept{{$donateForms->id}}" tabindex="-1" role="dialog" aria-labelledby="accept" aria-hidden="true" data-backdrop="true">
                                             <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -268,8 +269,8 @@
                                                          <strong>Are you sure to take full responsible for this post??</strong>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button  class="btn myButton"><b>Cancel</b></button>
-                                                        <button  class="btn ok_btn myButton"><b>OK</b></button>
+                                                            <button type="button" class="btn myButton" data-dismiss="modal"><b>Cancel</b></button>
+                                                            <button type="submit" id="showText1" class="btn myButton" data-dismiss="modal"><b>OK</b></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -332,5 +333,10 @@
         @if (count($errors) > 0)
         $('#donationFormModal').modal('show');
         @endif
+
+        $('#showText1').click(function () {
+            $('#showText').append("This post is Accepted By Foundations" );
+        });
+
     </script>
 @stop

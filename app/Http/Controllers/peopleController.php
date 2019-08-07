@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\People;
 use App\User;
 use App\userPost;
@@ -21,7 +22,8 @@ class peopleController extends Controller
         return view('people_login');
     }
     public function getPeoplePostView(){
-        return view('user_post');
+        $category=Category::all();
+        return view('user_post')->with(['category'=>$category]);
     }
     public function postpeopleRegister(Request $request)
     {
@@ -107,6 +109,10 @@ class peopleController extends Controller
         $file = Storage::disk('user_post')->get($img_user_post);
         return response($file, 200);
     }
+    public function getConfirmUserPostImage($img_user_post){
+        $file = Storage::disk('user_post')->get($img_user_post);
+        return response($file, 200);}
+
     public function getUserProfile($img_user_profile)
     {
         $file = Storage::disk('user_profile')->get($img_user_profile);

@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('js/welcomeJs/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/welcomeCss/base.css')}}">
     <link rel="stylesheet" href="{{asset('css/welcomeCss/home.css')}}">
+    <link rel="stylesheet" href="{{asset('css/btn.css')}}">
 </head>
 <body>
 <div id="home">
@@ -35,6 +36,7 @@
             </div>
         </div>
     </div>
+    <button class="to-top" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="home_mv " >
         <div class="mv_content">
             <img src="img/img_top_mv.png" data-src-sp="img/img_top_mv_sp.png" alt="">
@@ -160,5 +162,23 @@
 <script type="text/javascript" src="{{asset('js/welcomeJs/slick.min.js')}}"></script>
 <script src="{{asset('js/welcomeJs/common.js')}}"></script>
 <script src="{{asset('js/welcomeJs/home.js')}}"></script>
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
 </body>
 </html>

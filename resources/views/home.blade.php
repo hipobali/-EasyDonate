@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/welcomeCss/slick.css')}}">
     <link rel="stylesheet" href="{{asset('css/modal_for_details.css')}}">
     <link rel="stylesheet" href="{{asset('css/welcomeCss/news.css')}}">
+    <link rel="stylesheet" href="{{asset('css/btn.css')}}">
     </head>
     <body>
     <div id="news">
@@ -21,6 +22,9 @@
                 </div>
             </div>
         </div>
+
+        <button class="to-top" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
         <div class="urgent">
             <div class="urgent_ttl">
                 <h2 class="urgent_ttl_txt">Urgent Need</h2>
@@ -31,21 +35,24 @@
                         <div class="urgent_post">
                             <div class="urgent_photo">
                                 <div class="urgent_img">
-                                    <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
+                                    @if($foundation_posts->user_post_id==0)
+                                        <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
+                                    @elseif($foundation_posts->user_post_id==$foundation_posts->userPost->id)
+                                        <img src="{{route('confirm_user_post_image',[$foundation_posts->userPost->image])}}" alt="Urgent_photo" width="234" height="200">
+                                    @endif
                                 </div>
                             </div>
                             <div class="urgent_txt">
                                 <div class="urgent_txt_ttl">
-                                    <img class="foundation_people" src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}"  alt="people" width="50" height="50" style="border-radius: 30px;" >
+                                    <img  class="foundation_people" src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}"  alt="people" width="50" height="50" style="border-radius: 30px;" >
                                     <h4 >{{$foundation_posts->foundation->foundation_name}}</h4>
-
                                 </div>
                                 <p>
                                     {{str_limit($foundation_posts->f_post_detail,100) }}
                                 </p>
                                 <div>
                                     <div class="detail_btn">
-                                        <a class="detail_link" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" href="#" >Detail </a>
+                                        <a class="detail_link" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" href="#" style="text-decoration: none">Detail </a>
                                     </div>
                                                                 <div class="modal fade" id="exampleModalCenter{{$foundation_posts->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -62,7 +69,7 @@
                                                                                 <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <a href="" type="button" class="btn btn-primary">Donate Now</a>
+                                                                                <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary" style="text-decoration: none">Donate Now</a>
                                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                             </div>
                                                                         </div>
@@ -84,8 +91,9 @@
             <div class="dropdown foundation_dd">
                 <button class="foundation_btn">Foundation List</button>
                 <div class="dropdown_menu">
+                    <a href="{{route('search_foundation',['id'=>0])}}" name="q">All</a>
                     @foreach($foundation as $foundations)
-                        <a href="">{{$foundations->foundation_name}}</a>
+                        <a href="{{route('search_foundation',[$foundations->id])}}" name="q">{{$foundations->foundation_name}}</a>
                     @endforeach
                 </div>
             </div>
@@ -103,7 +111,11 @@
                 @foreach($foundation_post as $foundation_posts)
                     <div class="donation_data ">
                         <div class="donation_data_photo">
-                            <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="260" height="240">
+                            @if($foundation_posts->user_post_id==0)
+                                <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
+                            @elseif($foundation_posts->user_post_id==$foundation_posts->userPost->id)
+                                <img src="{{route('confirm_user_post_image',[$foundation_posts->userPost->image])}}" alt="Urgent_photo" width="234" height="200">
+                            @endif
                             <p class="category_tab orphan">
                                 {{$foundation_posts->f_post_category}}
                             </p>
@@ -112,9 +124,9 @@
                             <img  src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}" width="38" height="38">
                             <h4 >{{$foundation_posts->foundation->foundation_name}}</h4 >
                         </div>
-                        <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,150)}}</p>
+                        <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,200)}}</p>
                         <div class="detail_btn">
-                            <a class="detail_link " href="" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}">Detail</a>
+                            <a class="detail_link " href="" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" style="text-decoration: none">Detail</a>
                         </div>
                         <div class="modal fade" id="exampleModal{{$foundation_posts->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -127,11 +139,15 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <img class="mb-4" src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="465" height="240">
+                                        @if($foundation_posts->user_post_id==0)
+                                            <img class="mb-4" src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="465" height="240">
+                                        @elseif($foundation_posts->user_post_id==$foundation_posts->userPost->id)
+                                            <img class="mb-4" src="{{route('confirm_user_post_image',[$foundation_posts->userPost->image])}}" width="465" height="240">
+                                        @endif
                                         <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="" type="button" class="btn btn-primary">Donate Now</a>
+                                        <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary">Donate Now</a>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
@@ -242,5 +258,23 @@
         });
     });
 </script>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
 </body>
 @stop
