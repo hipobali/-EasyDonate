@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c668fa95-a317-468b-99d5-cf0521a9f8b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/donorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/donorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/peopleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/peopleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/foundationPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/foundationPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/userPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/userPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/donor_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/donor_home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="116" selection-start-line="116" selection-end-line="117" />
+            <state relative-caret-position="398">
+              <caret line="41" column="42" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="41" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -70,8 +57,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/donor_home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="468">
+              <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+              <folding>
+                <element signature="e#2130#2158#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,7 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>comm</find>
       <find>foundation_post</find>
       <find>endforeach</find>
       <find>request_foun</find>
@@ -176,6 +165,7 @@
       <find>str</find>
       <find>get_user_post_image</find>
       <find>please</find>
+      <find>modal-body</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -222,7 +212,6 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/People.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/donorController.php" />
         <option value="$PROJECT_DIR$/resources/views/user_post.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/donor_home.blade.php" />
         <option value="$PROJECT_DIR$/public/css/btn.css" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_07_040529_create_confirm_posts_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" />
@@ -235,6 +224,7 @@
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/donor_home.blade.php" />
       </list>
     </option>
   </component>
@@ -323,7 +313,7 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1356" />
     <option name="height" value="520" />
@@ -483,12 +473,12 @@
       <workItem from="1565047369763" duration="5196000" />
       <workItem from="1565058428354" duration="23903000" />
       <workItem from="1565102083395" duration="2694000" />
-      <workItem from="1565148154291" duration="15361000" />
+      <workItem from="1565148154291" duration="15858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170397000" />
+    <option name="totallyTimeSpent" value="170894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -871,15 +861,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="116" selection-start-line="116" selection-end-line="117" />
+        <state relative-caret-position="398">
+          <caret line="41" column="42" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="41" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/donor_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        <state relative-caret-position="468">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+          <folding>
+            <element signature="e#2130#2158#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

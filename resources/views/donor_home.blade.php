@@ -35,7 +35,11 @@
                         <div class="urgent_post">
                             <div class="urgent_photo">
                                 <div class="urgent_img">
-                                    <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
+                                    @if($foundation_posts->user_post_id==0)
+                                        <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
+                                    @elseif($foundation_posts->user_post_id==$foundation_posts->userPost->id)
+                                        <img src="{{route('confirm_user_post_image',[$foundation_posts->userPost->image])}}" alt="Urgent_photo" width="234" height="200">
+                                    @endif
                                 </div>
                             </div>
                             <div class="urgent_txt">
@@ -108,7 +112,11 @@
                         @foreach($foundation_post as $foundation_posts)
                             <div class="donation_data ">
                                 <div class="donation_data_photo">
-                                    <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="260" height="240">
+                                    @if($foundation_posts->user_post_id==0)
+                                        <img src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="260" height="240">
+                                    @elseif($foundation_posts->user_post_id==$foundation_posts->userPost->id)
+                                        <img src="{{route('confirm_user_post_image',[$foundation_posts->userPost->image])}}" width="260" height="240">
+                                    @endif
                                     <p class="category_tab orphan">
                                         {{$foundation_posts->f_post_category}}
                                     </p>
@@ -132,7 +140,11 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <img class="mb-4" src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="465" height="240">
+                                                @if($foundation_posts->user_post_id==0)
+                                                    <img class="mb-4" src="{{route('f_image_post',['foundation_post'=>$foundation_posts->f_post_image])}}" width="465" height="240">
+                                                @elseif($foundation_posts->user_post_id==$foundation_posts->userPost->id)
+                                                    <img class="mb-4" src="{{route('confirm_user_post_image',[$foundation_posts->userPost->image])}}" width="465" height="240">
+                                                @endif
                                                 <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                             </div>
                                             <div class="modal-footer">
