@@ -11,7 +11,7 @@ header, hgroup, menu, nav, section, time, mark, audio, video {
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
-    font-family: 'Roboto',Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+    font-family: Roboto,'Padauk',sans-serif;
     line-height: 1;
     -ms-word-wrap: break-word;
     word-wrap: break-word;

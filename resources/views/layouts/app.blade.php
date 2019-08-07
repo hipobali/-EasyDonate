@@ -21,7 +21,10 @@
     <link href="{{asset('css/nav_style.css')}}" rel="stylesheet">
     <link href="{{asset('css/nav_test.css')}}" rel="stylesheet">
     <link href="{{asset('css/request.css')}}" rel="stylesheet">
-    <link href="{{asset('css/input_file.css')}}" rel="stylesheet"></head>
+    <link href="{{asset('css/input_file.css')}}" rel="stylesheet">
+    <link href="{{asset('css/all.css')}}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Padauk:400,700&display=swap" rel="stylesheet">
+</head>
 <body>
 <div id="app">
     <main class="py-5">

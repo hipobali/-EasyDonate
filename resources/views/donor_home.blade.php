@@ -27,7 +27,7 @@
 
         <div class="urgent">
             <div class="urgent_ttl">
-                <h2 class="urgent_ttl_txt">Urgent Need</h2>
+                <h2 class="urgent_ttl_txt">{{__('common.urgent_need')}}</h2>
             </div>
             <div class="urgent_post_section">
                 @foreach($foundation_post as $foundation_posts)
@@ -53,7 +53,7 @@
                                 </p>
                                 <div>
                                     <div class="detail_btn">
-                                        <a class="detail_link" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" href="#" >Detail </a>
+                                        <a class="detail_link" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" href="#" >{{__('common.detail')}} </a>
                                     </div>
                                     <div class="modal fade" id="exampleModalCenter{{$foundation_posts->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -85,12 +85,12 @@
         </div>
         <div class="donation">
             <div class="donation_ttl">
-                <h2 class="donation_ttl_txt">Donation List</h2>
+                <h2 class="donation_ttl_txt">{{__('common.donation_list')}}</h2>
             </div>
             <div class="inner">
                 <div class="btn_section">
                     <div class="dropdown foundation_dd">
-                        <button class="foundation_btn">Foundation List</button>
+                        <button class="foundation_btn">{{__('common.foundation_list')}}</button>
                         <div class="dropdown_menu">
                             <a href="{{route('donor_search_foundation',['id'=>0])}}" name="q">All</a>
                             @foreach($foundation as $foundations)
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="dropdown category_dd">
-                        <button class="category_btn">Category List</button>
+                        <button class="category_btn">{{__('common.category')}}</button>
                         <div class="dropdown_menu menu_margin">
                             @foreach($category as $categories)
                                 <a href="{{route('donor_search_category',[$categories->category_name])}}" name="q">{{$categories->category_name}}</a>
@@ -122,12 +122,71 @@
                                     </p>
                                 </div>
                                 <div class="donation_data_ttl">
-                                    <img  src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}" width="38" height="38">
+                                    <a data-toggle="modal" data-target="#exampleModal{{$foundation_posts->foundation_id}}">
+                                        <img  src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}" width="38" height="38">
+                                    </a>
+                                    <div class="modal fade" id="exampleModal{{$foundation_posts->foundation_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Your Profile</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- Card -->
+                                                    <div class="card testimonial-card" style="background-color:lightgoldenrodyellow">
+                                                        <!-- Background color -->
+                                                        <div class="card-up indigo lighten-1"></div>
+
+                                                        <!-- Avatar -->
+                                                        <div class="avatar mx-auto white mt-3">
+                                                            <img  src="{{route('getFoundationProfile',[$foundation_posts->foundation->foundation_profile])}}" class="rounded-circle" height="auto" width="200" alt="woman avatar">
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="card-body">
+                                                            <!-- Name -->
+                                                            <h4 class="card-title"><i class="fa fa-user-alt "></i>&nbsp;{{$foundation_posts->foundation->foundation_name}}</h4>
+                                                            <hr>
+                                                            <!-- Quotation -->
+                                                            <form class="form-horizontal">
+                                                                <div class="form-group row">
+                                                                    <label class="col-4">Email</label>
+                                                                    <p class="col-8"> :&nbsp;&nbsp;Email</p>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label class="col-4">President name</label>
+                                                                    <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->president_name}}</p>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label class="col-4">Member count</label>
+                                                                    <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->member_count}}</p>
+                                                                </div><div class="form-group row">
+                                                                    <label class="col-4">Address</label>
+                                                                    <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->address}}</p>
+                                                                </div>
+                                                                <div class="form-group row">
+                                                                    <label class="col-4">Phone</label>
+                                                                    <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->phone}}</p>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- Card -->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <h4 >{{$foundation_posts->foundation->foundation_name}}</h4 >
                                 </div>
                                 <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,150)}}</p>
                                 <div class="detail_btn">
-                                    <a class="detail_link " href="" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}">Detail</a>
+                                    <a class="detail_link " href="" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}">{{(__('common.detail'))}}</a>
                                 </div>
                                 <div class="modal fade" id="exampleModal{{$foundation_posts->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -160,8 +219,8 @@
                 </div>
 
                 <div class="pagination">
-                    <a class="fs_ls" href="{{$foundation_post->url(1) }}">First</a>
-                    <a class="previous_left" href="{{ $foundation_post->previousPageUrl() }}">Previous</a>
+                    <a class="fs_ls" href="{{$foundation_post->url(1) }}">{{__('common.first')}}</a>
+                    <a class="previous_left" href="{{ $foundation_post->previousPageUrl() }}">{{__('common.previous')}}</a>
                     @foreach(range(1,$foundation_post->lastPage()) as $i)
                         @if($i >=$foundation_post->currentPage() - 2 && $i <= $foundation_post->currentPage() + 2)
                             @if ($i == $foundation_post->currentPage())
@@ -172,8 +231,8 @@
                         @endif
                     @endforeach
 
-                    <a class="next_right" href="{{ $foundation_post->nextPageUrl() }}">Next</a>
-                    <a class="fs_ls" href="{{ $foundation_post->url($foundation_post->lastPage()) }}">Last</a>
+                    <a class="next_right" href="{{ $foundation_post->nextPageUrl() }}">{{__('common.next')}}</a>
+                    <a class="fs_ls" href="{{ $foundation_post->url($foundation_post->lastPage()) }}">{{__('common.last')}}</a>
                 </div>
             </div>
         </div>
@@ -182,7 +241,7 @@
                 <img class="logo_img" src="{{asset('img/news_post/logo.png')}}" alt="">
             </a>
             <div class="footer_menu">
-                <a href="/">News</a><a href="#content_about">About</a><a href="">Contact</a><a href="#content_terms">Terms and Conditions</a>
+                <a href="/">{{__('common.home')}}</a><a href="#content_about">{{__('common.about')}}</a><a href="">{{__('common.contact')}}</a><a href="#content_terms">{{__('common.terms_and_conditions')}}</a>
             </div>
             <p class="txt_copyright">2019© All Rights Reserved. EasyDonateMyanmar.com</p>
             <div class="social_menu">

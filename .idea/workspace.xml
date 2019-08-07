@@ -195,9 +195,6 @@
         <option value="$PROJECT_DIR$/resources/views/donation_form.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_04_194101_create_donate_forms_table.php" />
         <option value="$PROJECT_DIR$/public/css/text.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app1.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/donor_nav.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_04_190016_create_reports_table.php" />
         <option value="$PROJECT_DIR$/public/css/request.css" />
         <option value="$PROJECT_DIR$/resources/views/admin_foundationPost_data.blade.php" />
@@ -224,6 +221,24 @@
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/welcomeCss/home.css" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/Localization.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app1.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/all.css" />
+        <option value="$PROJECT_DIR$/public/css/welcomeCss/base.css" />
+        <option value="$PROJECT_DIR$/resources/lang/mm/welcome.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/welcome.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/term_condition.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/nav_test.css" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/donor_nav.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/mm/term_condition.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/common.php" />
+        <option value="$PROJECT_DIR$/resources/lang/mm/common.php" />
         <option value="$PROJECT_DIR$/resources/views/donor_home.blade.php" />
       </list>
     </option>
@@ -382,6 +397,8 @@
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
               <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
+              <item name="mm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
@@ -487,6 +504,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2881997" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -497,7 +515,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33388704" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -769,13 +787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Foundation.php">
+    <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="1008">
+          <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -789,7 +804,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/peopleController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="114" selection-start-line="114" selection-end-line="114" />

@@ -1,5 +1,4 @@
-
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -8,8 +7,11 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="{{asset('js/welcomeJs/slick-theme.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('js/welcomeJs/slick.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="{{asset('css/welcomeCss/base.css')}}">
     <link rel="stylesheet" href="{{asset('css/welcomeCss/home.css')}}">
+    <link rel="stylesheet" href="{{asset('fa/css/all.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Padauk:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/btn.css')}}">
 </head>
 <body>
@@ -17,10 +19,12 @@
     <div class="topnav ">
         <a href=""><img src="../../../img/logo_aa.png" width="50px" height=""></a>
         <div class="topnav-right only_pc">
-            <a href="/">News</a>
-            <a href="#content_about">About</a>
-            <a href="#content_contact">Contact</a>
-            <a href="#content_terms">Terms and Conditions</a>
+            <a href="/">{{ __('common.news') }}</a>
+            <a href="#content_about">{{ __('common.about') }}</a>
+            <a href="#content_contact">{{ __('common.contact') }}</a>
+            <a href="#content_terms">{{ __('common.terms_and_conditions') }}</a>
+            <a href="{{url('locale/en')}}" style="padding-right: 0;margin-right: 0">English &nbsp;/</a>
+            <a href="{{url('locale/mm')}}">မြန်မာ</a>
         </div>
         <div class="responsive_nav only_sp">
             <div class="btn_menu">
@@ -29,10 +33,12 @@
                 </div>
             </div>
             <div class="responsive_content only_sp">
-                <a href="" class="news">News</a>
-                <a href="#content_about">About</a>
-                <a href="#content_contact">Contact</a>
-                <a href="#content_terms">Terms and Conditions</a>
+                <a href="/">{{ __('common.news') }}</a>
+                <a href="#content_about">{{ __('common.about') }}</a>
+                <a href="#content_contact">{{ __('common.contact') }}</a>
+                <a href="#content_terms">{{ __('common.terms_and_conditions') }}</a>
+                <a href="{{url('locale/en')}}" style="padding-right: 0;margin-right: 0">English &nbsp;/</a>
+                <a href="{{url('locale/mm')}}">မြန်မာ</a>
             </div>
         </div>
     </div>
@@ -42,7 +48,7 @@
             <img src="img/img_top_mv.png" data-src-sp="img/img_top_mv_sp.png" alt="">
             <div class="text_sec">
                 <p class="txt_mv">“We Rise By Lifting Others”</p>
-                <a class="mv_link" href="{{route('donor_home')}}" title="">Get Started</a>
+                <a class="mv_link" href="{{route('donor_home')}}" title="">{{__('welcome.get_started')}}</a>
             </div>
         </div>
     </div>
@@ -50,8 +56,8 @@
     <div class="content">
         <div class="content_about" id="content_about">
             <div class="inner">
-                <p class="txt_about">Easy-Donate Website is the website that grouped many foundations in one place to access easily.<br>We expected this website will be useful for<br>the people who want to request for help and for the people who want to donate. </p>
-                <p class="ttl_news">NEWS</p>
+                <p class="txt_about">{{__('welcome.about1')}}<br>{{__('welcome.about2')}}<br>{{__('welcome.about3')}}</p>
+                <p class="ttl_news">{{__('common.news')}}</p>
             </div>
             <ul class="news_list">
                 <li class="news">
@@ -89,18 +95,18 @@
                 <div class="address">
                     <img src="img/icon_address.png" alt="" width="78" height="98">
                     <div class="contact_box">
-                        <p>No.22, BaYintNaung(9) Street, Kamarkyi Road, ThinGankwin Township,<br>Yangon, Myanmar.</p>
+                        <p>{{__('common.address1')}}<br>{{__('common.address2')}}</p>
                     </div>
                 </div>
                 <div class="phone">
                     <img src="img/icon_phone.png" alt="" width="78" height="98">
                     <div class="contact_box">
                         <p>
-                            <a href="tel:+959960005016"> 09-960005016 </a>,
-                            <a href="tel:+959256137059"> 09-256137059 </a> ,<br>
-                            <a href="tel:+959769196759"> 09-769146759 </a> ,
-                            <a href="tel:+959797911982"> 09-797911982 </a> ,
-                            <a href="tel:+959954499492"> 09-954499492 </a>
+                            <a href="tel:+959960005016"> {{__('common.phone1')}} </a>,
+                            <a href="tel:+959256137059"> {{__('common.phone2')}} </a> ,<br>
+                            <a href="tel:+959769196759"> {{__('common.phone3')}} </a> ,
+                            <a href="tel:+959797911982"> {{__('common.phone4')}} </a> ,
+                            <a href="tel:+959954499492"> {{__('common.phone5')}} </a>
                         </p>
                     </div>
                 </div>
@@ -115,27 +121,26 @@
         <!-- end of contact -->
         <div class="content_terms" id="content_terms">
             <div class="inner">
-                <p class="txt_terms">Please read these terms and policy before using our websites. These terms apply to all users<br>who access or use the Service. (Visitors, Non-profit Organization and People-in-needs who want to post request)</p>
+                <p class="txt_terms">{{__('term_condition.paragraph1')}}<br>{{__('term_condition.paragraph2')}}</p>
                 <div class="txt_terms_content">
-                    <h3 class="ttl_people">People-in-need</h3>
-                    <p class="txt_need"> People-in-need (user who want to post the request) must have to register. </p>
-                    <p class="txt_need">To register, people-in-need must have to fill the registeration form correctly.</p>
-                    <p class="txt_need">To post the request about needed area, please post the information with statements (photos or videos).</p>
+                    <h3 class="ttl_people">{{__('common.people_in_need')}}</h3>
+                    <p class="txt_need">{{__('term_condition.people_tc1')}}</p>
+                    <p class="txt_need">{{__('term_condition.people_tc2')}}</p>
+                    <p class="txt_need">{{__('term_condition.people_tc3')}}</p>
                     <hr>
                     <!-- end of people_in_need -->
-                    <h3 class="ttl_people">Non-Profit Organization</h3>
-                    <p class="txt_need"> The organization must have to register.</p>
-                    <p class="txt_need">To register, the organization has to add the count of members and founded year to determine the foundation is real or fake.</p>
-                    <p class="txt_need">Before accepting the request from the people-in-need, please read carefully the information of that people-in-need (After accepting the request, the foundation cannot cancle or deny the request)</p>
-                    <p class="txt_need">Every post that uploaded to the websites by ‘A Organization’ have to take fully responsibility by the‘A Organization’.</p>
-                    <p class="txt_need">Every post that uploaded to the websites by ‘A Organization’ have to take fully responsibility by the ‘A Organization’.</p>
-                    <p class="txt_need">Please enter the registration certificate, or allowance of the authority.</p>
+                    <h3 class="ttl_people">{{__('common.non_profit_organization')}}</h3>
+                    <p class="txt_need">{{__('term_condition.organization_tc1')}}</p>
+                    <p class="txt_need">{{__('term_condition.organization_tc2')}}</p>
+                    <p class="txt_need">{{__('term_condition.organization_tc3')}}</p>
+                    <p class="txt_need">{{__('term_condition.organization_tc4')}}</p>
+                    <p class="txt_need">{{__('term_condition.organization_tc5')}}</p>
                     <hr>
                     <!-- end of non-profit-organization -->
-                    <h3 class="ttl_people">Visitor</h3>
-                    <p class="txt_need">Visitor(Donor) do not need to register.</p>
-                    <p class="txt_need">Donor can only see the post that accepted by non-profit organization.</p>
-                    <p class="txt_need">Please do not click the donate button without responsibility.</p>
+                    <h3 class="ttl_people">{{__('common.visitor')}}</h3>
+                    <p class="txt_need">{{__('term_condition.donor_tc1')}}</p>
+                    <p class="txt_need">{{__('term_condition.donor_tc2')}}</p>
+                    <p class="txt_need">{{__('term_condition.donor_tc3')}}</p>
                     <!-- end of visitor -->
                 </div>
             </div>
@@ -149,7 +154,7 @@
             <!-- <img src="img/logo.png" alt="" width="260" height="20"> -->
         </a>
         <div class="footer_menu">
-            <a href="#">News</a><a href="#content_about">About</a><a href="#content_contact">Contact</a><a href="#content_terms">Terms and Conditions</a>
+            <a href="#">{{__('common.news')}}</a><a href="#content_about">{{__('common.about')}}</a><a href="#content_contact">{{__('common.contact')}}</a><a href="#content_terms">{{__('common.terms_and_conditions')}}</a>
         </div>
         <p class="txt_copyright">2019© All Rights Reserved. EasyDonateMyanmar.com</p>
         <div class="social_menu">
