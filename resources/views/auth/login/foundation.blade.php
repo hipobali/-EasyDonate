@@ -11,12 +11,12 @@
             <div class="col-md-6 text-center left-side">
                 <h1>{{__('foundation.login_to_account')}}</h1>
                 <p style="margin-top: 50px;"><strong>
-                        "Your greatness<br>
-                        is not what you have,<br>
-                        it's what you give."<br>
+                        "{{__('user.login_quote1')}}<br>
+                        {{__('user.login_quote2')}}<br>
+                        {{__('user.login_quote3')}}"<br>
                     </strong>
                     <br>
-                    <i><b>--Winston Churchill--</b></i>
+                    <i><b>--{{__('user.login_writer')}}--</b></i>
                 </p>
                 <img class="img-fluid" src="../../../img/community2.png" width="200px" style="margin-top: 40px">
             </div>
