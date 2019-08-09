@@ -1,4 +1,5 @@
-@extends('layouts.app1')
+
+@extends('layouts.app')
 @extends('layouts.nav')
 @section('content')
     <meta charset="utf-8">
