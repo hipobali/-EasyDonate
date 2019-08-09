@@ -1,8 +1,9 @@
 @extends('layouts.app1')
 @if(Auth::user())
     @extends('layouts.nav')
-@endif
+@else
 @extends('layouts.donor_nav')
+    @endif
 @section('content')
     <title>About Us</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

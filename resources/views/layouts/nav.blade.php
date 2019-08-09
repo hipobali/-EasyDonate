@@ -5,9 +5,11 @@
             <a class="navbar-brand" href="{{ url('/home') }}">
                 <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
             </a>
-            @endif
+            @else
             <a class="navbar-brand" href="{{ url('donor/home') }}">
+                <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
             </a>
+        @endif
         <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
                 aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
             <div class="animated-icon3"><span></span><span></span><span></span></div>
