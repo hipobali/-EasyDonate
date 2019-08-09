@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c668fa95-a317-468b-99d5-cf0521a9f8b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/foundation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/user.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/mm/foundation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/mm/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/mm/common.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/mm/common.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login/people.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login/people.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/donor_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/donor_home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/people_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/people_register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_post.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,19 +19,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6369">
-              <caret line="193" column="30" selection-start-line="193" selection-start-column="30" selection-end-line="193" selection-end-column="30" />
+            <state relative-caret-position="384">
+              <caret line="391" lean-forward="true" selection-start-line="391" selection-end-line="391" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/foundation_request_page.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="3985">
               <caret line="338" column="18" selection-start-line="338" selection-start-column="18" selection-end-line="338" selection-end-column="18" />
             </state>
           </provider>
@@ -86,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/donor_home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6369">
-              <caret line="193" column="97" selection-start-line="193" selection-start-column="97" selection-end-line="193" selection-end-column="97" />
+            <state relative-caret-position="6237">
+              <caret line="189" column="97" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
             </state>
           </provider>
         </entry>
@@ -122,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/donation_form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3828">
+            <state relative-caret-position="289">
               <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
             </state>
           </provider>
@@ -218,7 +205,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/welcomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/donor_home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" />
@@ -228,6 +214,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -317,7 +304,7 @@
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1356" />
     <option name="height" value="520" />
@@ -480,12 +467,12 @@
       <workItem from="1565148154291" duration="24194000" />
       <workItem from="1565192360293" duration="14389000" />
       <workItem from="1565283722646" duration="7976000" />
-      <workItem from="1565314725071" duration="601000" />
+      <workItem from="1565314725071" duration="901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202196000" />
+    <option name="totallyTimeSpent" value="202496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -779,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6369">
-          <caret line="193" column="30" selection-start-line="193" selection-start-column="30" selection-end-line="193" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_04_190016_create_reports_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -815,8 +795,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/donor_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6369">
-          <caret line="193" column="97" selection-start-line="193" selection-start-column="97" selection-end-line="193" selection-end-column="97" />
+        <state relative-caret-position="6237">
+          <caret line="189" column="97" selection-start-line="189" selection-start-column="97" selection-end-line="189" selection-end-column="97" />
         </state>
       </provider>
     </entry>
@@ -843,15 +823,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/donation_form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3828">
+        <state relative-caret-position="289">
           <caret line="116" column="45" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/foundation_request_page.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="3985">
           <caret line="338" column="18" selection-start-line="338" selection-start-column="18" selection-end-line="338" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="391" lean-forward="true" selection-start-line="391" selection-end-line="391" />
         </state>
       </provider>
     </entry>
