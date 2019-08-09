@@ -17,11 +17,33 @@ use Illuminate\Support\Facades\Auth;
 Route::group(['middleware'=>['auth']],function (){
     Route::get('/home', 'HomeController@index')->name('home');
 
+
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[
+    'uses'=>'welcomeController@getWelcome',
+    'as'=>'/'
+]);
+
+//foundation
+Route::get('foundation/register/view',[
+    'uses'=>'FoundationController@getFoundationRegister',
+    'as'=>'foundation_register_view'
+]);
+Route::post('foundation/register/post',[
+    'uses'=>'FoundationController@postFoundationRegister',
+    'as'=>'foundation_register'
+]);
+
+//people
+Route::get('people/register/view',[
+    'uses'=>'peopleController@getPeopleRegister',
+    'as'=>'people_register_view'
+]);
+Route::post('/people/register/post',[
+    'uses'=>'peopleController@postPeopleRegister',
+    'as'=>'people_register'
+]);
 
 //Language Change
 Route::get('locale/{locale}',function ($locale){
@@ -29,6 +51,7 @@ Route::get('locale/{locale}',function ($locale){
     return redirect()->back();
 });
 
+//donor
 Route::get('/donor/home/',[
    'uses'=>'donorController@getDonorHome',
    'as'=>'donor_home'
@@ -45,6 +68,8 @@ Route::get('delete/donor/request/{id}',[
     'uses'=>'donorController@getDeleteDonorRequest',
     'as'=>'delete_donor_request'
 ]);
+
+//search
 
 Route::get('search/category/{q}',[
     'uses'=>'homeController@getSearchCategory',
@@ -66,22 +91,33 @@ Route::get('donor/search/foundation/{q}',[
     'as'=>'donor_search_foundation'
 ]);
 
+Route::get('donate/form/cancel/',[
+   'uses'=>'donorController@getDonateCancle',
+    'as'=>'donate_form_cancel'
+    ]);
+
+//contact
+Route::get('/User/ContactUs/',[
+    'uses'=>"donorController@getContactUs",
+    'as'=>'contact_us_nav'
+]);
+
+//Mail
+Route::post('/Send/Mail/',[
+    'uses'=>'MailController@sendEmail',
+    'as'=>'send_mail'
+]);
+
+
 Route::group(['prefix'=>'foundation','middleware'=>'foundation'],function (){
     Auth::routes(
         [ 'register' => false,]
     );
-    Route::get('/register/view',[
-        'uses'=>'FoundationController@getFoundationRegister',
-        'as'=>'foundation_register_view'
-    ]);
     Route::get('/login/view',[
        'uses'=>'FoundationController@getFoundationLogin',
        'as'=>'foundation_login_view'
     ]);
-    Route::post('/register/post',[
-        'uses'=>'FoundationController@postFoundationRegister',
-        'as'=>'foundation_register'
-    ]);
+
     Route::get('/request/view/',[
        'uses'=>'FoundationController@getFoundationRequestView',
        'as'=>'foundation_request_view'
@@ -110,17 +146,9 @@ Route::group(['prefix'=>'people','middleware'=>'people'],function (){
         [ 'register' => false,]
     );
 
-    Route::get('/register/view',[
-        'uses'=>'peopleController@getPeopleRegister',
-        'as'=>'people_register_view'
-    ]);
     Route::get('/login/view',[
         'uses'=>'peopleControllerController@getPeopleLogin',
         'as'=>'people_login_view'
-    ]);
-    Route::post('/people/register/post',[
-        'uses'=>'peopleController@postPeopleRegister',
-        'as'=>'people_register'
     ]);
     Route::post('/request/post/form/{id}',[
        'uses'=>'peopleController@postPeopleRequest',

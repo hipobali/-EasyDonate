@@ -148,7 +148,7 @@ class FoundationController extends Controller
     }
     public function postFoundationReport(Request $request){
         $report_form=new Report();
-        $report_form->foundation_id=$request['id'];
+        $report_form->user_post_id=$request['id'];
         $report_form->report_foundation_name=$request['name'];
         $report_form->report_foundation_option=$request['option'];
         $report_form->save();

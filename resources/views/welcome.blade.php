@@ -19,7 +19,7 @@
     <div class="topnav ">
         <a href=""><img src="../../../img/logo_aa.png" width="50px" height=""></a>
         <div class="topnav-right only_pc">
-            <a href="/">{{ __('common.news') }}</a>
+            <a href="#content_news">{{ __('common.news') }}</a>
             <a href="#content_about">{{ __('common.about') }}</a>
             <a href="#content_contact">{{ __('common.contact') }}</a>
             <a href="#content_terms">{{ __('common.terms_and_conditions') }}</a>
@@ -57,36 +57,26 @@
         <div class="content_about" id="content_about">
             <div class="inner">
                 <p class="txt_about">{{__('welcome.about1')}}<br>{{__('welcome.about2')}}<br>{{__('welcome.about3')}}</p>
-                <p class="ttl_news">{{__('common.news')}}</p>
+                <p class="ttl_news" id="content_news">{{__('common.news')}}</p>
             </div>
+
             <ul class="news_list">
+                @foreach($foundationPost as $foundationPosts)
                 <li class="news">
                     <div class="img_news">
-                        <img src="img/img_news.png" alt="news" width="296" height="258">
-                        <div class="txt_date">2019.07.01</div>
+                        @if(is_null($foundationPosts->user_post_id))
+                            <img src="{{route('f_image_post',['foundation_post'=>$foundationPosts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
+                        @elseif($foundationPosts->user_post_id==$foundationPosts->userPost->id)
+                            <img src="{{route('confirm_user_post_image',[$foundationPosts->userPost->image])}}" alt="Urgent_photo" width="234" height="200">
+                        @endif
+                        <div class="txt_date">{{$foundationPosts->created_at}}</div>
                     </div>
                     <div class="txt_news">
-                        <p>Title of request title of request title of Request title of request</p>
+                        <p>  {{str_limit($foundationPosts->f_post_detail,100) }}</p>
                     </div>
                 </li>
-                <li class="news">
-                    <div class="img_news">
-                        <img src="img/img_news.png" alt="news" width="296" height="258">
-                        <div class="txt_date">2019.07.01</div>
-                    </div>
-                    <div class="txt_news">
-                        <p>Title of request title of request title of Request title of request</p>
-                    </div>
-                </li>
-                <li class="news">
-                    <div class="img_news">
-                        <img src="img/img_news.png" alt="news" width="296" height="258">
-                        <div class="txt_date">2019.07.01</div>
-                    </div>
-                    <div class="txt_news">
-                        <p>Title of request title of request title of Request title of request</p>
-                    </div>
-                </li>
+                @endforeach
+
             </ul>
         </div>
         <!-- end of about -->

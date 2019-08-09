@@ -19,6 +19,8 @@ class CreateDonateFormsTable extends Migration
             $table->string("donor_ph_no");
             $table->string("donor_location");
             $table->string("donor_address");
+            $table->string('donate_category');
+            $table->string('donate_foundation');
             $table->string("donor_donationOption");
             $table->string("donor_date");
             $table->string("donor_amount");

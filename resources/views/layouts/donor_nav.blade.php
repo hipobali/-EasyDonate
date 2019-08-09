@@ -26,7 +26,7 @@
                         <a class="nav-link" href="#">{{__('common.about')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">{{__('common.contact')}}</a>
+                        <a class="nav-link" href="{{route('contact_us_nav')}}">{{__('common.contact')}}</a>
                     </li>
                     <li class="nav-item last">
                         <a class="nav-link terms" href="#">{{__('common.terms_and_conditions')}}</a>

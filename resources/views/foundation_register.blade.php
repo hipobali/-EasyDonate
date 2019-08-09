@@ -55,20 +55,20 @@
 
                             <span class="text-danger">{{$errors->first('foundation_profile')}}</span>
                             <div class="form-group">
-                                <label for="foundation_name" class=" f_name"><span class="fa fa-users "></span>&nbsp {{__('foundation.foundation_name')}}</label>
-                                <input value="{{ old('username') }}" type="text" name="foundation_name" id="foundation_name" class="form-control form-control-sm {{$errors->has('foundation_name') ? 'has-error':''}} ">
+                                <label for="foundation_name" class=" f_name"><span class="fa fa-users "></span>&nbsp Foundation Name: </label>
+                                <input value="{{ old('foundation_name') }}" type="text" name="foundation_name" id="foundation_name" class="form-control form-control-sm {{$errors->has('foundation_name') ? 'has-error':''}} ">
                                 <span class="text-danger">{{$errors->first('foundation_name')}}</span>
                             </div>
                             <div class="form-group">
-                                <label for="founder"><span class="fa fa-user-tie "></span>&nbsp {{__('foundation.founder')}}</label>
-                                <input value="{{ old('username') }}" type="text" name="founder" id="founder" class="fa fa-users form-control form-control-sm {{$errors->has('founder') ? 'has-error':''}}" >
+                                <label for="founder"><span class="fa fa-user-tie "></span>&nbsp Founder:</label>
+                                <input value="{{ old('founder') }}" type="text" name="founder" id="founder" class="fa fa-users form-control form-control-sm {{$errors->has('founder') ? 'has-error':''}}" >
                                 <span class="text-danger">{{$errors->first('founder')}}</span>
                             </div>
                             <div class="form-group">
                                 <label><span class="fa fa-calendar-alt "></span>&nbsp {{__('foundation.founded_date')}}</label>
                                 <div class="row">
                                     <div class="col-4 col-sm-4">
-                                        <select value="{{ old('username') }}" name="year_picker" id="year_picker" class="form-control form-control-sm {{$errors->has('year_picker') ? 'has-error':''}}">
+                                        <select value="{{ old('year_picker') }}" name="year_picker" id="year_picker" class="form-control form-control-sm {{$errors->has('year_picker') ? 'has-error':''}}">
                                             @for($i = 1990; $i < date('Y') + 10; $i++ )
                                                 <option value="{{ $i }}" @if($i == date('Y')) selected @endif>{{ $i }}</option>
                                             @endfor
@@ -81,7 +81,7 @@
                                                 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'
                                             ];
                                         @endphp
-                                        <select value="{{ old('username') }}" name="month_picker" id="month_picker" class="form-control form-control-sm {{$errors->has('month_picker') ? 'has-error':''}}">
+                                        <select value="{{ old('month_picker') }}" name="month_picker" id="month_picker" class="form-control form-control-sm {{$errors->has('month_picker') ? 'has-error':''}}">
                                             @foreach($months as $key => $val)
                                                 <option value="{{ $key }}" @if(date('m') - 1 == $key) selected @endif>{{ $val }}</option>
                                             @endforeach
@@ -89,7 +89,7 @@
                                         <span class="text-danger">{{$errors->first('month_picker')}}</span>
                                     </div>
                                     <div class="col -4 col-sm-4">
-                                        <select value="{{ old('username') }}" name="day_picker" id="day_picker" class=" form-control form-control-sm {{$errors->has('day_picker') ? 'has-error':''}}"></select>
+                                        <select value="{{ old('day_picker') }}" name="day_picker" id="day_picker" class=" form-control form-control-sm {{$errors->has('day_picker') ? 'has-error':''}}"></select>
                                         <span class="text-danger">{{$errors->first('day_picker')}}</span>
                                     </div>
                                 </div>
