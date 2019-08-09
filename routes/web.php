@@ -102,6 +102,18 @@ Route::get('/User/ContactUs/',[
     'as'=>'contact_us_nav'
 ]);
 
+//terms and conditions
+Route::get('/User/termsandconditions',[
+    'uses'=>'donorController@getTermsAndConditions',
+    'as'=>'terms_and_conditions'
+]);
+
+//about us
+Route::get('/User/about_us',[
+   'uses'=>'donorController@getAboutUs',
+   'as'=>'about_us'
+]);
+
 //Mail
 Route::post('/Send/Mail/',[
     'uses'=>'MailController@sendEmail',

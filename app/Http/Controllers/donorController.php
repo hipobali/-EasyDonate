@@ -84,9 +84,18 @@ class donorController extends Controller
         return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['category'=>$category])->with(['foundation'=>$foundation]);
     }
     public function getContactUs(){
-    return view('contact_us');
-}
-   public function getDonateCancle(){
+        return view('contact_us');
+    }
+
+    public function getTermsAndConditions(){
+       return view('terms_and_conditions');
+    }
+
+    public function getAboutUs(){
+       return view('about_us');
+    }
+
+    public function getDonateCancle(){
        if(Auth::user()){
            $user_post=userPost::all();
            $foundation_post=foundationPost::all()->first()->orderBy('id','desc')->paginate(6);

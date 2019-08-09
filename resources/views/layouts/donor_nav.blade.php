@@ -23,13 +23,13 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{__('common.about')}}</a>
+                        <a class="nav-link" href="{{route('about_us')}}">{{__('common.about')}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('contact_us_nav')}}">{{__('common.contact')}}</a>
                     </li>
                     <li class="nav-item last">
-                        <a class="nav-link terms" href="#">{{__('common.terms_and_conditions')}}</a>
+                        <a class="nav-link terms" href="{{route('terms_and_conditions')}}">{{__('common.terms_and_conditions')}}</a>
                     </li>
                     <li class="nav-item dropdown dropdown-menu-right">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
