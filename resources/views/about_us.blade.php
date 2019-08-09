@@ -102,7 +102,7 @@
         <hr style="width: 50%; margin-bottom: 2.5%;">
         <div class="alignment">
             <figure class="snip1566">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample14.jpg" alt="sq-sample14" />
+                <img src="{{asset('img/about_us/thet_htar_wai.jpg')}}" alt="sq-sample14" />
                 <figcaption>
                     <div>Thet Htar Wai</div>
                     <div>TUM</div>
@@ -112,7 +112,7 @@
                 <a href="#"></a>
             </figure>
             <figure class="snip1566">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample19.jpg" alt="sq-sample19" />
+                <img src="{{asset('img/about_us/phoo_moh.jpg')}}" alt="sq-sample19" />
                 <figcaption>
                     <div>Phoo Moh Moh</div>
                     <div>TUM</div>
@@ -122,7 +122,7 @@
                 <a href="#"></a>
             </figure>
             <figure class="snip1566">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample20.jpg" alt="sq-sample20" />
+                <img src="{{asset('img/about_us/kay_zin.jpg')}}" alt="sq-sample20" />
                 <figcaption>
                     <div>Kay Zin Myo Thet Nyein</div>
                     <div>UCSM</div>
@@ -141,7 +141,7 @@
                 </figcaption>
             </figure>
             <figure class="snip1566">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample20.jpg" alt="sq-sample20" />
+                <img src="{{asset('img/about_us/thet_tun_kyaw.jpg')}}" alt="sq-sample20" />
                 <figcaption>
                     <div>Thet Tun Kyaw</div>
                     <div>UCSM</div>
@@ -171,14 +171,14 @@
         </div>
         <p class="txt_copyright">2019© All Rights Reserved. EasyDonateMyanmar.com</p>
         <div class="social_menu">
-            <a href="https://www.facebook.com/blablabla">
-                <img src="../../img/news_post/icon_fb.png" alt="" width="42" height="42">
+            <a href="https://www.facebook.com/လႉမယ္လြယ္လြယ္-107640630579396/?eid=ARC2LdA06F1AyHQq1mdN21B5l-UqxelPvIbCylgzcBKfmwfx4Mbyc-I0Z0qL0tuLCr9EkYdW9WAS7nPI">
+                <img src="{{asset('img/news_post/icon_fb.png')}}" alt="" width="42" height="42">
             </a>
             <a href="https://twitter.com/DonateEasy">
-                <img src="../../img/news_post/icon_twitter.png" alt="" width="42" height="42">
+                <img src="{{asset('img/news_post/icon_twitter.png')}}" alt="" width="42" height="42">
             </a>
-            <a href="#">
-                <img src="../../img/news_post/icon_ig.png" alt="" width="42" height="42">
+            <a href="https://www.instagram.com/">
+                <img src="{{asset('img/news_post/icon_ig.png')}}" alt="" width="42" height="42">
             </a>
         </div>
     </footer>
