@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('css/Bootstrap_Helpers/winmarkltd-BootstrapFormHelpers-d6770e0/dist/css/bootstrap-formhelpers.css')}}">
     <link rel="stylesheet" href="{{asset('css/reportForm.css')}}}">
     <link rel="stylesheet" href="{{asset('css/request.css')}}}">
-    <link rel="stylesheet" href="{{asset('css/text.css')}}}">
+
     <body class="f_body ">
     <div class="container-fluid " style="padding-top: 3vw;">
         <div class="row">
@@ -34,9 +34,7 @@
                     <a href="#" id="showhidePeopleInNeed/showhideDonor" style="text-decoration: none" class="item1 list-group-item"><span>All</span>&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     <a href="#" id="showhideDonor" style="text-decoration: none" class="item2 list-group-item"><span>Request from donor</span>&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     <a href="#" id="showhidePeopleInNeed"  style="text-decoration: none" class="item3 list-group-item"><span>Request from people in need</span> &nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                   <div>
-                       <img src="{{asset('img/help.png')}}" width="300px">
-                   </div>
+
                 </div>
             </div>
             <div class="col-md-5 ">
@@ -239,8 +237,9 @@
                     @foreach($donateForm as $donateForms)
                         <div class="card donor_card card1 post_card" style="margin-bottom: 30px; border-radius: 10px;">
                             <div class="card-header" >
-                                <img src="../../../img/donate.png" style="width: 50px;height: 50px;" class="rounded-circle" > Normal User {{$donateForms->created_at->diffForHumans()}}
-                                <a href="{{route('delete_donor_request',$donateForms->id)}}" type="button" class="fa fa-trash-alt float-right"  style="color:orangered;">
+                                <img src="../../../img/donate.png" style="width: 50px;height: 50px;" class="rounded-circle" >  Donor
+                                <a href="" type="button" class="fa fa-clock float-right"  style="color:goldenrod;">
+                                    {{$donateForms->created_at->diffForHumans()}}
                                 </a>
                             </div>
                             <div class="card-body">
@@ -257,7 +256,7 @@
                                 <p id="showText1"></p>
                                 <div class="row">
                                     <div class="col-md-4 offset-4">
-                                        <button class="btn myButton btn1 btn-block "  data-toggle="modal" data-target="#accept{{$donateForms->id}}"><b>Accept</b></button>
+                                        <button id="btn_accept{{$donateForms->id}}" class="btn btn_accept myButton btn1 btn-block "  data-toggle="modal" data-target="#accept{{$donateForms->id}}"><b>Accept</b></button>
                                         <!-- Modal -->
                                         <div class="modal right fade " id="accept{{$donateForms->id}}" tabindex="-1" role="dialog" aria-labelledby="accept" aria-hidden="true" data-backdrop="true">
                                             <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
@@ -270,7 +269,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                             <button type="button" class="btn myButton" data-dismiss="modal"><b>Cancel</b></button>
-                                                            <button type="submit" id="showText1" class="btn myButton" data-dismiss="modal"><b>OK</b></button>
+                                                            <button type="submit" id="accepted{{$donateForms->id}}" class="accepted btn myButton" data-dismiss="modal"><b>OK</b></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -289,7 +288,7 @@
                     <div class="card-body">
                         <form method="post" action="{{route('foundation_request_post',Auth::user()->id)}}" enctype="multipart/form-data">
                             <div class="form-group">
-                                <textarea rows="10" name="f_post_detail"  class="form-control request_textarea" placeholder="Write about donation details" required></textarea>
+                                <textarea rows="8" name="f_post_detail"  class="form-control request_textarea" placeholder="Write about donation details" required></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="file" name="f_post_image" class="request_file form-control" required style=" padding-bottom: 3.3vw;">
@@ -333,10 +332,10 @@
         @if (count($errors) > 0)
         $('#donationFormModal').modal('show');
         @endif
-
-        $('#showText1').click(function () {
-            $('#showText').append("This post is Accepted By Foundations" );
+        @foreach($donateForm as $donateForms)
+        $('#accepted{{$donateForms->id}}').click(function () {
+            $('#btn_accept{{$donateForms->id}}').hide();
         });
-
+       @endforeach
     </script>
 @stop

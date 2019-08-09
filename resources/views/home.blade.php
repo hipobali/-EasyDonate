@@ -44,7 +44,9 @@
                             </div>
                             <div class="urgent_txt">
                                 <div class="urgent_txt_ttl">
-                                    <img  class="foundation_people" src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}"  alt="people" width="50" height="50" style="border-radius: 30px;" >
+                                    <a data-toggle="modal" data-target="#exampleModal{{$foundation_posts->foundation_id}}">
+                                        <img  class="foundation_people" src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}"  alt="people" width="50" height="50" style="border-radius: 30px;" >
+                                    </a>
                                     <h4 >{{$foundation_posts->foundation->foundation_name}}</h4>
                                 </div>
                                 <p>
@@ -69,7 +71,7 @@
                                                                                 <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary" style="text-decoration: none">Donate Now</a>
+                                                                                <a href="{{route('get_donation_form',$foundation_posts->id)}}" type="button" class="btn btn-primary">Donate Now</a>
                                                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                             </div>
                                                                         </div>
@@ -121,10 +123,69 @@
                             </p>
                         </div>
                         <div class="donation_data_ttl">
-                            <img  src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}" width="38" height="38">
+                            <a data-toggle="modal" data-target="#exampleModal{{$foundation_posts->foundation_id}}">
+                                <img  src="{{route('getFoundationProfile',['foundation_post'=>$foundation_posts->foundation->foundation_profile])}}" width="38" height="38">
+                            </a>
+                            <div class="modal fade" id="exampleModal{{$foundation_posts->foundation_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Card -->
+                                            <div class="card testimonial-card" style="background-color:lightgoldenrodyellow">
+                                                <!-- Background color -->
+                                                <div class="card-up indigo lighten-1"></div>
+
+                                                <!-- Avatar -->
+                                                <div class="avatar mx-auto white mt-3">
+                                                    <img  src="{{route('getFoundationProfile',[$foundation_posts->foundation->foundation_profile])}}" class="rounded-circle" height="auto" width="200" alt="woman avatar">
+                                                </div>
+                                                <!-- Content -->
+                                                <div class="card-body">
+                                                    <!-- Name -->
+                                                    <h4 class="card-title"><i class="fa fa-user-alt "></i>&nbsp;{{$foundation_posts->foundation->foundation_name}}</h4>
+                                                    <hr>
+                                                    <!-- Quotation -->
+                                                    <form class="form-horizontal">
+                                                        <div class="form-group row">
+                                                            <label class="col-4">Email</label>
+                                                            <p class="col-8"> :&nbsp;&nbsp;Email</p>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-4">President name</label>
+                                                            <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->president_name}}</p>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-4">Member count</label>
+                                                            <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->member_count}}</p>
+                                                        </div><div class="form-group row">
+                                                            <label class="col-4">Address</label>
+                                                            <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->address}}</p>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label class="col-4">Phone</label>
+                                                            <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->phone}}</p>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                            <!-- Card -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="{{route('get_donation_form',$foundation_posts->id)}}" type="button" class="btn btn-primary">Donate Now</a>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <h4 >{{$foundation_posts->foundation->foundation_name}}</h4 >
                         </div>
-                        <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,200)}}</p>
+                        <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,125)}}</p>
                         <div class="detail_btn">
                             <a class="detail_link " href="" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" style="text-decoration: none">Detail</a>
                         </div>
@@ -147,7 +208,7 @@
                                         <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary">Donate Now</a>
+                                        <a href="{{route('get_donation_form',$foundation_posts->id)}}" type="button" class="btn btn-primary">Donate Now</a>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
@@ -159,8 +220,8 @@
         </div>
 
         <div class="pagination">
-            <a class="fs_ls" href="{{$foundation_post->url(1) }}">First</a>
-            <a class="previous_left" href="{{ $foundation_post->previousPageUrl() }}">Previous</a>
+            <a class="fs_ls" href="{{$foundation_post->url(1) }}" style="text-decoration: none">First</a>
+            <a class="previous_left" href="{{ $foundation_post->previousPageUrl() }}" style="text-decoration: none">Previous</a>
             @foreach(range(1,$foundation_post->lastPage()) as $i)
                 @if($i >=$foundation_post->currentPage() - 2 && $i <= $foundation_post->currentPage() + 2)
                     @if ($i == $foundation_post->currentPage())
@@ -171,8 +232,8 @@
                 @endif
             @endforeach
 
-            <a class="next_right" href="{{ $foundation_post->nextPageUrl() }}">Next</a>
-            <a class="fs_ls" href="{{ $foundation_post->url($foundation_post->lastPage()) }}">Last</a>
+            <a class="next_right" href="{{ $foundation_post->nextPageUrl() }}" style="text-decoration: none">Next</a>
+            <a class="fs_ls" href="{{ $foundation_post->url($foundation_post->lastPage()) }}" style="text-decoration: none">Last</a>
         </div>
     </div>
 </div>

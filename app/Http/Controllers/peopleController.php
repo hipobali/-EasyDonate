@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Foundation;
 use App\People;
 use App\User;
 use App\userPost;
@@ -71,7 +72,7 @@ class peopleController extends Controller
     }
     public function postPeopleRequest(Request $request){
        $id=$request['id'];
-       $people=People::whereId($id)->first();
+       $people=People::where('user_id',$id)->first();
         $this->validate($request,[
             'title'=>'required|min:1|max:100',
             'location'=>'required|min:3|max:200',
@@ -88,7 +89,7 @@ class peopleController extends Controller
         $img_user_post_name=md5(microtime()).'.'.$request->file('image')->getClientOriginalExtension();
         $img_user_post_file=$request->file('image');
         $user_post=new userPost();
-        $user_post->people_id=$people['user_id'];
+        $user_post->people_id=$people['id'];
         $user_post->user_id=$id;
         $user_post->title=$request['title'];
         $user_post->location=$request['location'];

@@ -11,17 +11,14 @@
     <link rel="stylesheet" href="{{asset('Bootstrap_Helpers/winmarkltd-BootstrapFormHelpers-d6770e0/dist/css/bootstrap-formhelpers.css')}}">
     <link rel="stylesheet" href="{{asset('reportForm.css')}}">
 </head>
-<body  style="background-color: grey">
+<body >
 <div class="container-fluid mt-5 mb-5">
     <div class="row">
         <div class="col-md-6 offset-3">
             <form action="{{route('donate_form')}}" method="post">
                 @csrf
-                <div class="card">
-                    <div class="card-header" style="background: #dba904;">
-                        <h5 class="modal-title" id="exampleModalLabel">Donation Title</h5>
-                    </div>
-                    <div class="card-body">
+                        <h2 class="modal-title text-center" id="exampleModalLabel">Donation Title</h2>
+
                         @if(Session('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin:0 auto; width:500px; margin-bottom: 10px;">
                             {{Session('success')}}
@@ -33,7 +30,7 @@
                         <!-- Name -->
                         <div class="form-group">
                             <label for="donationInputName">Name</label>
-                            <input type="text" class="form-control" id="donationInputName" name="donationInputName" placeholder="Enter donar name">
+                            <input type="text" class="form-control" id="donationInputName" name="donationInputName" placeholder="Enter donar name" value="{{old('donationInputName')}}">
                             <span style="color: red;">{{ $errors->first('donationInputName')}}</span>
                         </div>
 
@@ -41,47 +38,65 @@
                         <!-- Phone Number -->
                         <div class="form-group">
                             <label for="donationInputPhoneNumber">Phone Number</label>
-                            <input type="text" class="form-control" id="donationInputPhoneNumber" name="donationInputPhoneNumber" placeholder="Enter donar phone number(09-123456789)">
+                            <input type="text" class="form-control" id="donationInputPhoneNumber" name="donationInputPhoneNumber" placeholder="Enter donar phone number(09-123456789)" value="{{old('donationInputPhoneNumber')}}">
                             <span style="color: red;">{{ $errors->first('donationInputPhoneNumber') }}</span>
                         </div>
 
                         <!-- Phone Number -->
                         <!-- Country And State -->
                         <label for="selectedCountry">Country</label>
-                        <select id="countries_states1" class="form-control bfh-countries" data-country="US" name="selectedCountry" data-flags="true"></select>
+                        <select id="countries_states1" class="form-control bfh-countries" data-country="US" name="selectedCountry" data-flags="true" value="{{old('selectedCountry')}}"></select>
                         <br>
                         <label for="selectedState">State</label>
-                        <select class="form-control bfh-states" data-country="countries_states1" data-state="LA" name="selectedState"></select>
+                        <select class="form-control bfh-states" data-country="countries_states1" data-state="LA" name="selectedState" value="{{old('selectedState')}}"></select>
                         <br>
                         <!-- Country And State -->
                         <!-- Address(Details) -->
                         <div class="form-group">
                             <label for="donationInputAddress">Address(Details)</label>
-                            <textarea class="form-control" id="donationInputAddress" name="address" rows="2"></textarea>
+                            <textarea class="form-control" id="donationInputAddress" name="address" rows="2" value="{{old('address')}}"></textarea>
                             <span style="color: red;">{{ $errors->first('address')}}</span>
                         </div>
                         <!-- Address(Details) -->
+                {{--donate_category--}}
+                        <div class="form-group">
+                            <label for="donate_category">Which category you want to donate?</label>
+                            <select name="donate_category" class="form-control request_textarea"  required value="{{old('donate_category')}}">
+                              @foreach($category as $categories)
+                                <option value="{{$categories->id}}">{{$categories->category_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                {{-- donate_category--}}
+                <div class="form-group">
+                    <label for="donate_foundation">Which foundation you want to donate?</label>
+                            <select id="aa" name="donate_foundation" class="form-control request_textarea"  required  value="{{old('donate_foundation')}}">
+                       @foreach($foundation as $foundations)
+                           <option id="aa" value="{{$foundations->id}}">{{$foundations->foundation_name}}</option>
+                     @endforeach
+                    </select>
+                </div>
                         <!-- Payment Design  -->
                         <div class="form-group">
                             <label for="donationInputOption">How will you donate?</label><br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Cash">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Cash" value="{{old('inlineRadioOptions')}}">
                                 <label class="form-check-label" for="inlineRadio1" >Cash</label>
                             </div>
                             <div class="form-group form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Wave-Money">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Wave-Money" value="{{old('inlineRadioOptions')}}">
                                 <label class="form-check-label" for="inlineRadio2">Wave-Money</label>
                             </div>
                             <div class="form-group form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="M-PiteSan">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="M-PiteSan" value="{{old('inlineRadioOptions')}}">
                                 <label class="form-check-label" for="inlineRadio3">M-PiteSan</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="PayPal">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="PayPal" value="{{old('inlineRadioOptions')}}">
                                 <label class="form-check-label" for="inlineRadio4">PayPal</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="Bank Accounts">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="Bank Accounts" value="{{old('inlineRadioOptions')}}">
                                 <label class="form-check-label" for="inlineRadio5" class="bankAccounts">Bank Account</label>
                             </div>
                         </div>
@@ -89,7 +104,7 @@
                         <!-- DatePicker -->
                         <div class="form-group">
                             <label for="donationInputDate">Date</label>
-                            <input id="datepicker" name="date" width="100%" placeholder="Enter the date to donate...">
+                            <input id="datepicker" name="date" width="100%" placeholder="Enter the date to donate..." value="{{old('date')}}">
                             <span style="color: red;">{{ $errors->first('date')}}</span>
                         </div>
                         <!-- DatePicker -->
@@ -98,25 +113,21 @@
                             <label for="donationInputAmount"><h5>Donation Amount</h5></label>
                             <div style="margin: 0; width: 100%">
                                 <label for="selectedCurrency">Currency</label>
-                                <select class="form-control bfh-currencies" data-currency="EUR" name="selectedCurrency" required></select><br>
+                                <select class="form-control bfh-currencies" data-currency="EUR" name="selectedCurrency" required value="{{old('selectedCurrency')}}"></select><br>
                                 <span style="color: red;">{{ $errors->first('selectedCurrency')}}</span>
                                 <label for="amount">Amount</label>
-                                <input type="text" class="form-control" id="donationInputAmount" name="amount" placeholder="Enter the amount of donation..." >
+                                <input type="text" class="form-control" id="donationInputAmount" name="amount" placeholder="Enter the amount of donation..."  value="{{old('amount')}}">
                                 <span style="color: red;">{{ $errors->first('amount')}}</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer" style="background: #dba904;" >
                         <div class="row">
                             <div class="col-md-6">
-                                <a href="{{url('donor/home')}}" type="button" class="btn btn-danger btn-block" data-dismiss="modal" > Cancel</a>
+                                <a href="{{route('donate_form_cancel')}}" type="button" class="btn btn-dark btn-block" data-dismiss="modal" > Cancel</a>
                             </div>
                             <div class="col-md-6">
-                                <button type="submit" class="btn btn-primary btn-block">Donate</button>
+                                <button type="submit" class="btn btn-dark btn-block">Donate</button>
                             </div>
                         </div>
-                    </div>
-                </div>
             </form>
         </div>
     </div>
