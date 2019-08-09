@@ -262,8 +262,8 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                    <a href="{{route('get_donation_form')}}" type="button" class="btn btn-primary">{{__('common.donate_now')}}</a>
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('common.close')}}</button>
+                                        <a href="{{route('get_donation_form',$foundation_posts->id)}}" type="button" class="btn btn-primary">Donate Now</a>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
