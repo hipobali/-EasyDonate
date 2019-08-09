@@ -59,7 +59,7 @@
                 @else
                     @if(Auth::user()->type=='foundation')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('foundation_request_view')}}">Request</a>
+                            <a class="nav-link" href="{{route('foundation_request_view')}}">{{__('common.request')}}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{__('common.about')}}</a>
@@ -73,7 +73,7 @@
                     @endif
                 @if(Auth::user()->type=='people')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{route('request_user_post')}}">Post</a>
+                                <a class="nav-link" href="{{route('request_user_post')}}">{{__('common.post')}}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">{{__('common.about')}}</a>
@@ -116,7 +116,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('common.logout') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

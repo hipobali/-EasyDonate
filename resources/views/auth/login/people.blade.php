@@ -10,14 +10,14 @@
     <div class='container' >
         <div class="row " style="margin-top:50px;">
             <div class="col-md-6 text-center left-side">
-                <h1 >Login to Your Account</h1>
+                <h1 >{{__('user.login_to_account')}}</h1>
                 <p style="margin-top: 50px;"><strong>
-                        "Your greatness<br>
-                        is not what you have,<br>
-                        it's what you give."<br>
+                        "{{__('user.login_quote1')}}<br>
+                        {{__('user.login_quote2')}}<br>
+                        {{__('user.login_quote3')}}"<br>
                     </strong>
                     <br>
-                    <i><b>--Winston Churchill--</b></i>
+                    <i><b>--{{__('user.login_writer')}}--</b></i>
                 </p>
                 <img class="img-fluid" src="../../../img/community2.png" width="200px" style="margin-top: 40px">
             </div>
@@ -26,7 +26,7 @@
                     <form method="post" action="{{url('people/login')}}">
                         <div class="card-header text-center">
                             <img src="../../../img/test.png" alt="Easy Donate Logo" width="70px" height="70px">
-                            <h4>User Login Form</h4>
+                            <h4>{{__('user.login_form')}}</h4>
                         </div>
                         <div class="card-body">
                             @if(Session('error'))
@@ -41,14 +41,14 @@
                             <span class="text-danger">{{ $errors->first('user_profile') }}</span>
 
                             <div class="form-group md-form" {{ $errors->has('email') ? 'has-error' : '' }}>
-                                <i class="fa fa-envelope"></i> <label for="email">&nbsp Email</label>
+                                <i class="fa fa-envelope"></i> <label for="email">&nbsp {{__('common.email')}}</label>
                                 <input type="email" id="email" name="email" class="form-control" placeholder="email@address.com" value="{{old('email')}}">
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             </div>
                             <div class="form-group" {{ $errors->has('password') ? 'has-error' : '' }}>
-                                <i class="fas fa-lock"></i><label for="password">&nbsp Password</label>
+                                <i class="fas fa-lock"></i><label for="password">&nbsp {{__('user.password')}}</label>
                                 <div class="input-group" id="show_hide_password">
-                                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password">
+                                    <input type="password" id="password" name="password" class="form-control" placeholder={{__('user.enter_pw')}}>
                                     <div class="input-group-append">
                                     <span class="input-group-text">
                                         <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
@@ -62,14 +62,14 @@
                         <div class="card-footer">
                             <div class="form-group row">
                                 <div class="col-6">
-                                    <a href="{{url('donor/home')}}" class="btn btn-light form-control btnCancel">Cancel</a>
+                                    <a href="{{url('donor/home')}}" class="btn btn-light form-control btnCancel">{{__('user.login_cancel')}}</a>
                                 </div>
                                 <div class="col-6">
-                                    <button type="submit" class="btn btn-light  form-control btnSave">Login</button>
+                                    <button type="submit" class="btn btn-light  form-control btnSave">{{__('user.login')}}</button>
                                 </div>
                             </div>
                             <div class="form-group text-center">
-                                Haven't you account? <a id="login" href="{{url('people/register/view')}}" style="text-decoration: none">Register</a>
+                                {{__('user.ask_account')}} <a id="login" href="{{url('people/register/view')}}" style="text-decoration: none">{{__('user.register')}}</a>
                             </div>
                         </div>
                     </form>

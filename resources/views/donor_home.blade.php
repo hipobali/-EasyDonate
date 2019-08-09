@@ -156,22 +156,22 @@
                                                             <!-- Quotation -->
                                                             <form class="form-horizontal">
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">Email</label>
+                                                                    <label class="col-4">{{__('common.email')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;Email</p>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">President name</label>
+                                                                    <label class="col-4">{{__('common.president_name')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->president_name}}</p>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">Member count</label>
+                                                                    <label class="col-4">{{__('common.member_count')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->member_count}}</p>
                                                                 </div><div class="form-group row">
-                                                                    <label class="col-4">Address</label>
+                                                                    <label class="col-4">{{__('common.address')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->address}}</p>
                                                                 </div>
                                                                 <div class="form-group row">
-                                                                    <label class="col-4">Phone</label>
+                                                                    <label class="col-4">{{__('common.phone')}}</label>
                                                                     <p class="col-8"> :&nbsp;&nbsp;{{$foundation_posts->foundation->phone}}</p>
                                                                 </div>
                                                             </form>
