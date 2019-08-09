@@ -4,7 +4,7 @@
 @endif
 @extends('layouts.donor_nav')
 @section('content')
-    <title>Terms And Polocies</title>
+    <title>Terms And Conditions</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- bootstrap.css -->
@@ -23,7 +23,7 @@
     <div class="container-fluid" style="width: 100%">
 
         <!-- main title -->
-        <h1 style="margin: 1.5vw auto;">Terms and Policies</h1>
+        <h1 style="margin: 1.5vw auto;">Terms And Conditions</h1>
         <!-- main title -->
 
         <!-- foundation -->
