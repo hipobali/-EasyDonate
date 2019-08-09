@@ -3,19 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c668fa95-a317-468b-99d5-cf0521a9f8b2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/donorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/donorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/peopleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/peopleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/foundationPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/foundationPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/userPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/userPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/donor_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/donor_home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user_post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/foundation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/foundation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/mm/foundation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/mm/foundation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/mm/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/mm/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login/people.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login/people.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/people_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/people_register.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,105 +27,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/foundation_register.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_07_31_064353_create_foundations_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_04_105208_create_foundation_posts_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="18" column="47" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="116" selection-start-line="116" selection-end-line="117" />
+            <state relative-caret-position="280">
+              <caret line="163" column="28" lean-forward="true" selection-start-line="163" selection-start-column="28" selection-end-line="163" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/donor_home.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+            <state relative-caret-position="168">
+              <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/foundation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="224">
+              <caret line="29" column="15" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/peopleController.php">
+        <entry file="file://$PROJECT_DIR$/resources/lang/mm/foundation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
-              <folding>
-                <element signature="e#40#57#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="308">
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/userPost.php">
+        <entry file="file://$PROJECT_DIR$/resources/lang/en/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/foundationPost.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/foundation_request_page.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="261" column="101" selection-start-line="261" selection-start-column="101" selection-end-line="261" selection-end-column="101" />
-              <folding>
-                <element signature="e#16752#16758#0#HTML" expanded="true" />
-                <element signature="e#16884#16890#0#HTML" expanded="true" />
-                <element signature="e#17017#17023#0#HTML" expanded="true" />
-                <element signature="e#17136#17142#0#HTML" expanded="true" />
-                <element signature="e#17249#17255#0#HTML" expanded="true" />
-                <element signature="e#18014#18036#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="252">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -184,30 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin_foundationData.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin_userData.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_02_041734_create_admins_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_31_064425_create_people_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_07_31_064353_create_foundations_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/foundation_register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/people_register.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/auth/login/people.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_04_101454_create_categories_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/category.blade.php" />
-        <option value="$PROJECT_DIR$/app/Category.php" />
-        <option value="$PROJECT_DIR$/config/filesystems.php" />
-        <option value="$PROJECT_DIR$/app/People.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_04_174100_create_user_posts_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/donation_form.php" />
-        <option value="$PROJECT_DIR$/resources/views/donation_form.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_04_194101_create_donate_forms_table.php" />
-        <option value="$PROJECT_DIR$/public/css/text.css" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_08_04_190016_create_reports_table.php" />
-        <option value="$PROJECT_DIR$/public/css/request.css" />
-        <option value="$PROJECT_DIR$/resources/views/admin_foundationPost_data.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin_foundationReport_data.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin_peoplePost_data.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/adminController.php" />
@@ -251,6 +163,14 @@
         <option value="$PROJECT_DIR$/resources/lang/en/common.php" />
         <option value="$PROJECT_DIR$/resources/lang/mm/common.php" />
         <option value="$PROJECT_DIR$/resources/views/donor_home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/people_register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/user.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login/people.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/mm/user.php" />
+        <option value="$PROJECT_DIR$/resources/lang/en/foundation.php" />
+        <option value="$PROJECT_DIR$/resources/lang/mm/foundation.php" />
+        <option value="$PROJECT_DIR$/resources/views/foundation_register.blade.php" />
       </list>
     </option>
   </component>
@@ -339,10 +259,10 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="27" />
-    <option name="width" value="1356" />
-    <option name="height" value="520" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -350,7 +270,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,30 +281,6 @@
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
               <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
@@ -402,27 +297,26 @@
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
               <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="DataTables" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="welcomeCss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
               <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="lang" type="462c0819:PsiDirectoryNode" />
-              <item name="mm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
               <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-EasyDonate" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+              <item name="lang" type="462c0819:PsiDirectoryNode" />
+              <item name="en" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-EasyDonate" type="b2602c69:ProjectViewProjectNode" />
@@ -433,6 +327,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,14 +347,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Restaurant\resources\views" />
+      <recent name="C:\xampp\htdocs\Restaurant\resources\views\auth\login" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Restaurant\public\css" />
       <recent name="C:\xampp\htdocs\Restaurant\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\Restaurant\public" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Restaurant\resources\views" />
-      <recent name="C:\xampp\htdocs\Restaurant\resources\views\auth\login" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -502,17 +397,17 @@
       <workItem from="1565058428354" duration="23903000" />
       <workItem from="1565102083395" duration="2694000" />
       <workItem from="1565148154291" duration="15361000" />
+      <workItem from="1565250457102" duration="7694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170397000" />
+    <option name="totallyTimeSpent" value="178093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2881997" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2065053" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -538,82 +433,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_04_190016_create_reports_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/donor_nav.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_04_194101_create_donate_forms_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_04_101454_create_categories_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin_foundationPost_data.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding>
-            <element signature="e#365#383#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin_foundationReport_data.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1749">
-          <caret line="53" column="17" lean-forward="true" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
-          <folding>
-            <element signature="e#365#383#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin_peoplePost_data.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="33" column="50" lean-forward="true" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="e#365#383#0#HTML" expanded="true" />
-            <element signature="e#1556#1588#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Foundation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -740,9 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/foundation_register.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/donation_form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
@@ -757,27 +573,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/people_register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3333">
-          <caret line="101" column="62" selection-start-line="101" selection-start-column="62" selection-end-line="101" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/confirmPost.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_07_040529_create_confirm_posts_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/confirmPost.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_08_07_040529_create_confirm_posts_table.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/donorController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
@@ -896,6 +693,89 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/people_register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="107" column="19" lean-forward="true" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+          <folding>
+            <element signature="e#1819#1841#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/mm/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login/foundation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login/people.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="e#582#607#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/mm/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/foundation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="29" column="15" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/mm/foundation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/foundation_register.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="163" column="28" lean-forward="true" selection-start-line="163" selection-start-column="28" selection-end-line="163" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
         </state>
       </provider>
     </entry>
