@@ -1,5 +1,5 @@
 @extends('layouts.app1')
-@extends('layouts.donor_nav')
+@extends('layouts.nav')
 @section('content')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -212,6 +212,7 @@
                                                 <p class="text-left">  {{$foundation_posts->f_post_detail}}</p>
                                             </div>
                                             <div class="modal-footer">
+                                                <a href="{{route('get_donation_form',$foundation_posts->id)}}" type="button" class="btn btn-primary">Donate Now</a>
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                             </div>
                                         </div>

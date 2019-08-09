@@ -1,9 +1,12 @@
 <script src="{{asset('bst/js/jquery.js')}}"></script>
 <nav class="navbar  fixed-top navbar-expand-md nav-bg shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url('/home') }}">
-            <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
-        </a>
+        @if(Auth::user())
+            <a class="navbar-brand" href="{{ url('/home') }}">
+                <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
+            </a>
+            @endif
+
         <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
                 aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
             <div class="animated-icon3"><span></span><span></span><span></span></div>

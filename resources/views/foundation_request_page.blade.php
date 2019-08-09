@@ -119,21 +119,21 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="foundationOption">Why you want to report this post?</label><br>
-                                                            <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="reportingOptions1" name="option" value="irrelevant" checked>
-                                                                <label class="custom-control-label" for="reportingOptions1">irrelevant</label>
+                                                            <div class=" custom-radio">
+                                                                <input type="radio" id="reportingOptions1" name="option" value="irrelevant" checked>
+                                                                <label for="reportingOptions1">irrelevant</label>
                                                             </div>
-                                                            <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="reportingOptions2" name="option" value="fake_post">
-                                                                <label class="custom-control-label" for="reportingOptions2">fake post</label>
+                                                            <div class=" custom-radio">
+                                                                <input type="radio" id="reportingOptions2" name="option" value="fake_post">
+                                                                <label for="reportingOptions2">fake post</label>
                                                             </div>
-                                                            <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="reportingOptions3" name="option" value="already_completed">
-                                                                <label class="custom-control-label" for="reportingOptions3">already completed</label>
+                                                            <div class=" custom-radio">
+                                                                <input type="radio" id="reportingOptions3" name="option" value="already_completed">
+                                                                <label for="reportingOptions3">already completed</label>
                                                             </div>
-                                                            <div class="custom-control custom-radio custom-control-inline">
-                                                                <input type="radio" class="custom-control-input" id="reportingOptions4" name="option" value="others">
-                                                                <label class="custom-control-label" for="reportingOptions4">others</label>
+                                                            <div class=" custom-radio">
+                                                                <input type="radio" id="reportingOptions4" name="option" value="others">
+                                                                <label for="reportingOptions4">others</label>
                                                             </div>
                                                             <div class="form-group" id="toggleTextarea" style="display: none;">
                                                                 <textarea class="form-control" rows="5" id="reportingReason" name="otherOptions"></textarea>
@@ -168,6 +168,11 @@
                                 <p><img src="../../../img/phone.svg" width="5%">&nbsp;<strong>  Phone :</strong> &nbsp;{{$user_posts->phone}}</p>
                                 <p><img src="../../../img/edit.svg" width="5%">&nbsp;<strong>  remark :</strong> &nbsp;{{$user_posts->remark}}</p>
                             </div>
+                            @foreach($foundationPost as $foundationPosts)
+                                @if($foundationPosts->user_post_id==$user_posts->id)
+                                    <p ><h5 style="color:darkred;">This post have been shared by foundation !</h5></p>
+                                @endif
+                            @endforeach
                         </div>
                         <div class="card-footer">
                             <div class="row">
@@ -235,50 +240,52 @@
                 @endforeach
 
                     @foreach($donateForm as $donateForms)
-                        <div class="card donor_card card1 post_card" style="margin-bottom: 30px; border-radius: 10px;">
-                            <div class="card-header" >
-                                <img src="../../../img/donate.png" style="width: 50px;height: 50px;" class="rounded-circle" >  Donor
-                                <a href="" type="button" class="fa fa-clock float-right"  style="color:goldenrod;">
-                                    {{$donateForms->created_at->diffForHumans()}}
-                                </a>
-                            </div>
-                            <div class="card-body">
-                                <p>Name::{{$donateForms->donor_name}}</p>
-                                <p>Phone::{{$donateForms->donor_ph_no}}</p>
-                                <p>Location::{{$donateForms->donor_location}}</p>
-                                <p>Address::{{$donateForms->donor_address}}</p>
-                                <p> Amount::{{$donateForms->donor_amount}}</p>
-                                <p>Option::{{$donateForms->donor_donationOption}}</p>
-                                <p>Posted date::{{$donateForms->donor_date}}</p>
-
-                            </div>
-                            <div class="card-footer">
-                                <p id="showText1"></p>
-                                <div class="row">
-                                    <div class="col-md-4 offset-4">
-                                        <button id="btn_accept{{$donateForms->id}}" class="btn btn_accept myButton btn1 btn-block "  data-toggle="modal" data-target="#accept{{$donateForms->id}}"><b>Accept</b></button>
-                                        <!-- Modal -->
-                                        <div class="modal right fade " id="accept{{$donateForms->id}}" tabindex="-1" role="dialog" aria-labelledby="accept" aria-hidden="true" data-backdrop="true">
-                                            <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        Please Be Careful!!
-                                                    </div>
-                                                    <div class="modal-body">
-                                                         <strong>Are you sure to take full responsible for this post??</strong>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                            <button type="button" class="btn myButton" data-dismiss="modal"><b>Cancel</b></button>
-                                                            <button type="submit" id="accepted{{$donateForms->id}}" class="accepted btn myButton" data-dismiss="modal"><b>OK</b></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Modal -->
-                                    </div>
+                        @if($donateForms->donate_foundation==Auth::user()->name)
+                            <div class="card donor_card card1 post_card" style="margin-bottom: 30px; border-radius: 10px;">
+                                <div class="card-header" >
+                                    <img src="../../../img/donate.png" style="width: 50px;height: 50px;" class="rounded-circle" >  Donor
+                                    <a href="" type="button" class="fa fa-clock float-right"  style="color:goldenrod;">
+                                        {{$donateForms->created_at->diffForHumans()}}
+                                    </a>
                                 </div>
+                                <div class="card-body">
+                                    <p>Name::{{$donateForms->donor_name}}</p>
+                                    <p>Phone::{{$donateForms->donor_ph_no}}</p>
+                                    <p>Location::{{$donateForms->donor_location}}</p>
+                                    <p>Address::{{$donateForms->donor_address}}</p>
+                                    <p> Amount::{{$donateForms->donor_amount}}</p>
+                                    <p>Option::{{$donateForms->donor_donationOption}}</p>
+                                    <p>Posted date::{{$donateForms->donor_date}}</p>
+
+                                </div>
+{{--                                <div class="card-footer">--}}
+{{--                                    <p id="showText1"></p>--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-md-4 offset-4">--}}
+{{--                                            <button id="btn_accept{{$donateForms->id}}" class="btn btn_accept myButton btn1 btn-block "  data-toggle="modal" data-target="#accept{{$donateForms->id}}"><b>Accept</b></button>--}}
+{{--                                            <!-- Modal -->--}}
+{{--                                            <div class="modal right fade " id="accept{{$donateForms->id}}" tabindex="-1" role="dialog" aria-labelledby="accept" aria-hidden="true" data-backdrop="true">--}}
+{{--                                                <div class="modal-dialog modal-frame modal-top modal-notify modal-info" role="document">--}}
+{{--                                                    <div class="modal-content">--}}
+{{--                                                        <div class="modal-header" >--}}
+{{--                                                            <h4> Please Be Careful!</h4>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="modal-body">--}}
+{{--                                                            <strong>Are you sure to take full responsible for this post??</strong>--}}
+{{--                                                        </div>--}}
+{{--                                                        <div class="modal-footer">--}}
+{{--                                                            <button type="button" class="btn myButton" data-dismiss="modal"><b>Cancel</b></button>--}}
+{{--                                                            <button type="submit" id="accepted{{$donateForms->id}}" class="accepted btn myButton" data-dismiss="modal"><b>OK</b></button>--}}
+{{--                                                        </div>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                            <!-- Modal -->--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                             </div>
-                        </div>
+                        @endif
                     @endforeach
 
             </div>
