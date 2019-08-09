@@ -1,7 +1,7 @@
 <script src="{{asset('bst/js/jquery.js')}}"></script>
 <nav class="navbar navbar-expand-md nav-bg shadow-sm">
     <div class=" container-fluid">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/donor/home') }}">
             <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
         </a>
         <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"

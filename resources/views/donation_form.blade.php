@@ -63,7 +63,7 @@
                             <label for="donate_category">Which category you want to donate?</label>
                             <select name="donate_category" class="form-control request_textarea"  required value="{{old('donate_category')}}">
                               @foreach($category as $categories)
-                                <option value="{{$categories->id}}">{{$categories->category_name}}</option>
+                                    <option value="{{$categories->category_name}}">{{$categories->category_name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -72,7 +72,7 @@
                     <label for="donate_foundation">Which foundation you want to donate?</label>
                             <select id="aa" name="donate_foundation" class="form-control request_textarea"  required  value="{{old('donate_foundation')}}">
                        @foreach($foundation as $foundations)
-                           <option id="aa" value="{{$foundations->id}}">{{$foundations->foundation_name}}</option>
+                           <option id="aa" value="{{$foundations->foundation_name}}">{{$foundations->foundation_name}}</option>
                      @endforeach
                     </select>
                 </div>
