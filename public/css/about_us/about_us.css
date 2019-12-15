@@ -1,15 +1,7 @@
 /*PURPOSE */
 body
 {
-    background: linear-gradient(to bottom right,  #536976 0%, #292E49 100%);
-    color: white;
-    /*background-color: white;*/
-    /*background-color: red;*/
-    /*background-image: url(img/background_image_1.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;*/
-    /*background-position: fixed;*/
+
 }
 
 .purpose
@@ -87,7 +79,7 @@ ul
 hr
 {
     /*width: 80%;*/
-    background-color: #dba904;
+    background-color: hsl(35,100%,50%);
 }
 /* hr */
 
@@ -149,7 +141,7 @@ footer{
     padding: 0 15px;
 }
 .footer_menu a:hover{
-    color: #dba904;
+    color: hsl(35,100%,50%);
 }
 .txt_copyright{
     font-size: 12px;

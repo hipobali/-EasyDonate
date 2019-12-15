@@ -63,7 +63,7 @@
                                 <label for="email"><i class="fa fa-envelope"></i>&nbsp {{__('common.email')}}</label>
                                 <input type="email" id="email" name="email" class="form-control" placeholder="email@address.com" value="{{old('email')}}">
                                 <span class="text-danger">{{ $errors->first('mail') }}</span>
-                        </div>
+                            </div>
                             <div class="form-group" {{ $errors->has('address') ? 'has-error' : '' }}>
                                 <label for="address"><i class="fa fa-home"></i>&nbsp {{__('user.address')}}</label>
                                 <input type="text" id="address" name="address" class="form-control" value="{{old('address')}}">

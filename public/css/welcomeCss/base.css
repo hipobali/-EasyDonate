@@ -34,7 +34,7 @@ a:hover,
 a:focus,
 a:active{
     text-decoration:none;
-    color: #22325f;
+    /*color: #22325f;*/
 }
 input,select,textarea,button{
     margin:0;

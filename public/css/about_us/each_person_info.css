@@ -41,7 +41,7 @@
     right: 0px;
     z-index: -1;
     border: 2px solid #bbb;
-    border-color: transparent #dba904;
+    border-color: transparent hsl(35,100%,50%);
 }
 
 .snip1566 img {

@@ -32,7 +32,7 @@
 
         <!-- purpose -->
         <div class="purpose">
-            <h4>OUR MAIN PURPOSE</h4>
+            <h4 style="color: hsl(35,100%,50%)">OUR MAIN PURPOSE</h4>
             <p>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We want to serve for  the donor, the foundation and the people who needs help to be easily connected at the one place.
                 In our website, the donor can directly donate to the foundation and the people-in-need can directly access to the foundation.
@@ -46,10 +46,10 @@
         <div class="foundation">
             <div class="row">
                 <div class="col " style="text-align: center; width: 100%;">
-                    <img src="{{asset('img/about_us/united_nations_organization.jpg')}}" alt="foundation image" width="75%"  style="border-radius: 10px; box-shadow: 30px 30px #dba904;">
+                    <img src="{{asset('img/about_us/united_nations_organization.jpg')}}" alt="foundation image" width="75%"  style="border-radius: 10px; box-shadow: 30px 30px hsl(35,100%,50%);">
                 </div>
                 <div class="col " style="text-align: center;">
-                    <h5>Foundation</h5>
+                    <h5 style="color: hsl(35,100%,50%)">Foundation</h5>
                     <p>
                         By using our website, the foundation can know which regions, which parts, and whose people are need help in the form posted by the people in need. So, the foundation can join those people easily.
                         Also, the foundation can request help as the delegation of the people in needs to the donor.
@@ -65,10 +65,10 @@
         <div class="people_in_need">
             <div class="row">
                 <div class="col" style="width: 100%;">
-                    <img src="{{asset('img/about_us/people_in_need.jpg')}}" alt="foundation image" width="75%" style="border-radius: 10px; box-shadow: 30px 30px #dba904;">
+                    <img src="{{asset('img/about_us/people_in_need.jpg')}}" alt="foundation image" width="75%" style="border-radius: 10px; box-shadow: 30px 30px hsl(35,100%,50%);">
                 </div>
                 <div class="col">
-                    <h5>People In Need</h5>
+                    <h5 style="color: hsl(35,100%,50%)">People In Need</h5>
                     <p>
                         In the side of people-in-need, they can request the help to the foundation via request form.
                     </p>
@@ -82,10 +82,10 @@
         <div class="donor">
             <div class="row">
                 <div class="col" style="width: 100%;">
-                    <img src="{{asset('img/about_us/donor.jpg')}}" alt="foundation image" width="75%" style="border-radius: 10px; box-shadow: 30px 30px #dba904;">
+                    <img src="{{asset('img/about_us/donor.jpg')}}" alt="foundation image" width="75%" style="border-radius: 10px; box-shadow: 30px 30px hsl(35,100%,50%);">
                 </div>
                 <div class="col">
-                    <h5>Donor</h5>
+                    <h5 style="color:hsl(35,100%,50%);">Donor</h5>
                     <p>
                         The donor can see what donation can be donated in our websites.
                         In addition, the donor can donate money to the foundation for what they want to help.
@@ -99,7 +99,7 @@
 
         <!-- our developer team -->
         <!-- for each person -->
-        <h5 style="margin: 0 auto;">Our Developer Team</h5>
+        <h5 style="margin: 0 auto; color: hsl(35,100%,50%)">Our Developer Team</h5>
         <hr style="width: 50%; margin-bottom: 2.5%;">
         <div class="alignment">
             <figure class="snip1566">

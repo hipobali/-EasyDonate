@@ -23,13 +23,13 @@
     <div class="container-fluid" style="width: 100%">
 
         <!-- main title -->
-        <h1 style="margin: 1.5vw auto;">Terms And Conditions</h1>
+        <h1 style="margin: 1.5vw auto; color: hsl(35,100%,50%)">Terms And Conditions</h1>
         <!-- main title -->
 
         <!-- foundation -->
         <div class="container foundation">
             <!-- subtitle foundation -->
-            <h3 class="subtitle-foundation-h2">Non Profit Organization(Foundation)</h3>
+            <h3 class="subtitle-foundation-h2" style="color: hsl(35,100%,50%)">Non Profit Organization(Foundation)</h3>
             <!-- subtitle foundation -->
 
             <!-- content foundation -->
@@ -60,7 +60,7 @@
         <!-- people-in-need -->
         <div class="container people-in-need">
             <!-- subtitle people-in-need -->
-            <h3 class="subtitle-people-in-need-h2">Non Profit Organization(Foundation)</h3>
+            <h3 class="subtitle-people-in-need-h2" style="color: hsl(35,100%,50%)">Non Profit Organization(Foundation)</h3>
             <!-- subtitle/ people-in-need -->
             <!-- content people-in-need -->
             <ul class="content-people-in-need-ul">
@@ -82,7 +82,7 @@
         <!-- donor -->
         <div class="container donor">
             <!-- subtitle donor -->
-            <h3 class="subtitle-donor-h2">Donor(Visitor)</h3>
+            <h3 class="subtitle-donor-h2" style="color: hsl(35,100%,50%)">Donor(Visitor)</h3>
             <!-- subtitle donor -->
             <!-- content donor -->
             <ul class="content-donor-ul">

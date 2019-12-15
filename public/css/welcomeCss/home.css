@@ -1,10 +1,10 @@
 /*nav bar*/
 .topnav {
 
-    background-color: #010c1e;
+    /*background-color: #010c1e;*/
+    background-color: hsl(35,100%,50%);
     width: 100%;
     overflow: hidden;
-    border-bottom: 1px solid #dba904;
 
 }
 
@@ -12,7 +12,7 @@
     float: left;
     color: #ffffff;
     text-align: center;
-    margin: 22px 15px;
+    margin: 35px 15px;
     text-decoration: none;
     font-size: 16px;
 }
@@ -20,10 +20,12 @@
 .topnav-right {
     position: absolute;
     right: 0;
+    display: flex;
+    align-items: center;
 }
 
 .topnav-right a:hover {
-    color: #dba904;
+    color: saddlebrown;
 }
 
 /*end of nav*/
@@ -38,18 +40,18 @@
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    background-color: rgb(1,12,30);
-    padding: 40px 0px;
+    /*background-color: rgb(1,12,30);*/
+    padding: 0px 0px;
 }
 .mv_content{
     width: 100%;
-    max-width: 1040px;
+    /*max-width: 1040px;*/
     margin: 0 auto;
     text-align: center;
     position: relative;
 }
 .mv_content img{
-    width: 86%;
+    width: 100%;
     height: auto;
 }
 .text_sec{
@@ -62,28 +64,66 @@
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
     transform: translateX(-50%);
-    width: 570px;
+    /*width: 570px;*/
 }
 .txt_mv {
-    font-size: 40px;
-    color: #ffffff;
+    /*font-size: 50px;*/
+    /*color: #ffffff;*/
+    /*line-height: 1.428;*/
+    /*!*text-shadow: 4px 3px 0px #333, 9px 8px 0px rgba(0,0,0,0.15);*!*/
+    /*font-weight: bold;*/
+    /*background: url("../../img/orange_white.png") repeat-y;*/
+    /*background-clip: text;*/
+    /*color: transparent;*/
+    /*-webkit-animation: animate 50s linear infinite;*/
+    color: #000;
+    font-size: 50px;
+    font-weight: bold;
     line-height: 1.428;
-    text-shadow: 4px 3px 0px #333, 9px 8px 0px rgba(0,0,0,0.15);
-
+    background: hsl(35,100%,50%);
+    background: -webkit-linear-gradient( right, hsl(35,100%,50%) 0%, #ffffff 25%, #ffff00 50%, hsl(35,100%,50%) 100%) repeat;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    text-fill-color: transparent;
+    -webkit-animation-name: masked-animation;
+    -webkit-animation-duration: 50s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes masked-animation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -8000px -3000px;
+    }
+}
+@-webkit-keyframes animate {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 .mv_link{
     position: relative;
-    font-size: 20px;
+    font-size: 30px;
     color: #ffffff;
-    line-height: 0.7;
+    font-weight: bold;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    border: 1px solid #dba904;
-    width: 292px;
+    border: 2px solid hsl(35,100%,50%);
+    width: 400px;
     display: inline-block;
     padding: 18px 0;
     margin-top: 60px;
-    background: url('../../img/icon_mv_link.png') no-repeat center right 60px rgba(0,0,0,0.4);
+    background: url('../../img/icon_mv_link.png') no-repeat center right 60px rgba(0,0,0,0.6);
     -webkit-background-size: 20px auto;
     -o-background-size: 20px auto;
     background-size: 20px auto;
@@ -94,7 +134,7 @@
     transition: all 0.4s;
 }
 .mv_link:hover{
-    color: #ffffff;
+    color: hsl(35,100%,50%);
     background: url('../../img/icon_mv_link.png') no-repeat center right 30px rgba(0,0,0,0.4);
     -webkit-background-size: 20px auto;
     -o-background-size: 20px auto;
@@ -131,10 +171,25 @@
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    background: url('../../img/img_about_flag.png') no-repeat top left;
-    -webkit-background-size: 300px auto;
-    -o-background-size: 300px auto;
-    background-size: 300px auto;
+    background: url("../../img/kanote2.png") no-repeat top right;
+    background-size: 150px auto;
+}
+.about_title{
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+.right_kanote{
+    width: 80px;
+    height: auto;
+}
+.left_kanote{
+    width: 80px;
+    height: auto;
+}
+.about_title_text{
+    color: hsl(35,100%,50%);
+    font-size: 50px;
 }
 .txt_about{
     font-size: 16px;
@@ -189,10 +244,20 @@
     width: 100%;
     max-width: 1280px;
     margin: 60px auto 80px;
-    background: url('../../img/img_contact_flag.png') no-repeat top right;
-    -webkit-background-size: 300px auto;
-    -o-background-size: 300px auto;
-    background-size: 300px auto;
+    background-image: url("../../img/kanote1.png"),url("../../img/kanote1.png");
+    background-position: top left,bottom right;
+    background-repeat: no-repeat,no-repeat;
+    background-size: 150px auto;
+}
+.contact_title{
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+}
+.contact_title_text{
+    color: hsl(35,100%,50%);
+    font-size: 50px;
 }
 .contact{
     padding-top: 160px;
@@ -215,14 +280,22 @@
     margin-top:40px;
 }
 /*end of contact*/
+
 .content_terms{
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    background: url('../../img/img_terms_flag.png') no-repeat top left;
-    -webkit-background-size: 428px auto;
-    -o-background-size: 428px auto;
-    background-size: 428px auto;
+    background: url('../../img/kanote2.png') no-repeat bottom right;
+    background-size: 150px auto;
+}
+.terms_title{
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+.terms_title_text{
+    color: hsl(35,100%,50%);
+    font-size: 50px;
 }
 .txt_terms{
     padding: 160px 0 50px;
@@ -240,7 +313,7 @@
 }
 .ttl_people{
     font-size: 26px;
-    color: #dba904;
+    color: hsl(35,100%,50%);
     text-align: center;
     margin-bottom: 50px;
 }
@@ -258,11 +331,11 @@
 }
 hr{
     margin: 50px 85px;
-    border: 1px solid #dba904;
+    border: 1px solid hsl(35,100%,50%);
 }
 /*end of terms and conditions*/
 footer{
-    background: #010c1e;
+    background-color: hsl(35,100%,50%);
     position: relative;
     padding: 40px 0;
 }
@@ -279,11 +352,11 @@ footer{
     padding: 0 15px;
 }
 .footer_menu a:hover{
-    color: #dba904;
+    color: saddlebrown;
 }
 .txt_copyright{
     font-size: 12px;
-    color: #5f5f5f;
+    color:  #ffffff;
     margin-top: 30px;
 }
 footer .logo,

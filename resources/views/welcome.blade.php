@@ -23,8 +23,9 @@
             <a href="#content_about">{{ __('common.about') }}</a>
             <a href="#content_contact">{{ __('common.contact') }}</a>
             <a href="#content_terms">{{ __('common.terms_and_conditions') }}</a>
-            <a href="{{url('locale/en')}}" style="padding-right: 0;margin-right: 0">English &nbsp;/</a>
-            <a href="{{url('locale/mm')}}">မြန်မာ</a>
+            <a href="{{url('locale/en')}}" style="margin-right: 0"><img src="../../../img/flagEng.png" width="30px" height="30px">Eng</a>
+            <a href="{{url('locale/mm')}}" style="margin-right: 0"><img src="../../../img/flagMyanmar.png" width="30px" height="30px">မြန်မာ</a>
+            <a href="#" style="margin-right: 0"><img src="../../../img/flagJapan.png" width="30px" height="30px">日本 &nbsp;</a>
         </div>
         <div class="responsive_nav only_sp">
             <div class="btn_menu">
@@ -45,16 +46,23 @@
     <button class="to-top" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="home_mv " >
         <div class="mv_content">
-            <img src="img/img_top_mv.png" data-src-sp="img/img_top_mv_sp.png" alt="">
+            <img src="img/banner1.jpg" data-src-sp="img/img_top_mv_sp.png" alt="">
             <div class="text_sec">
-                <p class="txt_mv">“We Rise By Lifting Others”</p>
-                <a class="mv_link" href="{{route('donor_home')}}" title="">{{__('welcome.get_started')}}</a>
+                <p class="txt_mv">WE RISE BY LIFTING OTHERS</p>
+                <a class="mv_link" href="{{route('donor_home')}}" title="">
+                    {{__('welcome.get_started')}}
+                </a>
             </div>
         </div>
     </div>
     <!-- end of main_virtual -->
     <div class="content">
         <div class="content_about" id="content_about">
+            <div class="about_title">
+                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <h3 class="about_title_text">About</h3>
+                <img src="../../../img/right_kanote.png" class="right_kanote">
+            </div>
             <div class="inner">
                 <p class="txt_about">{{__('welcome.about1')}}<br>{{__('welcome.about2')}}<br>{{__('welcome.about3')}}</p>
                 <p class="ttl_news" id="content_news">{{__('common.news')}}</p>
@@ -81,6 +89,11 @@
         </div>
         <!-- end of about -->
         <div class="content_contact" id="content_contact">
+            <div class="contact_title">
+                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <h3 class="contact_title_text">Contact</h3>
+                <img src="../../../img/right_kanote.png" class="right_kanote">
+            </div>
             <div class="contact inner">
                 <div class="address">
                     <img src="img/icon_address.png" alt="" width="78" height="98">
@@ -110,6 +123,11 @@
         </div>
         <!-- end of contact -->
         <div class="content_terms" id="content_terms">
+            <div class="terms_title">
+                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <h3 class="terms_title_text">Terms and Conditions</h3>
+                <img src="../../../img/right_kanote.png" class="right_kanote">
+            </div>
             <div class="inner">
                 <p class="txt_terms">{{__('term_condition.paragraph1')}}<br>{{__('term_condition.paragraph2')}}</p>
                 <div class="txt_terms_content">

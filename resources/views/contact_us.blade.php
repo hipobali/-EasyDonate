@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col">
                 <div class="card">
-                    <div class="card-header bg-dark text-white"><i class="fa fa-envelope"></i> Contact us.
+                    <div class="card-header text-white" style="background-color: hsl(35,100%,50%)"><i class="fa fa-envelope"></i> Contact us.
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{route('send_mail')}}">
@@ -45,7 +45,7 @@
                                 <textarea name="message" class="form-control" id="message" rows="6" required></textarea>
                             </div>
                             <div class="mx-auto">
-                                <button type="submit" class="btn btn-dark text-right">Submit</button></div>
+                                <button type="submit" class="btn text-right" style="background-color: hsl(35,100%,50%); color: white">Submit</button></div>
                             @csrf
                         </form>
                     </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="col-12 col-sm-4">
                 <div class="card bg-light mb-3">
-                    <div class="card-header bg-dark text-white text-uppercase"><i class="fa fa-home"></i> Address</div>
+                    <div class="card-header text-white text-uppercase" style="background-color: hsl(35,100%,50%)"><i class="fa fa-home"></i> Address</div>
                     <div class="card-body">
                         <p>No.22, BaYintNaung(9) Street,</p>
                         <p>Kamarkyi Road, ThinGanKwin Township,</p>

@@ -37,7 +37,7 @@
                                                {{__('foundation.picture')}}
                                             </b>
                                         </div>
-                                        <input value="{{ old('username') }}" type="file" class="img-upload {{$errors->has('foundation_profile') ? 'has-error':''}} " name="foundation_profile" style="display: none;">
+                                        <input type="file" class="img-upload {{$errors->has('foundation_profile') ? 'has-error':''}} " name="foundation_profile" value="{{ old('foundation_profile') }}"  style="display: none;">
                                     </label>
                                 </div>
                             </div>
@@ -55,13 +55,13 @@
 
                             <span class="text-danger">{{$errors->first('foundation_profile')}}</span>
                             <div class="form-group">
-                                <label for="foundation_name" class=" f_name"><span class="fa fa-users "></span>&nbsp Foundation Name: </label>
-                                <input value="{{ old('foundation_name') }}" type="text" name="foundation_name" id="foundation_name" class="form-control form-control-sm {{$errors->has('foundation_name') ? 'has-error':''}} ">
+                                <label for="foundation_name" class=" f_name"><span class="fa fa-users "></span>&nbsp {{__('foundation.foundation_name')}} </label>
+                                <input type="text" name="foundation_name" id="foundation_name" value="{{ old('foundation_name') }}" class="form-control form-control-sm {{$errors->has('foundation_name') ? 'has-error':''}} ">
                                 <span class="text-danger">{{$errors->first('foundation_name')}}</span>
                             </div>
                             <div class="form-group">
-                                <label for="founder"><span class="fa fa-user-tie "></span>&nbsp Founder:</label>
-                                <input value="{{ old('founder') }}" type="text" name="founder" id="founder" class="fa fa-users form-control form-control-sm {{$errors->has('founder') ? 'has-error':''}}" >
+                                <label for="founder"><span class="fa fa-user-tie "></span>&nbsp {{__('foundation.founder')}}</label>
+                                <input type="text" name="founder" id="founder" value="{{ old('founder') }}" class="form-control form-control-sm {{$errors->has('founder') ? 'has-error':''}}" >
                                 <span class="text-danger">{{$errors->first('founder')}}</span>
                             </div>
                             <div class="form-group">
@@ -96,42 +96,42 @@
                             </div>
                             <div class="form-group">
                                 <label for="email"><span class="fa fa-envelope"></span>&nbsp {{__('common.email')}}</label>
-                                <input value="{{ old('username') }}" placeholder="........@gmail.com" type="text" name="email" id="email" class="form-control form-control-sm {{$errors->has('email') ? 'has-error':''}}">
+                                <input placeholder="........@gmail.com" type="text" name="email" id="email" value="{{ old('email') }}" class="form-control form-control-sm {{$errors->has('email') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('email')}}</span>
                             </div>
                             <div class="form-group">
                                 <label for="address"><span class="fa fa-home"></span>&nbsp {{__('foundation.address')}}</label>
-                                <textarea value="{{ old('username') }}" type="text" id="address" name="address" class="form-control form-control-sm {{$errors->has('address') ? 'has-error':''}}" ></textarea>
+                                <textarea id="address" name="address" class="form-control form-control-sm {{$errors->has('address') ? 'has-error':''}}" >{{ old('address') }}</textarea>
                                 <span class="text-danger">{{$errors->first('address')}}</span>
                             </div>
                             <div class="form-group">
                                 <label for="phone"><span class="fa fa-phone"></span>&nbsp {{__('foundation.foundation_phone')}}</label>
-                                <input value="{{ old('username') }}" type="text" id="phone" name="phone" placeholder="09*********" class="form-control form-control-sm {{$errors->has('phone') ? 'has-error':''}}">
+                                <input type="text" id="phone" name="phone"  value="{{ old('phone') }}" placeholder="09*********" class="form-control form-control-sm {{$errors->has('phone') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('phone')}}</span>
                             </div>
                             <div class="form-group">
                                 <label for="president_name"><span class="fa fa-user"></span> &nbsp {{__('foundation.president_name')}}</label>
-                                <input value="{{ old('username') }}" type="text" id="president_name" name="president_name" class="form-control form-control-sm {{$errors->has('president_name') ? 'has-error':''}}">
+                                <input type="text" id="president_name" name="president_name" value="{{ old('president_name') }}" class="form-control form-control-sm {{$errors->has('president_name') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('president_name')}}</span>
                             </div>
                             <div class="form-group">
                                 <label for="foundation_certificate"><span class="fa fa-certificate"></span> &nbsp{{__('foundation.foundation_certificate')}}</label>
-                                <input value="{{ old('username') }}" type="file" id="foundation_certificate" name="foundation_certificate" class="certificate_file form-control form-control-sm {{$errors->has('foundation_certificate') ? 'has-error':''}}">
+                                <input type="file" id="foundation_certificate" name="foundation_certificate" value="{{ old('foundation_certificate') }}" class="certificate_file form-control form-control-sm {{$errors->has('foundation_certificate') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('foundation_certificate')}}</span>
                             </div>
                             <div class="form-group">
                                 <label for="member_count"><span class="fa fa-users-cog"></span> &nbsp {{__('foundation.member_count')}}</label>
-                                <input value="{{ old('username') }}" type="number" id="member_count" name="member_count" class="form-control {{$errors->has('member_count') ? 'has-error':''}}">
+                                <input type="number" id="member_count" name="member_count" value="{{ old('member_count') }}" class="form-control {{$errors->has('member_count') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('member_count')}}</span>
                             </div>
                             <div class="form-group">
                                 <label id="password"><span class="fa fa-key"></span> &nbsp {{__('foundation.password')}} </label>
-                                <input value="{{ old('username') }}" type="password" id="password"  name="password" class="form-control form-control-sm {{$errors->has('password') ? 'has-error':''}}">
+                                <input type="password" id="password"  name="password" class="form-control form-control-sm {{$errors->has('password') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('password')}}</span>
                             </div>
                             <div class="form-group">
                                 <label id="confirm_password"><span class="fa fa-key"></span> &nbsp{{__('foundation.confirm_password')}}</label>
-                                <input value="{{ old('username') }}" type="password" id="password"  name="confirm_password" class="form-control form-control-sm {{$errors->has('confirm_password') ? 'has-error':''}}">
+                                <input type="password" id="confirm_password"  name="confirm_password" class="form-control form-control-sm {{$errors->has('confirm_password') ? 'has-error':''}}">
                                 <span class="text-danger">{{$errors->first('confirm_password')}}</span>
                             </div>
                         </div>
