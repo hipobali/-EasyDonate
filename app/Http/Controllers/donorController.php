@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class donorController extends Controller
 {
    public function getDonorHome(){
-       $foundation_post=foundationPost::all()->first()->orderBy('id','desc')->paginate(6);
+       $foundation_post=foundationPost::orderBy('id','desc')->paginate(6);
        $foundation=Foundation::all();
        $category=Category::all();
        return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['foundation'=>$foundation]);;

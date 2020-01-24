@@ -13,7 +13,7 @@ class CreateFoundationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('foundations', function (Blueprint $table) {
+        Schema::create('foundation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('foundation_profile');
@@ -37,6 +37,6 @@ class CreateFoundationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('foundations');
+        Schema::dropIfExists('foundation');
     }
 }

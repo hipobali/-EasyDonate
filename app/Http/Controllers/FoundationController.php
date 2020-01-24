@@ -26,8 +26,8 @@ class FoundationController extends Controller
         return view('foundation_login');
     }
     public function getFoundationRequestView(){
-        $donateForm=donateForm::all()->first()->orderBy('id','desc')->get();
-            $user_post=userPost::all()->first()->orderBy('id','desc')->get();
+        $donateForm=donateForm::orderBy('id','desc')->get();
+            $user_post=userPost::orderBy('id','desc')->get();
             $foundation=Foundation::all();
             $foundationPost=foundationPost::all();
             $category=Category::all();
