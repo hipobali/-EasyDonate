@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {   $user_post=userPost::all();
-        $foundation_post=foundationPost::all()->first()->orderBy('id','desc')->paginate(6);
+        $foundation_post=foundationPost::orderBy('id','desc')->paginate(6);
         $foundation=Foundation::all();
         $category=Category::all();
             return view('home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['foundation'=>$foundation])->with(['user_post'=>$user_post]);

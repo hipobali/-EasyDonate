@@ -6,6 +6,7 @@ use App\Category;
 use App\donateForm;
 use App\Foundation;
 use App\foundationPost;
+use App\Http\Requests\DonateFormRequest;
 use App\userPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 class donorController extends Controller
 {
    public function getDonorHome(){
-       $foundation_post=foundationPost::all()->first()->orderBy('id','desc')->paginate(6);
+       $foundation_post=foundationPost::orderBy('id','desc')->paginate(6);
        $foundation=Foundation::all();
        $category=Category::all();
        return view('donor_home')->with(['category'=>$category])->with(['foundation_post'=>$foundation_post])->with(['foundation'=>$foundation]);;
@@ -23,24 +24,7 @@ class donorController extends Controller
        $category=Category::all();
        return view('donation_form')->with(['category'=>$category])->with(['foundation'=>$foundation]);
     }
-    public function postDonateForm(Request $request){
-        $this->validate($request,[
-            'donationInputName'=> 'required',
-            'donationInputPhoneNumber'=> 'required',
-            'address'=>'required',
-            'donate_category'=>'required',
-            'donate_foundation'=>'required',
-            'date'=>'required',
-            'amount'=>'required'
-        ],[
-            'donationInputName' => 'The donor name is required!',
-            'donationInputPhoneNumber' => 'The phone number is required!',
-            'address' => 'The address is required!',
-            'donate_category'=>'please choose the category',
-            'donate_foundation'=>'please choose the foundation',
-            'date' => ' The date is required',
-            'amount' => ' The amount is required',
-        ]);
+    public function postDonateForm(DonateFormRequest $request){
         $donationFormsModel=new donateForm();
         $donationFormsModel->donor_name=$request['donationInputName'];
         $donationFormsModel->donor_ph_no=$request['donationInputPhoneNumber'];

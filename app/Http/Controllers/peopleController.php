@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Foundation;
+use App\Http\Requests\PeopleRegisterRequest;
 use App\People;
 use App\User;
 use App\userPost;
@@ -26,29 +27,8 @@ class peopleController extends Controller
         $category=Category::all();
         return view('user_post')->with(['category'=>$category]);
     }
-    public function postpeopleRegister(Request $request)
+    public function postpeopleRegister(PeopleRegisterRequest $request)
     {
-        $this->validate($request,[
-            'user_profile'=>'required|mimes:jpeg,png,jpg,gif,svg',
-            'name'=> 'required|min:1|max:40',
-            'email'=> 'required|email|unique:users',
-            'address'=> 'required|min:3|max:100',
-            'phone'=>'required|numeric',
-            'password'=> 'required|min:8|max:20',
-            'confirm_password'=> 'required|min:8|max:20|same:password',
-        ],[
-            'name.required' => 'The name is required.',
-            'email.required' => 'The email is required',
-            'address.required' => 'The address is required.',
-            'phone.required' => 'The phone is required',
-            'password.required' => 'The password is required.',
-            'confirm_password.required' => 'The conform password is required',
-            'phone.numeric'=>'Phone number must be numeric.',
-            'password.min' => ' The password must be at least 8 characters.',
-            'password.max' => ' The password may not be greater than 20 characters.',
-            'confirm_password.min' => ' The confirm password must be at least 8 characters.',
-            'confirm_password.max' => ' The confirm password may not be greater than 20 characters.',
-        ]);
         $img_user_profile_name=md5(microtime()).'.'.$request->file('user_profile')->getClientOriginalExtension();
         $img_user_profile_file=$request->file('user_profile');
 
@@ -73,18 +53,6 @@ class peopleController extends Controller
     public function postPeopleRequest(Request $request){
        $id=$request['id'];
        $people=People::where('user_id',$id)->first();
-        $this->validate($request,[
-            'title'=>'required|min:1|max:100',
-            'location'=>'required|min:3|max:200',
-            'name'=>'required|max:100',
-            'items-requested'=>'required',
-            'cost'=>'required|numeric',
-            'significance'=>'required|min:3',
-            'phone'=>'required|numeric',
-            'image'=>'required|mimes:jpeg,png,jpg,gif,svg',
-        ],[
-            'items_requested.required' => 'The item requested is required.',
-        ]);
 
         $img_user_post_name=md5(microtime()).'.'.$request->file('image')->getClientOriginalExtension();
         $img_user_post_file=$request->file('image');

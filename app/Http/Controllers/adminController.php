@@ -6,6 +6,7 @@ use App\Admin;
 use App\Category;
 use App\Foundation;
 use App\foundationPost;
+use App\Http\Requests\AdminPostRequest;
 use App\People;
 use App\Report;
 use App\User;
@@ -15,24 +16,7 @@ use Illuminate\Support\Facades\Storage;
 
 class adminController extends Controller
 {
-    public function postAdminRegister(Request $request){
-        $this->validate($request,[
-           'name'=>'required|min:1|max:40',
-            'email'=>'required|email|unique:users',
-            'secret'=>'required',
-            'password'=>'required|min:8',
-            'password_confirm'=>'required|min:8|same:password',
-        ],[
-            'name.required'=>'The admin name field is required',
-            'email.required'=>'Email address field is required',
-            'email.unique'=>'Email address is already exists in database',
-            'secret'=>'Secret Code is required',
-            'password.required'=>'The password field is required',
-            'password.min'=>'Password must be at least 8 characters',
-            'password_confirm.required'=>'The confirm password field is required',
-            'password_confirm.min'=>'Confirm password must be at least 8 characters',
-            'password_confirm.same'=>'Confirm password must be same with the password',
-        ]);
+    public function postAdminRegister(AdminPostRequest $request){
         $user=new User();
         $user->type='admin';
         $user->name=$request['name'];
