@@ -8,7 +8,11 @@
     <div class='container'>
         <div class="row">
             <div class="col-md-6 left_side" >
-                <h1 style="margin-top:20%;">{{__('foundation.register_account')}}</h1>
+                <div class="text_point ">
+                    <img src="../../../img/left_kanote.png" class="left_kanote" style="vertical-align: middle">
+                    <h3 style="color: hsl(35,100%,50%); margin-top: 20%">&nbsp;{{__('foundation.register_account')}}&nbsp;</h3>
+                    <img src="../../../img/right_kanote.png" class="right_kanote" style="vertical-align: middle">
+                </div>
 
                 <p class="col-sm " style="margin-top:10%;"><strong>
                         "{{__('foundation.reg_quote1')}}<br>

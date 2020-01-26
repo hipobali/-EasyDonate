@@ -1,6 +1,23 @@
 body {
-    background-color:#e6e5ff;
+    /*background-color:#e6e5ff;*/
 }
+
+.right_kanote{
+    width: 50px;
+    height: auto;
+}
+.left_kanote{
+    width: 50px;
+    height: auto;
+}
+
+.text_point{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 #welcomeInHeader
 {
     color: white;
@@ -13,7 +30,7 @@ body {
 }
 
 .card-header{
-    background-color: #010c1e;
+    background-color: hsl(35,100%,50%);
 }
 
 .image_upload{
@@ -29,7 +46,7 @@ body {
     height: 200px;
     transition: .5s ease;
     text-align: center;
-    border:15px solid #010c1e ;
+    border:15px solid hsl(35,100%,50%) ;
 }
 .upload_text{
     opacity: 0;
@@ -59,17 +76,17 @@ body {
 }
 
 .card-footer{
-    background-color: #010c1e;
+    background-color: hsl(35,100%,50%);
     color: white;
 }
 
 .btnCancel:hover{
-    background-color: #DE5C5C;
+    background-color: #ff2626;
     color: white;
 }
 
 .btnSave:hover{
-    background-color: #3F8ED6;
+    background-color: royalblue;
     color: white;
 }
 

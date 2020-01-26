@@ -3,6 +3,19 @@ body
 {
 
 }
+.about_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right_kanote{
+    width: 80px;
+    height: auto;
+}
+.left_kanote{
+    width: 80px;
+    height: auto;
+}
 
 .purpose
 {

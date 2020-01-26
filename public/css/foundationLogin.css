@@ -1,13 +1,29 @@
 body{
-    background-color: #e6e5ff;
+
 }
+
+.right_kanote{
+    width: 50px;
+    height: auto;
+}
+.left_kanote{
+    width: 50px;
+    height: auto;
+}
+
+.text_point{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .card-header{
-    background-color: #010c1e;
+    background-color: hsl(35,100%,50%);
     color: white;
 }
 
 .card-footer{
-    background-color: #010c1e;
+    background-color: hsl(35,100%,50%);
     color: white;
 }
 .btnCancel{
@@ -16,13 +32,14 @@ body{
 .btnSave{
     background-color: white;
 }
+
 .card-footer .btnCancel:hover{
-    background-color: #DE5C5C;
+    background-color: #ff2626;
     color: white;
 }
 
 .card-footer .btnSave:hover{
-    background-color: #3F8ED6;
+    background-color: royalblue;
     color: white;
 }
 @media only screen and (max-width: 767px){

@@ -32,7 +32,12 @@
 
         <!-- purpose -->
         <div class="purpose">
-            <h4 style="color: hsl(35,100%,50%)">OUR MAIN PURPOSE</h4>
+            <div class="about_title">
+                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <h4 class="about_title_text" style="color: hsl(35,100%,50%)">OUR MAIN PURPOSE</h4>
+                <img src="../../../img/right_kanote.png" class="right_kanote">
+            </div>
+{{--            <h4 style="color: hsl(35,100%,50%)">OUR MAIN PURPOSE</h4>--}}
             <p>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; We want to serve for  the donor, the foundation and the people who needs help to be easily connected at the one place.
                 In our website, the donor can directly donate to the foundation and the people-in-need can directly access to the foundation.

@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    new CircleType(document.getElementById('curve')).radius(384);
 	$(".btn_menu").click(function() {
 	    if ($('.btn_menu').hasClass('is_active')) {
 	        $('.responsive_content').removeClass('show');
@@ -9,7 +10,6 @@ $(document).ready(function() {
 	        $(".btn_menu").addClass("is_active");
 	        $('.responsive_content').addClass('show');
 	    }
-
 	});
 
 	if ($(window).width() < 768) {

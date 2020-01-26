@@ -190,7 +190,7 @@
                                     </div>
                                     <h4 >{{$foundation_posts->foundation->foundation_name}}</h4 >
                                 </div>
-                                <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,125)}}</p>
+                                <p class="txt_donation_post">{{str_limit($foundation_posts->f_post_detail,130)}}</p>
                                 <div class="detail_btn">
                                     <a class="detail_link " href="" data-toggle="modal" data-target="#exampleModal{{$foundation_posts->id}}" style="text-decoration: none">{{(__('common.detail'))}}</a>
                                 </div>
