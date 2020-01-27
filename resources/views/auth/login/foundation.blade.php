@@ -9,7 +9,11 @@
     <div class="container">
         <div class="row" style="margin-top:50px;">
             <div class="col-md-6 text-center left-side">
-                <h1>{{__('foundation.login_to_account')}}</h1>
+                <div class="text_point">
+                    <img src="../../../img/left_kanote.png" class="left_kanote" style="vertical-align: middle">
+                    <h3 style="color: hsl(35,100%,50%)">&nbsp;{{__('foundation.login_to_account')}}&nbsp;</h3>
+                    <img src="../../../img/right_kanote.png" class="right_kanote" style="vertical-align: middle">
+                </div>
                 <p style="margin-top: 50px;"><strong>
                         "{{__('user.login_quote1')}}<br>
                         {{__('user.login_quote2')}}<br>

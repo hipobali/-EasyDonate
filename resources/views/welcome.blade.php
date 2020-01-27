@@ -24,8 +24,8 @@
             <a href="#content_contact">{{ __('common.contact') }}</a>
             <a href="#content_terms">{{ __('common.terms_and_conditions') }}</a>
             <a href="{{url('locale/en')}}" style="margin-right: 0"><img src="../../../img/flagEng.png" width="30px" height="30px">Eng</a>
-            <a href="{{url('locale/mm')}}" style="margin-right: 0"><img src="../../../img/flagMyanmar.png" width="30px" height="30px">မြန်မာ</a>
-            <a href="#" style="margin-right: 0"><img src="../../../img/flagJapan.png" width="30px" height="30px">日本 &nbsp;</a>
+            <a href="{{url('locale/mm')}}" style="margin-right: 0"><img src="../../../img/flagMyanmar.png" width="30px" height="30px">မြန်မာ  &nbsp;</a>
+{{--            <a href="#" style="margin-right: 0"><img src="../../../img/flagJapan.png" width="30px" height="30px">日本 &nbsp;</a>--}}
         </div>
         <div class="responsive_nav only_sp">
             <div class="btn_menu">
@@ -46,7 +46,7 @@
     <button class="to-top" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="home_mv " >
         <div class="mv_content">
-            <img src="img/banner1.jpg" data-src-sp="img/img_top_mv_sp.png" alt="">
+            <img src="img/finalshadowbannerccc.gif" data-src-sp="img/img_top_mv_sp.png" alt="">
             <div class="text_sec">
                 <p class="txt_mv">WE RISE BY LIFTING OTHERS</p>
                 <a class="mv_link" href="{{route('donor_home')}}" title="">
