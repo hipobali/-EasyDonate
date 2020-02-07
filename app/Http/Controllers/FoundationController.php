@@ -19,20 +19,24 @@ use Illuminate\Support\Facades\Storage;
 
 class FoundationController extends Controller
 {
+
     public function getFoundationRegister()
     {
         return view('foundation_register');
     }
+
     public function getFoundationLogin(){
         return view('foundation_login');
     }
-    public function getFoundationRequestView(){
+
+    public function getFoundationRequestView()
+    {
         $donateForm=donateForm::orderBy('id','desc')->get();
-            $user_post=userPost::orderBy('id','desc')->get();
-            $foundation=Foundation::all();
-            $foundationPost=foundationPost::all();
-            $category=Category::all();
-        return view('foundation_request_page')->with(['foundation'=>$foundation])->with(['category'=>$category])->with(['user_post'=>$user_post])->with(['donateForm'=>$donateForm])->with(['foundationPost'=>$foundationPost]);
+        $user_post=userPost::orderBy('id','desc')->get();
+        $foundation=Foundation::all();
+        $foundationPost=foundationPost::all();
+        $category=Category::all();
+        return view('foundation_request_page',compact('donateForm','user_post','foundation','category','foundationPost'));
     }
 
     public function postFoundationRegister(FoundationRegisterRequest $request)
@@ -62,11 +66,14 @@ class FoundationController extends Controller
         $foundation->foundation_certificate=$img_certificate_name;
         $foundation->member_count=$request['member_count'];
         $foundation->save();
+
         Storage::disk('foundation_profile')->put($img_foundation_name,file::get($img_foundation_file));
         Storage::disk('foundation_certificate')->put($img_certificate_name,file::get($img_certificate_file));
         return redirect()->back()->with(['success'=>'Your account have been created successfully']);
     }
-    public function postFoundationRequest(Request $request){
+
+    public function postFoundationRequest(Request $request)
+    {
         $id=$request['id'];
         $foundation=Foundation::where('user_id',$id)->first();
         if($request->hasFile('f_post_image')){
@@ -90,16 +97,21 @@ class FoundationController extends Controller
         $foundation_post->save();
         return redirect()->back();
     }
+
     public function foundationImagePost($img_post_name)
     {
         $file = Storage::disk('foundation_post_image')->get($img_post_name);
         return response($file, 200);
     }
-    public function getFoundationProfile($img_foundation_profile){
+
+    public function getFoundationProfile($img_foundation_profile)
+    {
         $file=Storage::disk('foundation_profile')->get($img_foundation_profile);
         return response($file,200);
     }
-    public function postFoundationReport(Request $request){
+
+    public function postFoundationReport(Request $request)
+    {
         $report_form=new Report();
         $report_form->user_post_id=$request['id'];
         $report_form->report_foundation_name=$request['name'];
@@ -107,7 +119,9 @@ class FoundationController extends Controller
         $report_form->save();
         return redirect()->back()   ;
     }
-    public function foundationPostDataDelete(Request $request){
+
+    public function foundationPostDataDelete(Request $request)
+    {
         $id=$request['id'];
         $foundation_post=foundationPost::whereId($id)->first();
         $foundation_post->delete();

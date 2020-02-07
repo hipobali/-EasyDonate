@@ -1,25 +1,7 @@
 @extends('layouts.app')
 @extends('layouts.nav')
 @section('content')
-    <script>
-        $(document).ready(function(){
-            $('.item1').click( function() {
-                $(".card1").show(1000),
-                    $(".card2").show(1000);
-            });
-            $('.item2').click( function() {
-                $(".card1").show(1000),
-                    $(".card2").hide(1000);
-            });
-            $('.item3').click( function() {
-                $(".card2").show(1000),
-                    $(".card1").hide(1000);
-            });
-            $('.ok_btn').click(function () {
-               $(".donor_card").hide();
-            });
-        });
-    </script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{asset('css/Bootstrap_Helpers/winmarkltd-BootstrapFormHelpers-d6770e0/dist/css/bootstrap-formhelpers.css')}}">
@@ -344,5 +326,24 @@
             $('#btn_accept{{$donateForms->id}}').hide();
         });
        @endforeach
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.item1').click( function() {
+                $(".card1").show(1000),
+                    $(".card2").show(1000);
+            });
+            $('.item2').click( function() {
+                $(".card1").show(1000),
+                    $(".card2").hide(1000);
+            });
+            $('.item3').click( function() {
+                $(".card2").show(1000),
+                    $(".card1").hide(1000);
+            });
+            $('.ok_btn').click(function () {
+                $(".donor_card").hide();
+            });
+        });
     </script>
 @stop

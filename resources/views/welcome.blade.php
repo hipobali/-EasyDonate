@@ -49,11 +49,13 @@
             <img src="img/finalshadowbannerccc.gif" data-src-sp="img/img_top_mv_sp.png" alt="">
             <div class="text_sec">
                 <p class="txt_mv">WE RISE BY LIFTING OTHERS</p>
-                <a class="mv_link" href="{{route('donor_home')}}" title="">
+                <a class="mv_link  " href="{{route('donor_home')}}" title="">
                     {{__('welcome.get_started')}}
                 </a>
             </div>
+
         </div>
+
     </div>
     <!-- end of main_virtual -->
     <div class="content">
@@ -64,8 +66,10 @@
                 <img src="../../../img/right_kanote.png" class="right_kanote">
             </div>
             <div class="inner">
+
                 <p class="txt_about">{{__('welcome.about1')}}<br>{{__('welcome.about2')}}<br>{{__('welcome.about3')}}</p>
                 <p class="ttl_news" id="content_news">{{__('common.news')}}</p>
+
             </div>
 
             <ul class="news_list">

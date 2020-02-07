@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c668fa95-a317-468b-99d5-cf0521a9f8b2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Restaurant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Restaurant.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/adminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/donorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/donorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/peopleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/peopleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,40 +32,6 @@
         <option value="CSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>str</find>
-      <find>get_user_post_image</find>
-      <find>modal-body</find>
-      <find>Detail</find>
-      <find>get_donation_form</find>
-      <find>getDonationForm</find>
-      <find>submi</find>
-      <find>send</find>
-      <find>Donate Now</find>
-      <find>detail</find>
-      <find>ava</find>
-      <find>donate now</find>
-      <find>donate no</find>
-      <find>help.pn</find>
-      <find>avat</find>
-      <find>urgent_txt_ttl</find>
-      <find>delete</find>
-      <find>list-group</find>
-      <find>.list-group-item.active</find>
-      <find>address</find>
-      <find>help.</find>
-      <find>Normal</find>
-      <find>report</find>
-      <find>postFoundationReport</find>
-      <find>report_form</find>
-      <find>please</find>
-      <find>confirm</find>
-      <find>btn_accept</find>
-      <find>accept</find>
-      <find>close</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -147,6 +120,7 @@
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
@@ -222,6 +196,14 @@
       <workItem from="1565327645037" duration="3903000" />
       <workItem from="1579845015209" duration="911000" />
       <workItem from="1579849591015" duration="4771000" />
+      <workItem from="1580095216401" duration="243000" />
+      <workItem from="1580113127960" duration="1303000" />
+      <workItem from="1580195423789" duration="837000" />
+      <workItem from="1580203113123" duration="3951000" />
+      <workItem from="1580266877589" duration="700000" />
+      <workItem from="1580980895262" duration="1759000" />
+      <workItem from="1581044908508" duration="1376000" />
+      <workItem from="1581046302480" duration="4598000" />
     </task>
     <servers />
   </component>
@@ -229,9 +211,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581046287436">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1581046287436" />
     <state x="405" y="210" width="545" height="373" key="NewPhpClassDialog" timestamp="1579860357735">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="405" y="210" width="545" height="373" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1579860357735" />
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1580266879142">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1580266879142" />
   </component>
 </project>

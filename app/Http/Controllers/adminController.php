@@ -31,24 +31,29 @@ class adminController extends Controller
             $admin->save();
             return redirect()->back()->with(['success'=>'Your account have been created successfully']);
         }else{
+            User::find($user->id)->delete();
             return redirect()->back()->with(['error'=>'Your secret code is invalid']);
         }
-
     }
+
     //foundation//
+
     public function getFoundationData(){
         $user=User::all();
         $foundation=Foundation::all();
         return view('admin_foundationData')->with(['foundation'=>$foundation])->with(['user'=>$user]);
     }
+
     public function getFoundationProfile($img_foundation_profile){
         $file=Storage::disk('foundation_profile')->get($img_foundation_profile);
         return response($file,200);
     }
+
     public function getFoundationCertificate($img_certificate_name){
         $file=Storage::disk('foundation_certificate')->get($img_certificate_name);
         return response($file,200);
     }
+
     public function foundationDataDelete(Request $request){
         $id=$request['id'];
         $foundations=Foundation::where('id',$id)->first();
@@ -58,7 +63,19 @@ class adminController extends Controller
         return redirect()->back();
     }
 
+    public function getFoundationPostData(){
+        $foundation_post=foundationPost::all();
+        return view('admin_foundationPost_data')->with(['foundation_post'=>$foundation_post]);
+    }
+
+    public function getFoundationReportData(){
+        $report_post=Report::all();
+        return view('admin_foundationReport_data')->with(['report_post'=>$report_post]);
+    }
+
+
     //User//
+
     public function getUserData(){
         $user=User::all();
         $people=People::all();
@@ -76,28 +93,50 @@ class adminController extends Controller
         return redirect()->back();
     }
 
-
     public function getUserProfile($img_user_profile)
     {
         $file = Storage::disk('user_profile')->get($img_user_profile);
         return response($file, 200);
     }
+
+    public function getPeoplePostData(){
+        $user_post=userPost::all();
+        return view('admin_peoplePost_data')->with(['user_post'=>$user_post]);
+    }
+
+    public function userPostDataDelete(Request $request){
+        $id=$request['id'];
+        $user_post=userPost::whereId($id)->first();
+        $user_post->delete();
+        return redirect()->back();
+    }
+
+    public function getPeoplePostImage($img_user_post){
+        $file = Storage::disk('user_post')->get($img_user_post);
+        return response($file, 200);
+    }
+
+    //Category
+
     public function getCategory(){
         $category=Category::all();
         return view('category')->with(['category'=>$category]);
     }
+
     public function postCategory(Request $request){
         $category=new Category();
         $category->category_name=$request['category_name'];
         $category->save();
         return redirect()->back();
     }
+
     public function getDeleteCategory(Request $request){
         $id=$request['id'];
         $category=Category::whereId($id)->get();
         $category->delete();
         return redirect()->back();
     }
+
     public function postUpdateCategory(Request $request){
         $id=$request['id'];
         $category=Category::whereId($id)->first();
@@ -105,29 +144,5 @@ class adminController extends Controller
         $category->update();
         return redirect()->back();
     }
-    public function getFoundationPostData(){
-        $foundation_post=foundationPost::all();
-       return view('admin_foundationPost_data')->with(['foundation_post'=>$foundation_post]);
-    }
-    public function getFoundationReportData(){
-        $report_post=Report::all();
-     return view('admin_foundationReport_data')->with(['report_post'=>$report_post]);
-    }
-    public function getPeoplePostData(){
-        $user_post=userPost::all();
-        return view('admin_peoplePost_data')->with(['user_post'=>$user_post]);
-    }
-    public function userPostDataDelete(Request $request){
-        $id=$request['id'];
-        $user_post=userPost::whereId($id)->first();
-        $user_post->delete();
-        return redirect()->back();
-    }
-    public function getPeoplePostImage($img_user_post){
-        $file = Storage::disk('user_post')->get($img_user_post);
-        return response($file, 200);
-    }
-
-
 
 }
