@@ -93,6 +93,9 @@
                         @endif
                     @if(Auth::user()->type=='admin')
                             <li class="nav-item">
+                                <a class="nav-link" href="{{url('admin/adminhome')}}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{url('/home')}}">{{__('common.home')}}</a>
                             </li>
                             <li class="nav-item">

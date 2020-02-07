@@ -14,23 +14,29 @@ use Illuminate\Support\Facades\Storage;
 
 class peopleController extends Controller
 {
-
-
     public function getPeopleRegister()
     {
         return view('people_register');
     }
+
     public function getPeopleLogin(){
         return view('people_login');
     }
-    public function getPeoplePostView(){
+
+    public function getPeoplePostView()
+    {
         $category=Category::all();
         return view('user_post')->with(['category'=>$category]);
     }
+
     public function postpeopleRegister(PeopleRegisterRequest $request)
     {
-        $img_user_profile_name=md5(microtime()).'.'.$request->file('user_profile')->getClientOriginalExtension();
-        $img_user_profile_file=$request->file('user_profile');
+//        $img_user_profile_name=md5(microtime()).'.'.$request->file('user_profile')->getClientOriginalExtension();
+//        $img_user_profile_file=$request->file('user_profile');
+
+        $input = $request->all();
+        $name = uniqid('user_profile-') . '.' . $input['user_profile']->extension();
+        $input['user_profile'] = isset($input['user_profile']) ? \Storage::disk('uploads')->putFileAs('user_profile', $input['user_profile'], $name) : '';
 
         $user=new User();
         $user->type='people';
@@ -41,15 +47,16 @@ class peopleController extends Controller
 
         $people = new People();
         $people->user_id=$user->id;
-        $people->user_profile=$img_user_profile_name;
+        $people->user_profile=$input['user_profile'];
         $people->address = $request['address'];
         $people->phone = $request['phone'];
         $people->user_gender=$request['user_gender'];
         $people->save();
-        Storage::disk('user_profile')->put($img_user_profile_name,file::get($img_user_profile_file));
+//        Storage::disk('user_profile')->put($img_user_profile_name,file::get($img_user_profile_file));
         return redirect()->back()->with(['success'=>'Your account have been created successfully.']);
 
     }
+
     public function postPeopleRequest(Request $request){
        $id=$request['id'];
        $people=People::where('user_id',$id)->first();
@@ -78,9 +85,12 @@ class peopleController extends Controller
         $file = Storage::disk('user_post')->get($img_user_post);
         return response($file, 200);
     }
-    public function getConfirmUserPostImage($img_user_post){
+
+    public function getConfirmUserPostImage($img_user_post)
+    {
         $file = Storage::disk('user_post')->get($img_user_post);
-        return response($file, 200);}
+        return response($file, 200);
+    }
 
     public function getUserProfile($img_user_profile)
     {

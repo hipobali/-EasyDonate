@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
- public function foundation(){
-     return $this->hasMany('App\Foundation','id');
- }
+      protected $fillable = ['name'];
+
+      public function foundation(){
+         return $this->hasMany('App\Foundation','id');
+      }
 
 }

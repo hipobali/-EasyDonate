@@ -96,6 +96,7 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Route::get('/register',function (){
         return view('admin_register');
     });
+    Route::get('/adminhome','adminController@index')->name('adminhome');
     Route::post('/register/post','adminController@postAdminRegister')->name('admin_register');
     Route::get('/foundation/data','adminController@getFoundationData')->name('admin_foundation_data');
     Route::get('foundation_data/profile/{foundation_profile}','adminController@getFoundationProfile')->name('getFoundationProfile');
@@ -104,10 +105,12 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Route::get('people_in_need/data','adminController@getUserData')->name('admin_peopleInNeed_data');
     Route::get('user_data/{user_profile}','adminController@getUserProfile')->name('getUserProfile');
     Route::get('user_data/delete/{id}','adminController@userInfoDelete')->name('userInfoDelete');
-    Route::get('category/data/','adminController@getCategory')->name('category_view');
-    Route::post('category/data/post/','adminController@postCategory')->name('category_post');
-    Route::get('category/delete/data/{id}','adminController@getDeleteCategory')->name('category_delete');
-    Route::post('category/update/data/{id}','adminController@postUpdateCategory')->name('category_update');
+//    Route::get('category/data/','adminController@getCategory')->name('category_view');
+//    Route::post('category/data/post/','adminController@postCategory')->name('category_post');
+//    Route::get('category/delete/data/{id}','adminController@getDeleteCategory')->name('category_delete');
+//    Route::post('category/update/data/{id}','adminController@postUpdateCategory')->name('category_update');
+    Route::resource('category','Admin\CategoryController');
+
     Route::get('foundation/post/data/','adminController@getFoundationPostData')->name('admin_foundation_post_data');
     Route::get('foundation/post/delete/{id}','adminController@foundationPostDataDelete')->name('foundation_post_data_delete');
     Route::get('foundation/report/post/data','adminController@getFoundationReportData')->name('admin_foundation_report_data');

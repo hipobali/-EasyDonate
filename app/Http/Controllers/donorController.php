@@ -110,7 +110,5 @@ class donorController extends Controller
            return view('donor_home',compact('foundation_post','foundation','category'));;
 
        }
-
-
    }
 }

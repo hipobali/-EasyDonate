@@ -27,7 +27,6 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
-
     /**
      * Create a new controller instance.
      *
@@ -45,8 +44,8 @@ class LoginController extends Controller
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
         if ($this->hasTooManyLoginAttempts($request)) {
-            $this->fireLockoutEvent($request);
-            return $this->sendLockoutResponse($request);
+                $this->fireLockoutEvent($request);
+                return $this->sendLockoutResponse($request);
         }
         // This section is the only change
         if ($this->guard()->validate($this->credentials($request))) {
@@ -59,7 +58,6 @@ class LoginController extends Controller
                     ->withInput($request->only($this->username(), 'remember'))
                     ->withErrors(['error_type' => 'Authentication Required']);
             }
-
             // Make sure the user is active
             if ($this->attemptLogin($request)) {
                 // Send the normal successful login response
@@ -77,8 +75,8 @@ class LoginController extends Controller
         // If the login attempt was unsuccessful we will increment the number of attempts
         // to login and redirect the user back to the login form. Of course, when this
         // user surpasses their maximum number of attempts they will get locked out.
-        $this->incrementLoginAttempts($request);
-        return $this->sendFailedLoginResponse($request);
+                $this->incrementLoginAttempts($request);
+                return $this->sendFailedLoginResponse($request);
     }
 
 }

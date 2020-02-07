@@ -1,25 +1,14 @@
-
 @extends('layouts.app')
 @extends('layouts.nav')
+@section('title')
+    Home
+@endsection
 @section('content')
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-    <title> @section('title')
-            Home
-        @endsection </title>
-    <link rel="stylesheet" type="text/css" href="{{asset('css/welcomeCss/slick-theme.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/welcomeCss/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('css/modal_for_details.css')}}">
-    <link rel="stylesheet" href="{{asset('css/welcomeCss/news.css')}}">
-    <link rel="stylesheet" href="{{asset('css/btn.css')}}">
-    </head>
-    <body>
     <div id="news">
         <div class="news_mv ">
             <div class="mv_parent">
                 <div class="mv_child">
-                    <p>“We Rise By Lifting Others”</p>
+                    <p>“We Rise By Lifting Others”                                                                                                                                                                                                                                                                                                                                                                                                          </p>
                 </div>
             </div>
         </div>
@@ -350,5 +339,6 @@
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
     </script>
-    </body>
-@stop
+@endsection
+
+

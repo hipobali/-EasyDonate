@@ -1,5 +1,5 @@
 @extends('layouts.app1')
-@extends('layouts.donor_nav')
+@extends('layouts.nav')
 @section('content')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

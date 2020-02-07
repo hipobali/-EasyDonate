@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class welcomeController extends Controller
 {
-    public function getWelcome(){
+    public function getWelcome()
+    {
         $foundationPost=foundationPost::orderBy('id','desc')->paginate(3);
-        return view('welcome')->with(['foundationPost'=>$foundationPost]);
+        return view('welcome',compact('foundationPost'));
     }
 
 }

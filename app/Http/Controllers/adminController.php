@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Storage;
 
 class adminController extends Controller
 {
-    public function postAdminRegister(AdminPostRequest $request){
+    public function index(){
+        return view('adminhome');
+    }
+
+    public function postAdminRegister(AdminPostRequest $request)
+    {
         $user=new User();
         $user->type='admin';
         $user->name=$request['name'];
@@ -144,5 +149,4 @@ class adminController extends Controller
         $category->update();
         return redirect()->back();
     }
-
 }

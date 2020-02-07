@@ -41,10 +41,17 @@ class FoundationController extends Controller
 
     public function postFoundationRegister(FoundationRegisterRequest $request)
     {
-        $img_foundation_name=md5(microtime()).'.'.$request->file('foundation_profile')->getClientOriginalExtension();
-        $img_foundation_file=$request->file('foundation_profile');
-        $img_certificate_name=md5(microtime()).'.'.$request->file('foundation_certificate')->getClientOriginalExtension();
-        $img_certificate_file=$request->file('foundation_certificate');
+//        $img_foundation_name=md5(microtime()).'.'.$request->file('foundation_profile')->getClientOriginalExtension();
+//        $img_foundation_file=$request->file('foundation_profile');
+//        $img_certificate_name=md5(microtime()).'.'.$request->file('foundation_certificate')->getClientOriginalExtension();
+//        $img_certificate_file=$request->file('foundation_certificate');
+        //profile
+        $input = $request->all();
+        $name = uniqid('foundation_profile-') . '.' . $input['foundation_profile']->extension();
+        $input['foundation_profile'] = isset($input['foundation_profile']) ? \Storage::disk('uploads')->putFileAs('foundation_profile', $input['foundation_profile'], $name) : '';
+        //Certificate
+        $name = uniqid('foundation_certificate-') . '.' . $input['foundation_certificate']->extension();
+        $input['foundation_certificate'] = isset($input['foundation_certificate']) ? \Storage::disk('uploads')->putFileAs('foundation_certificate', $input['foundation_certificate'], $name) : '';
 
         $user=new User();
         $user->type='foundation';
@@ -55,7 +62,7 @@ class FoundationController extends Controller
 
         $foundation = new Foundation();
         $foundation->user_id = $user->id;
-        $foundation->foundation_profile=$img_foundation_name;
+        $foundation->foundation_profile=$input['foundation_profile'];
         $foundation->foundation_name = $request['foundation_name'];
         $foundation->year_picker=$request['year_picker'];
         $foundation->month_picker=$request['month_picker'];
@@ -63,12 +70,12 @@ class FoundationController extends Controller
         $foundation->address = $request['address'];
         $foundation->phone = $request['phone'];
         $foundation->president_name=$request['president_name'];
-        $foundation->foundation_certificate=$img_certificate_name;
+        $foundation->foundation_certificate=$input['foundation_certificate'];
         $foundation->member_count=$request['member_count'];
         $foundation->save();
 
-        Storage::disk('foundation_profile')->put($img_foundation_name,file::get($img_foundation_file));
-        Storage::disk('foundation_certificate')->put($img_certificate_name,file::get($img_certificate_file));
+//        Storage::disk('foundation_profile')->put($img_foundation_name,file::get($img_foundation_file));
+//        Storage::disk('foundation_certificate')->put($img_certificate_name,file::get($img_certificate_file));
         return redirect()->back()->with(['success'=>'Your account have been created successfully']);
     }
 
