@@ -14,36 +14,22 @@
 
 use Illuminate\Support\Facades\Auth;
 
+//Home
 Route::group(['middleware'=>['auth']],function (){
     Route::get('/home', 'HomeController@index')->name('home');
 
 
 });
-
-Route::get('/',[
-    'uses'=>'welcomeController@getWelcome',
-    'as'=>'/'
-]);
+//Welcome
+Route::get('/','welcomeController@getWelcome')->name('/');
 
 //foundation
-Route::get('foundation/register/view',[
-    'uses'=>'FoundationController@getFoundationRegister',
-    'as'=>'foundation_register_view'
-]);
-Route::post('foundation/register/post',[
-    'uses'=>'FoundationController@postFoundationRegister',
-    'as'=>'foundation_register'
-]);
+Route::get('foundation/register/view','FoundationController@getFoundationRegister')->name('foundation_register_view');
+Route::post('foundation/register/post','FoundationController@postFoundationRegister')->name('foundation_register');
 
 //people
-Route::get('people/register/view',[
-    'uses'=>'peopleController@getPeopleRegister',
-    'as'=>'people_register_view'
-]);
-Route::post('/people/register/post',[
-    'uses'=>'peopleController@postPeopleRegister',
-    'as'=>'people_register'
-]);
+Route::get('people/register/view','peopleController@getPeopleRegister')->name('people_register_view');
+Route::post('/people/register/post','peopleController@postPeopleRegister')->name('people_register');
 
 //Language Change
 Route::get('locale/{locale}',function ($locale){
@@ -52,104 +38,41 @@ Route::get('locale/{locale}',function ($locale){
 });
 
 //donor
-Route::get('/donor/home/',[
-   'uses'=>'donorController@getDonorHome',
-   'as'=>'donor_home'
-]);
-Route::get('donation/form/',[
-    'uses'=>'donorController@getDonationForm',
-    'as'=>'get_donation_form'
-]);
-Route::post('donate/Form',[
-    'uses'=>'donorController@postDonateForm',
-    'as'=>'donate_form'
-]);
-Route::get('delete/donor/request/{id}',[
-    'uses'=>'donorController@getDeleteDonorRequest',
-    'as'=>'delete_donor_request'
-]);
+Route::get('/donor/home/','donorController@getDonorHome')->name('donor_home');
+Route::get('donation/form/','donorController@getDonationForm')->name('get_donation_form');
+Route::post('donate/Form','donorController@postDonateForm')->name('donate_form');
+Route::get('delete/donor/request/{id}','donorController@getDeleteDonorRequest')->name('delete_donor_request');
 
 //search
-
-Route::get('search/category/{q}',[
-    'uses'=>'homeController@getSearchCategory',
-    'as'=>'search_category'
-]);
-
-Route::get('search/foundation/{q}',[
-    'uses'=>'homeController@getSearchFoundation',
-    'as'=>'search_foundation'
-]);
-
-Route::get('donor/search/category/{q}',[
-    'uses'=>'donorController@getSearchCategory',
-    'as'=>'donor_search_category'
-]);
-
-Route::get('donor/search/foundation/{q}',[
-    'uses'=>'donorController@getSearchFoundation',
-    'as'=>'donor_search_foundation'
-]);
-
-Route::get('donate/form/cancel/',[
-   'uses'=>'donorController@getDonateCancle',
-    'as'=>'donate_form_cancel'
-    ]);
+Route::get('search/category/{q}','homeController@getSearchCategory')->name('search_category');
+Route::get('search/foundation/{q}','homeController@getSearchFoundation')->name('search_foundation');
+Route::get('donor/search/category/{q}','donorController@getSearchCategory')->name('donor_search_category');
+Route::get('donor/search/foundation/{q}','donorController@getSearchFoundation')->name('donor_search_foundation');
+Route::get('donate/form/cancel/','donorController@getDonateCancle')->name('donate_form_cancel');
 
 //contact
-Route::get('/User/ContactUs/',[
-    'uses'=>"donorController@getContactUs",
-    'as'=>'contact_us_nav'
-]);
+Route::get('/User/ContactUs/','donorController@getContactUs')->name('contact_us_nav');
 
 //terms and conditions
-Route::get('/User/termsandconditions',[
-    'uses'=>'donorController@getTermsAndConditions',
-    'as'=>'terms_and_conditions'
-]);
+Route::get('/User/termsandconditions','donorController@getTermsAndConditions')->name('terms_and_conditions');
 
 //about us
-Route::get('/User/about_us',[
-   'uses'=>'donorController@getAboutUs',
-   'as'=>'about_us'
-]);
+Route::get('/User/about_us','donorController@getAboutUs')->name('about_us');
 
 //Mail
-Route::post('/Send/Mail/',[
-    'uses'=>'MailController@sendEmail',
-    'as'=>'send_mail'
-]);
+Route::post('/Send/Mail/','MailController@sendEmail')->name('send_mail');
 
 
 Route::group(['prefix'=>'foundation','middleware'=>'foundation'],function (){
     Auth::routes(
         [ 'register' => false,]
     );
-    Route::get('/login/view',[
-       'uses'=>'FoundationController@getFoundationLogin',
-       'as'=>'foundation_login_view'
-    ]);
-
-    Route::get('/request/view/',[
-       'uses'=>'FoundationController@getFoundationRequestView',
-       'as'=>'foundation_request_view'
-    ]);
-    Route::post('/request/post/{id}',[
-        'uses'=>'FoundationController@postFoundationRequest',
-        'as'=>'foundation_request_post'
-    ]);
-    Route::get('/image/post/{f_post_image}',[
-        'uses'=>'FoundationController@foundationImagePost',
-        'as'=>'f_image_post'
-    ]);
-    Route::get('data/profile/{foundation_profile}',[
-        'uses'=>'FoundationController@getFoundationProfile',
-        'as'=>'getFoundationProfile'
-    ]);
-    Route::post('report/form/{id}',[
-       'uses'=>'FoundationController@postFoundationReport',
-       'as'=>'report_form'
-    ]);
+    Route::get('/login/view','FoundationController@getFoundationLogin')->name('foundation_login_view');
+    Route::get('/request/view/','FoundationController@getFoundationRequestView')->name('foundation_request_view');
+    Route::post('/request/post/{id}','FoundationController@postFoundationRequest')->name('foundation_request_post');
+    Route::get('/image/post/{f_post_image}','FoundationController@foundationImagePost')->name('f_image_post');
+    Route::get('data/profile/{foundation_profile}','FoundationController@getFoundationProfile')->name('getFoundationProfile');
+    Route::post('report/form/{id}','FoundationController@postFoundationReport')->name('report_form');
 
 });
 
@@ -158,30 +81,12 @@ Route::group(['prefix'=>'people','middleware'=>'people'],function (){
         [ 'register' => false,]
     );
 
-    Route::get('/login/view',[
-        'uses'=>'peopleControllerController@getPeopleLogin',
-        'as'=>'people_login_view'
-    ]);
-    Route::post('/request/post/form/{id}',[
-       'uses'=>'peopleController@postPeopleRequest',
-       'as'=>'user_post_form'
-    ]);
-    Route::get('/request/post/view',[
-       'uses'=>'peopleController@getPeoplePostView',
-       'as'=>'request_user_post'
-    ]);
-    Route::get('/user/post/{image}',[
-        'uses'=>'peopleController@getUserPostImage',
-        'as'=>'get_user_post_image'
-    ]);
-    Route::get('confirm/user/post/{image}',[
-        'uses'=>'peopleController@getConfirmUserPostImage',
-        'as'=>'confirm_user_post_image'
-    ]);
-    Route::get('user/data/{user_profile}',[
-        'uses'=>"peopleController@getUserProfile",
-        'as'=>'get_user_profile'
-    ]);
+    Route::get('/login/view','peopleControllerController@getPeopleLogin')->name('people_login_view');
+    Route::post('/request/post/form/{id}','peopleController@postPeopleRequest')->name('user_post_form');
+    Route::get('/request/post/view','peopleController@getPeoplePostView')->name('request_user_post');
+    Route::get('/user/post/{image}','peopleController@getUserPostImage')->name('get_user_post_image');
+    Route::get('confirm/user/post/{image}','peopleController@getConfirmUserPostImage')->name('confirm_user_post_image');
+    Route::get('user/data/{user_profile}','peopleController@getUserProfile')->name('get_user_profile');
 });
 
 Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
@@ -191,79 +96,22 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Route::get('/register',function (){
         return view('admin_register');
     });
-    Route::post('/register/post',[
-       'uses'=>'adminController@postAdminRegister',
-       'as'=>'admin_register'
-    ]);
-    Route::get('/foundation/data',[
-        'uses'=>'adminController@getFoundationData',
-        'as'=>'admin_foundation_data'
-    ]);
-    Route::get('foundation_data/profile/{foundation_profile}',[
-        'uses'=>'adminController@getFoundationProfile',
-        'as'=>'getFoundationProfile'
-    ]);
-    Route::get('/foundation_data/certificate/{foundation_certificate}',[
-        'uses'=>'adminController@getFoundationCertificate',
-        'as'=>'getFoundationCertificate'
-    ]);
-    Route::get('foundation_data/delete/{id}',[
-        'uses'=>'adminController@foundationDataDelete',
-        'as'=>'foundationInfoDelete'
-    ]);
-    Route::get('people_in_need/data',[
-        'uses'=>'adminController@getUserData',
-        'as'=>'admin_peopleInNeed_data'
-    ]);
-    Route::get('user_data/{user_profile}',[
-        'uses'=>"adminController@getUserProfile",
-        'as'=>'getUserProfile'
-    ]);
-    Route::get('user_data/delete/{id}',[
-        'uses'=>'adminController@userInfoDelete',
-        'as'=>'userInfoDelete'
-    ]);
-    Route::get('category/data/',[
-        'uses'=>'adminController@getCategory',
-        'as'=>'category_view'
-    ]);
-    Route::post('category/data/post/',[
-        'uses'=>'adminController@postCategory',
-        'as'=>'category_post'
-    ]);
-    Route::get('category/delete/data/{id}',[
-       'uses'=>'adminController@getDeleteCategory',
-       'as'=>'category_delete'
-    ]);
-    Route::post('category/update/data/{id}',[
-       'uses'=>'adminController@postUpdateCategory',
-       'as'=>'category_update'
-    ]);
-    Route::get('foundation/post/data/',[
-       'uses'=>'adminController@getFoundationPostData',
-        'as'=>'admin_foundation_post_data'
-    ]);
-    Route::get('foundation/post/delete/{id}',[
-        'uses'=>'adminController@foundationPostDataDelete',
-        'as'=>'foundation_post_data_delete'
-    ]);
-    Route::get('foundation/report/post/data',[
-       'uses'=>'adminController@getFoundationReportData',
-        'as'=>'admin_foundation_report_data'
-    ]);
-    Route::get('foundation/people/post/data',[
-       'uses'=>'adminController@getPeoplePostData',
-       'as'=>'admin_foundation_people_post_data'
-    ]);
-    Route::get('people/post/delete/{id}',[
-        'uses'=>'adminController@getPeoplePostDataDelete',
-        'as'=>'user_post_data_delete'
-    ]);
-    Route::get('people/post/{image}',[
-        'uses'=>'adminController@getPeoplePostImage',
-        'as'=>'get_user_post_image'
-    ]);
+    Route::post('/register/post','adminController@postAdminRegister')->name('admin_register');
+    Route::get('/foundation/data','adminController@getFoundationData')->name('admin_foundation_data');
+    Route::get('foundation_data/profile/{foundation_profile}','adminController@getFoundationProfile')->name('getFoundationProfile');
+    Route::get('/foundation_data/certificate/{foundation_certificate}','adminController@getFoundationCertificate')->name('getFoundationCertificate');
+    Route::get('foundation_data/delete/{id}','adminController@foundationDataDelete')->name('foundationInfoDelete');
+    Route::get('people_in_need/data','adminController@getUserData')->name('admin_peopleInNeed_data');
+    Route::get('user_data/{user_profile}','adminController@getUserProfile')->name('getUserProfile');
+    Route::get('user_data/delete/{id}','adminController@userInfoDelete')->name('userInfoDelete');
+    Route::get('category/data/','adminController@getCategory')->name('category_view');
+    Route::post('category/data/post/','adminController@postCategory')->name('category_post');
+    Route::get('category/delete/data/{id}','adminController@getDeleteCategory')->name('category_delete');
+    Route::post('category/update/data/{id}','adminController@postUpdateCategory')->name('category_update');
+    Route::get('foundation/post/data/','adminController@getFoundationPostData')->name('admin_foundation_post_data');
+    Route::get('foundation/post/delete/{id}','adminController@foundationPostDataDelete')->name('foundation_post_data_delete');
+    Route::get('foundation/report/post/data','adminController@getFoundationReportData')->name('admin_foundation_report_data');
+    Route::get('foundation/people/post/data','adminController@getPeoplePostData')->name('admin_foundation_people_post_data');
+    Route::get('people/post/delete/{id}','adminController@getPeoplePostDataDelete')->name('user_post_data_delete');
+    Route::get('people/post/{image}','adminController@getPeoplePostImage')->name('get_user_post_image');
 });
-
-
-
