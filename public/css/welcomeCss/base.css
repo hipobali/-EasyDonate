@@ -50,6 +50,7 @@ button{
     cursor: pointer;
 }
 img{
+    margin-right: 20px;
     vertical-align:middle;
 }
 *{

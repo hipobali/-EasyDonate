@@ -1,5 +1,4 @@
 @extends('layouts.admin.main')
-
 @section('content')
 
     <div class="page-wrapper chiller-theme toggled">
@@ -21,35 +20,28 @@
             <div class="container-fluid">
                 <div class="row justify-content-end">
                     <div class="col-md-3 text-right">
-                        <p class="plus_category btn" data-toggle="modal" data-target="#createModal"><i class="far fa-plus-square"></i>Add Gallery</p>
+                        <p class="plus_category btn" data-toggle="modal" data-target="#createModal"><i class="far fa-plus-square"></i>Add Category</p>
                     </div>
-                    <!--  <div class="col-md-3">
-                         <p class="minus_category" data-toggle="modal" data-target="#myModal1"><i class="far fa-plus-square"></i>Delete Galvanize</p>
-                     </div> -->
                 </div>
                 <div class="table-responsive">
                     <table  class="table table-bordered table-hover">
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Image</th>
+                            <th>Name</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody id="table_body">
-{{--                        @forelse($gallery as $key => $data)--}}
-{{--                            <tr>--}}
-{{--                                <td>{{ $key+1 }}</td>--}}
-{{--                                <td class="text-center">{{ $data->title }}</td>--}}
-{{--                                <td class="text-center">{{ $data->description }}</td>--}}
-{{--                                <td class="text-center"><img width="150" height="100" src="{{ url('uploads/'.$data->image) }}"></td>--}}
-{{--                                <td><i class="fas fa-user-edit edit_i" data-id="{{ $data->id }}" id="show_edit_btn"></i><i class="fas fa-trash-alt delete_i" data-id="{{ $data->id }}" id="show_btn"></i></td>--}}
-{{--                            </tr>--}}
-{{--                        @empty--}}
-{{--                            <tr><td colspan="5" class="text-center"> There is no data </td></tr>--}}
-{{--                        @endforelse--}}
+                        @forelse($category as $key => $data)
+                         <tr>
+                               <td>{{ $key+1 }}</td>
+                                <td class="text-center">{{ $data->category_name }}</td>
+                               <td><i class="fas fa-user-edit edit_i" data-id="{{ $data->id }}" id="show_edit_btn"></i><i class="fas fa-trash-alt delete_i" data-id="{{ $data->id }}" id="show_btn"></i></td>
+                            </tr>
+                       @empty
+                           <tr><td colspan="5" class="text-center"> There is no data </td></tr>
+                        @endforelse
                         </tbody>
                     </table>
                 </div><!--end of .table-responsive-->
@@ -63,7 +55,7 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Add Gallery</h4>
+                        <h4 class="modal-title">Add Category</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
                     <form action="" method="post" enctype="multipart/form-data">
@@ -72,26 +64,10 @@
                         <div class="modal-body">
                             <div class="input-group row">
 			        <span class="col-sm-4 mt-2">
-			          	<label>Title</label>
+			          	<label>Name</label>
 			        </span>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" placeholder="Title" name="title" required="true"/>
-                                </div>
-                            </div>
-                            <div class="input-group row">
-			        <span class="col-sm-4 mt-2">
-			            <label>Description</label>
-			        </span>
-                                <div class="col-sm-8">
-                                    <textarea class="form-control" placeholder="Description" name="description" required="true"></textarea>
-                                </div>
-                            </div>
-                            <div class="input-group row">
-			        <span class="col-sm-4 mt-2">
-			            <label>Image</label>
-			        </span>
-                                <div class="col-sm-8">
-                                    <input type="file" placeholder="Image" style="margin-top: 5px;"  name="image">
+                                    <input type="text" class="form-control" placeholder="category_name" name="category_name" required="true"/>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +88,7 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Edit Gallery</h4>
+                        <h4 class="modal-title">Edit Category</h4>
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                     </div>
 
@@ -123,27 +99,10 @@
                         <div class="modal-body">
                             <div class="input-group row">
 			        <span class="col-sm-4 mt-2">
-			          	<label>Title</label>
+			          	<label>Name</label>
 			        </span>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" placeholder="Title" name="title" required="true" id="title" />
-                                </div>
-                            </div>
-                            <div class="input-group row">
-			        <span class="col-sm-4 mt-2">
-			            <label>Description</label>
-			        </span>
-                                <div class="col-sm-8">
-                                    <textarea class="form-control" placeholder="Description" name="description" required="true" id="description"></textarea>
-                                </div>
-                            </div>
-                            <div class="input-group row">
-			        <span class="col-sm-4 mt-2">
-			            <label>Image</label>
-			        </span>
-                                <div class="col-sm-8">
-                                    <input type="file" placeholder="Image" style="margin-top: 5px;"  name="image">
-                                    <br><br><img width="150" height="100" title="Image" id="image">
+                                    <input type="text" class="form-control" placeholder="category_name" name="category_name" required="true" id="category_name" />
                                 </div>
                             </div>
                         </div>
@@ -186,6 +145,7 @@
         </div>
         <!-- End Of Edit Modal -->
     </div>
+   
     <script type="text/javascript">
         $(document).ready(function() {
             $(document).on("click","#show_btn",function() {
@@ -199,12 +159,9 @@
                 var id = $(this).attr('data-id');
                 $.ajax({
                     type:'GET',
-                    url:'get_edit_gallery_data/'+id,
+                    url:'category/'+id+'/edit',
                     success:function(data){
-                        var image = RemoveLastDirectoryPartOf(window.location.href) + '/uploads/' + data.data.image;
-                        $('#title').val(data.data.title);
-                        $('#description').val(data.data.description);
-                        $("#image").attr("src",image);
+                        $('#category_name').val(data.data.category_name);
                     }
                 });
                 var link = window.location.href + '/' + id;

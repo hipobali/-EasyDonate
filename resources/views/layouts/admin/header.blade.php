@@ -28,14 +28,20 @@
           </li>
           <li>
             <a href="{{ url('admin/adminhome') }}">
-              <span>Dashboard</span>
+              <span>Admin Data</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ url('admin/foundation_data') }}">
+              <span>Foundation Data</span>
             </a>
           </li>
           <li>
             <a href="{{ url('admin/category') }}">
-              <span>Gallery</span>
+              <span>Category</span>
             </a>
           </li>
+         
         </ul>
       </div>
       <!-- sidebar-menu  -->

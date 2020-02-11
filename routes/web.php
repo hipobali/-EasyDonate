@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,13 +10,12 @@
 |
 */
 
-
 use Illuminate\Support\Facades\Auth;
 
 //Home
 Route::group(['middleware'=>['auth']],function (){
-    Route::get('/home', 'HomeController@index')->name('home');
 
+    Route::get('/home', 'HomeController@index')->name('home');
 
 });
 //Welcome
@@ -37,7 +35,7 @@ Route::get('locale/{locale}',function ($locale){
     return redirect()->back();
 });
 
-//donor
+//donor 
 Route::get('/donor/home/','donorController@getDonorHome')->name('donor_home');
 Route::get('donation/form/','donorController@getDonationForm')->name('get_donation_form');
 Route::post('donate/Form','donorController@postDonateForm')->name('donate_form');
@@ -61,7 +59,6 @@ Route::get('/User/about_us','donorController@getAboutUs')->name('about_us');
 
 //Mail
 Route::post('/Send/Mail/','MailController@sendEmail')->name('send_mail');
-
 
 Route::group(['prefix'=>'foundation','middleware'=>'foundation'],function (){
     Auth::routes(
@@ -105,11 +102,9 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Route::get('people_in_need/data','adminController@getUserData')->name('admin_peopleInNeed_data');
     Route::get('user_data/{user_profile}','adminController@getUserProfile')->name('getUserProfile');
     Route::get('user_data/delete/{id}','adminController@userInfoDelete')->name('userInfoDelete');
-//    Route::get('category/data/','adminController@getCategory')->name('category_view');
-//    Route::post('category/data/post/','adminController@postCategory')->name('category_post');
-//    Route::get('category/delete/data/{id}','adminController@getDeleteCategory')->name('category_delete');
-//    Route::post('category/update/data/{id}','adminController@postUpdateCategory')->name('category_update');
+
     Route::resource('category','Admin\CategoryController');
+    Route::resource('foundation_data','Admin\FoundationDataController');
 
     Route::get('foundation/post/data/','adminController@getFoundationPostData')->name('admin_foundation_post_data');
     Route::get('foundation/post/delete/{id}','adminController@foundationPostDataDelete')->name('foundation_post_data_delete');
@@ -117,4 +112,5 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Route::get('foundation/people/post/data','adminController@getPeoplePostData')->name('admin_foundation_people_post_data');
     Route::get('people/post/delete/{id}','adminController@getPeoplePostDataDelete')->name('user_post_data_delete');
     Route::get('people/post/{image}','adminController@getPeoplePostImage')->name('get_user_post_image');
+
 });
