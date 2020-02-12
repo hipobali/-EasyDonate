@@ -37,6 +37,12 @@
             </a>
           </li>
           <li>
+            <a href="{{ url('admin/people_data') }}">
+              <span>People In Need Data</span>
+            </a>
+          </li>
+         
+          <li>
             <a href="{{ url('admin/category') }}">
               <span>Category</span>
             </a>

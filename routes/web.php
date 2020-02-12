@@ -105,6 +105,7 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
 
     Route::resource('category','Admin\CategoryController');
     Route::resource('foundation_data','Admin\FoundationDataController');
+    Route::resource('people_data','Admin\PeopleDataController');
 
     Route::get('foundation/post/data/','adminController@getFoundationPostData')->name('admin_foundation_post_data');
     Route::get('foundation/post/delete/{id}','adminController@foundationPostDataDelete')->name('foundation_post_data_delete');
