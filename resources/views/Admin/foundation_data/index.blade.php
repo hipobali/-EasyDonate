@@ -47,7 +47,7 @@
                          <td>{{ $key+1 }}</td>
                          <td class="text-center">
                          <img src="{{url('uploads/'.$data->foundation_profile)}}" class="img-fluid"></td>
-                         <td class="text-center">{{$data->user->    name}}</td>
+                         <td class="text-center">{{$data->user->name}}</td>
                          <td class="text-center">{{$data->foundation_name}}</td>
                          <td class="text-center">{{$data->year_picker}}</td>
                          <td class="text-center">{{$data->month_picker}}</td>
