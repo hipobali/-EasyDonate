@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -35,48 +36,63 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:foundation')->except('logout');
+        $this->middleware('guest:people')->except('logout');
+    }
+    public function showAdminLoginForm(){
+        return view('auth.login.admin', ['url' => 'admin']);
+    }
+    public function showFoundationLoginForm(){
+        return view('auth.login.foundation', ['url' => 'foundation']);
+    }
+    public function showPeopleLoginForm(){
+        return view('auth.login.people', ['url' => 'people']);
     }
 
-    public function login(Request $request)
+    public function adminLogin(Request $request)
     {
-        $this->validateLogin($request);
-        // If the class is using the ThrottlesLogins trait, we can automatically throttle
-        // the login attempts for this application. We'll key this by the username and
-        // the IP address of the client making these requests into this application.
-        if ($this->hasTooManyLoginAttempts($request)) {
-                $this->fireLockoutEvent($request);
-                return $this->sendLockoutResponse($request);
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/admin');
         }
-        // This section is the only change
-        if ($this->guard()->validate($this->credentials($request))) {
-            $user = $this->guard()->getLastAttempted();
-            // User must not be Admin Account
-            if ($user->type != $request->get('auth_type')){
-                $this->incrementLoginAttempts($request);
-                return redirect()
-                    ->back()
-                    ->withInput($request->only($this->username(), 'remember'))
-                    ->withErrors(['error_type' => 'Authentication Required']);
-            }
-            // Make sure the user is active
-            if ($this->attemptLogin($request)) {
-                // Send the normal successful login response
-                return $this->sendLoginResponse($request);
-            } else {
-                // Increment the failed login attempts and redirect back to the
-                // login form with an error message.
-                $this->incrementLoginAttempts($request);
-                return redirect()
-                    ->back()
-                    ->withInput($request->only($this->username(), 'remember'))
-                    ->withErrors(['active' => 'You must be active to login.']);
-            }
-        }
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
-                $this->incrementLoginAttempts($request);
-                return $this->sendFailedLoginResponse($request);
+        return back()->withInput($request->only('email', 'remember'));
     }
+
+
+    public function foundationLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('foundation')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/foundation');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
+
+    public function peopleLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if (Auth::guard('people')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+
+            return redirect()->intended('/people');
+        }
+        return back()->withInput($request->only('email', 'remember'));
+    }
+
+
 
 }

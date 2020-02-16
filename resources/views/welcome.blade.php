@@ -44,19 +44,17 @@
         </div>
     </div>
     <button class="to-top" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <div class="home_mv " >
+    <div class="home_mv">
         <div class="mv_content">
-            <img src="img/finalshadowbannerccc.gif" data-src-sp="img/img_top_mv_sp.png" alt="">
+            <img src="img/deN.jpg" data-src-sp="img/img_top_mv_sp.png" alt="">
             
             <div class="text_sec">
                 <p class="txt_mv">WE RISE BY LIFTING OTHERS</p>
                 <a class="mv_link  " href="{{route('donor_home')}}" title="">
                     {{__('welcome.get_started')}}
                 </a>
-            
             </div>
             
-
         </div>
 
     </div>

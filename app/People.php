@@ -1,18 +1,36 @@
 <?php
 
 namespace App;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Illuminate\Database\Eloquent\Model;
-
-class People extends Model
+class People extends Authenticatable
 {
-    protected $table = 'people';
+
+    use Notifiable;
+
+    protected $guard = 'people';
+
+    protected $fillable = [
+
+        'name', 'email', 'password','user_profile','address','phone','user_gander'
+
+    ];
+
+    protected $hidden = [
+
+        'password', 'remember_token',
+
+    ];
 
     //
     public  function  user(){
+        
         return $this->belongsTo('App\User');
     }
+
     public function userPost(){
+
         return $this->hasMany('App\userPost','id');
 
     }

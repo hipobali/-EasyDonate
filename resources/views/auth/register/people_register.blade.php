@@ -29,7 +29,12 @@
             </div>
             <div class="col-md-6">
                 <div class="card box-shadow ">
-                    <form method="post" action="{{route('people_register')}}" enctype="multipart/form-data">
+                    @isset($url)
+                    <form method="POST" action='{{ url("register/$url") }}' enctype="multipart/form-data" aria-label="{{ __('Register') }}">
+                    @else
+                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    @endisset
+                        @csrf
                         <div class="card-header text-center">
                             <div class="image_upload row">
                                 <img class="img_before_user_profile img-fluid rounded-circle" src="../../../img/camera_user.png">

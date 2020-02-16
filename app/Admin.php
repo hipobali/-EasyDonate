@@ -1,12 +1,22 @@
 <?php
 
 namespace App;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Admin extends Model
+class Admin extends Authenticatable
 {
-    protected $table = 'admin';
+    use Notifiable; 
+    protected $guard = 'admin';
+
+    protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+    
     public  function  user(){
         return $this->belongsTo('App\User');
     }

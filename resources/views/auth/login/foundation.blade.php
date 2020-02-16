@@ -30,7 +30,12 @@
                         <img src="../../../img/test.png" width="70px" height="70px">
                         <h3>{{__('foundation.login_form')}}</h3>
                     </div>
-                    <form method="post" action="{{url('foundation/login')}}">
+                    @isset($url)
+                        <form method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                        @else
+                        <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                        @endisset
+                            @csrf
                         <div class="card-body">
                             @if(Session('error'))
                                 <div class="alert alert-danger alert-dismissible fade show" role="alert">

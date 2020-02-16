@@ -27,7 +27,12 @@
             </div>
             <div class="col-md-6">
                 <div class="card shadow">
-                    <form method="post" action="{{url('people/login')}}">
+                    @isset($url)
+                    <form method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    @else
+                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    @endisset
+                        @csrf
                         <div class="card-header text-center">
                             <img src="../../../img/test.png" alt="Easy Donate Logo" width="70px" height="70px">
                             <h4>{{__('user.login_form')}}</h4>

@@ -1,7 +1,7 @@
 <script src="{{asset('bst/js/jquery.js')}}"></script>
 <nav class="navbar  fixed-top navbar-expand-md nav-bg shadow-sm">
     <div class="container-fluid">
-        @if(Auth::user())
+        {{-- @if(Auth::user())
             <a class="navbar-brand" href="{{ url('/home') }}">
                 <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
             </a>
@@ -9,7 +9,7 @@
             <a class="navbar-brand" href="{{ url('donor/home') }}">
                 <img class="img-fluid" src="{{asset('img/logo_aa.png')}}" width="60px" height="50px">
             </a>
-        @endif
+        @endif --}}
         <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
                 aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
             <div class="animated-icon3"><span></span><span></span><span></span></div>
@@ -24,7 +24,7 @@
             <ul class="navbar-nav nav-list text-center  ">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{url('donor/home')}}">{{__('common.home')}}</a>
                     </li>
 
@@ -56,8 +56,8 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{route('foundation_register_view')}}">{{__('common.foundation_signup')}}</a>
                         </div>
-                    </li>
-                    @if (Route::has('register'))
+                    </li> --}}
+                    {{-- @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">{{ __('common.signup') }}</a>
                         </li>
@@ -76,8 +76,8 @@
                         <li class="nav-item last">
                             <a class="nav-link terms" href="{{route('terms_and_conditions')}}">{{__('common.terms_and_conditions')}}</a>
                         </li>
-                    @endif
-                @if(Auth::user()->type=='people')
+                    @endif --}}
+                {{-- @if(Auth::user()->type=='people')
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('request_user_post')}}">{{__('common.post')}}</a>
                             </li>
@@ -116,7 +116,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('admin/category/data/')}}">Category</a>
                             </li>
-                        @endif
+                        @endif --}}
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>

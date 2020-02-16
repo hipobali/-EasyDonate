@@ -29,8 +29,14 @@
 
             <div class="col-md-6  ">
                 <div class=" card  box-shadow f_card">
-                    <form method="post" action="{{route('foundation_register')}}" enctype="multipart/form-data">
-                        <div class="card-header text-center">
+
+                    @isset($url)
+                    <form method="POST" action='{{ url("register/$url") }}' enctype="multipart/form-data" aria-label="{{ __('Register') }}">
+                    @else
+                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    @endisset
+                        @csrf
+                     <div class="card-header text-center">
                             <div class="image_upload">
                                 <img class=" user_profile card-img " src="{{asset('img/camera9.png')}}" >
                                 <div class="camera">
