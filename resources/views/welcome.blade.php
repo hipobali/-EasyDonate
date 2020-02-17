@@ -47,14 +47,14 @@
     <div class="home_mv">
         <div class="mv_content">
             <img src="img/deN.jpg" data-src-sp="img/img_top_mv_sp.png" alt="">
-            
+
             <div class="text_sec">
                 <p class="txt_mv">WE RISE BY LIFTING OTHERS</p>
                 <a class="mv_link  " href="{{route('donor_home')}}" title="">
                     {{__('welcome.get_started')}}
                 </a>
             </div>
-            
+
         </div>
 
     </div>
@@ -62,15 +62,15 @@
     <div class="content">
         <div class="content_about" id="content_about">
             <div class="about_title">
-                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <img src="../../../img/cloud.png" class="left_kanote">
                 <h3 class="about_title_text">About</h3>
-                <img src="../../../img/right_kanote.png" class="right_kanote">
+                <img src="../../../img/cloud.png" class="right_kanote">
             </div>
             <div class="inner">
-               
+
                 <!-- Thats the markup! -->
                 <!-- That looks cool. We are done!! -->
-                
+
                 <!-- 	Disregard --><a style="position: fixed; bottom: 10px; right: 10px;color:#CCC" href="https://plus.google.com/111052275277622928148?rel=me">Google+</a>
                 <p class="txt_about">{{__('welcome.about1')}}<br>{{__('welcome.about2')}}<br>{{__('welcome.about3')}}</p>
                 <p class="ttl_news" id="content_news">{{__('common.news')}}</p>
@@ -84,25 +84,25 @@
 .cloud {
 	width: 200px; height: 60px;
 	background: gray;
-	
+
 	border-radius: 200px;
 	-moz-border-radius: 200px;
 	-webkit-border-radius: 200px;
 	z-index: -999;
-	position: relative; 
+	position: relative;
 }
 
 .cloud:before, .cloud:after {
 	content: '';
-	position: absolute; 
+	position: absolute;
 	background: gray;
 	width: 100px; height: 80px;
 	position: absolute; top: -15px; left: 10px;
-	
+
 	border-radius: 100px;
 	-moz-border-radius: 100px;
 	-webkit-border-radius: 100px;
-	
+
 	-webkit-transform: rotate(30deg);
 	transform: rotate(30deg);
 	-moz-transform: rotate(30deg);
@@ -123,12 +123,12 @@
 /*variable speed, opacity, and position of clouds for realistic effect*/
 .x2 {
 	left: 200px;
-	
+
 	-webkit-transform: scale(0.6);
 	-moz-transform: scale(0.6);
 	transform: scale(0.6);
 	opacity: 0.6; /*opacity proportional to the size*/
-	
+
 	/*Speed will also be proportional to the size and opacity*/
 	/*More the speed. Less the time in 's' = seconds*/
 	-webkit-animation: moveclouds 25s linear infinite;
@@ -138,12 +138,12 @@
 
 .x3 {
 	left: -250px; top: -200px;
-	
+
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
 	opacity: 0.8; /*opacity proportional to the size*/
-	
+
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
@@ -151,12 +151,12 @@
 
 .x4 {
 	left: 470px; top: -250px;
-	
+
 	-webkit-transform: scale(0.75);
 	-moz-transform: scale(0.75);
 	transform: scale(0.75);
 	opacity: 0.75; /*opacity proportional to the size*/
-	
+
 	-webkit-animation: moveclouds 18s linear infinite;
 	-moz-animation: moveclouds 18s linear infinite;
 	-o-animation: moveclouds 18s linear infinite;
@@ -164,12 +164,12 @@
 
 .x5 {
 	left: -150px; top: -150px;
-	
+
 	-webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	transform: scale(0.8);
 	opacity: 0.8; /*opacity proportional to the size*/
-	
+
 	-webkit-animation: moveclouds 20s linear infinite;
 	-moz-animation: moveclouds 20s linear infinite;
 	-o-animation: moveclouds 20s linear infinite;
@@ -189,30 +189,32 @@
 }
     </style>
             <ul class="news_list">
-                @foreach($foundationPost as $foundationPosts)
-                <li class="news">
-                    <div class="img_news">
-                        @if(is_null($foundationPosts->user_post_id))
-                            <img src="{{route('f_image_post',['foundation_post'=>$foundationPosts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">
-                        @elseif($foundationPosts->user_post_id==$foundationPosts->userPost->id)
-                            <img src="{{route('confirm_user_post_image',[$foundationPosts->userPost->image])}}" alt="Urgent_photo" width="234" height="200">
-                        @endif
-                        <div class="txt_date">{{$foundationPosts->created_at}}</div>
-                    </div>
-                    <div class="txt_news">
-                        <p>  {{str_limit($foundationPosts->f_post_detail,100) }}</p>
-                    </div>
-                </li>
-                @endforeach
+{{--                @forelse($foundationPost as $foundationPosts)--}}
+{{--                <li class="news">--}}
+{{--                    <div class="img_news">--}}
+{{--                        @if(is_null($foundationPosts->user_post_id))--}}
+{{--                            <img src="{{route('f_image_post',['foundation_post'=>$foundationPosts->f_post_image])}}" alt="Urgent_photo" width="234" height="200">--}}
+{{--                        @elseif($foundationPosts->user_post_id==$foundationPosts->userPost->id)--}}
+{{--                            <img src="{{route('confirm_user_post_image',[$foundationPosts->userPost->image])}}" alt="Urgent_photo" width="234" height="200">--}}
+{{--                        @endif--}}
+{{--                        <div class="txt_date">{{$foundationPosts->created_at}}</div>--}}
+{{--                    </div>--}}
+{{--                    <div class="txt_news">--}}
+{{--                        <p>  {{str_limit($foundationPosts->f_post_detail,100) }}</p>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
+{{--                    @empty--}}
+{{--                    <p>There is no data</p>--}}
+{{--                @endforelse--}}
 
             </ul>
         </div>
         <!-- end of about -->
         <div class="content_contact" id="content_contact">
             <div class="contact_title">
-                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <img src="../../../img/cloud.png" class="left_kanote">
                 <h3 class="contact_title_text">Contact</h3>
-                <img src="../../../img/right_kanote.png" class="right_kanote">
+                <img src="../../../img/cloud.png" class="right_kanote">
             </div>
             <div class="contact inner">
                 <div class="address">
@@ -244,9 +246,9 @@
         <!-- end of contact -->
         <div class="content_terms" id="content_terms">
             <div class="terms_title">
-                <img src="../../../img/left_kanote.png" class="left_kanote">
+                <img src="../../../img/cloud.png" class="left_kanote">
                 <h3 class="terms_title_text">Terms and Conditions</h3>
-                <img src="../../../img/right_kanote.png" class="right_kanote">
+                <img src="../../../img/cloud.png" class="right_kanote">
             </div>
             <div class="inner">
                 <p class="txt_terms">{{__('term_condition.paragraph1')}}<br>{{__('term_condition.paragraph2')}}</p>

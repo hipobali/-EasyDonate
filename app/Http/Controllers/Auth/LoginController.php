@@ -59,7 +59,7 @@ class LoginController extends Controller
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/admin');
+            return view('admin');
         }
         return back()->withInput($request->only('email', 'remember'));
     }
@@ -74,7 +74,7 @@ class LoginController extends Controller
 
         if (Auth::guard('foundation')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/foundation');
+            return view('foundation');
         }
         return back()->withInput($request->only('email', 'remember'));
     }
@@ -88,7 +88,7 @@ class LoginController extends Controller
 
         if (Auth::guard('people')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/people');
+            return view('people');
         }
         return back()->withInput($request->only('email', 'remember'));
     }

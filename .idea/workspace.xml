@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c668fa95-a317-468b-99d5-cf0521a9f8b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Restaurant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Restaurant.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="a0a033a0-527d-42f4-8f2a-37f5672918ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FoundationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/adminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/adminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/foundation_request_page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/welcomeCss/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/welcomeCss/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -20,20 +19,18 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CSS File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -123,12 +120,7 @@
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="y" value="27" />
-    <option name="width" value="1356" />
-    <option name="height" value="520" />
-  </component>
-  <component name="ProjectId" id="1WpSMdGTsh7dqAf4UqVbEm8bWBl" />
+  <component name="ProjectId" id="1XefU4Y7lXUSmuNDC67bm58Qxrz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -136,74 +128,32 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Restaurant\resources\views" />
-      <recent name="C:\xampp\htdocs\Restaurant\resources\views\auth\login" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Backend/Admin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Restaurant\public\css" />
-      <recent name="C:\xampp\htdocs\Restaurant\resources\views\layouts" />
-      <recent name="C:\xampp\htdocs\Restaurant\public" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Backend/Auth" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c668fa95-a317-468b-99d5-cf0521a9f8b2" name="Default Changelist" comment="" />
-      <created>1564469118610</created>
+      <changelist id="a0a033a0-527d-42f4-8f2a-37f5672918ed" name="Default Changelist" comment="" />
+      <created>1581411492530</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1564469118610</updated>
-      <workItem from="1564469120247" duration="603000" />
-      <workItem from="1564498272259" duration="19968000" />
-      <workItem from="1564579128103" duration="9396000" />
-      <workItem from="1564626929287" duration="16107000" />
-      <workItem from="1564671202287" duration="28187000" />
-      <workItem from="1564912456638" duration="25680000" />
-      <workItem from="1564969965795" duration="7720000" />
-      <workItem from="1564984081654" duration="15582000" />
-      <workItem from="1565047369763" duration="5196000" />
-      <workItem from="1565058428354" duration="23903000" />
-      <workItem from="1565102083395" duration="2694000" />
-      <workItem from="1565148154291" duration="24194000" />
-      <workItem from="1565192360293" duration="14389000" />
-      <workItem from="1565283722646" duration="7976000" />
-      <workItem from="1565314725071" duration="12505000" />
-      <workItem from="1565327645037" duration="3903000" />
-      <workItem from="1579845015209" duration="911000" />
-      <workItem from="1579849591015" duration="4771000" />
-      <workItem from="1580095216401" duration="243000" />
-      <workItem from="1580113127960" duration="1303000" />
-      <workItem from="1580195423789" duration="837000" />
-      <workItem from="1580203113123" duration="3951000" />
-      <workItem from="1580266877589" duration="700000" />
-      <workItem from="1580980895262" duration="1759000" />
-      <workItem from="1581044908508" duration="1376000" />
-      <workItem from="1581046302480" duration="4598000" />
+      <updated>1581411492530</updated>
+      <workItem from="1581411494644" duration="3514000" />
+      <workItem from="1581563655826" duration="4000" />
+      <workItem from="1581920421331" duration="4465000" />
     </task>
     <servers />
   </component>
@@ -211,17 +161,29 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581046287436">
+    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581415085309">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1581046287436" />
-    <state x="405" y="210" width="545" height="373" key="NewPhpClassDialog" timestamp="1579860357735">
+    <state x="466" y="154" width="424" height="484" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1581415085309" />
+    <state x="127" y="85" width="1092" height="622" key="MergeDialog" timestamp="1581920628085">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="405" y="210" width="545" height="373" key="NewPhpClassDialog/0.27.1366.741@0.27.1366.741" timestamp="1579860357735" />
-    <state x="339" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1580266879142">
+    <state x="127" y="85" width="1092" height="622" key="MergeDialog/0.27.1366.741@0.27.1366.741" timestamp="1581920628085" />
+    <state x="388" y="114" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1581920628093">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
-    <state x="339" y="224" key="com.intellij.ide.util.TipDialog/0.27.1366.741@0.27.1366.741" timestamp="1580266879142" />
+    <state x="388" y="114" width="580" height="564" key="MultipleFileMergeDialog/0.27.1366.741@0.27.1366.741" timestamp="1581920628093" />
+    <state x="478" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1581414543591">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="478" y="322" width="399" height="149" key="NewPhpFileDialog/0.27.1366.741@0.27.1366.741" timestamp="1581414543591" />
+    <state x="451" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581412442718">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="451" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.741@0.27.1366.741" timestamp="1581412442718" />
+    <state x="409" y="110" width="537" height="572" key="git4idea.branch.GitSmartOperationDialog" timestamp="1581920579338">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="409" y="110" width="537" height="572" key="git4idea.branch.GitSmartOperationDialog/0.27.1366.741@0.27.1366.741" timestamp="1581920579338" />
   </component>
 </project>

@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use App\Http\Requests\FoundationRegisterRequest;    
+use App\Http\Requests\FoundationRegisterRequest;
 class RegisterController extends Controller
 {
     /*
@@ -64,7 +64,7 @@ class RegisterController extends Controller
         return view('auth.register.people_register', ['url' => 'people']);
     }
 
-  
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -89,14 +89,14 @@ class RegisterController extends Controller
     protected function createAdmin(AdminPostRequest $request)
     {
         if($request['secret']=='easydonate@5'){
-            
+
             $admin = Admin::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'secret' =>'easydonate@5',
                 'password' => Hash::make($request['password']),
             ]);
-            
+
             return view('login/admin');
 
         }else{
@@ -109,28 +109,43 @@ class RegisterController extends Controller
     protected function createFoundation(FoundationRegisterRequest $request)
     {
         $input = $request->all();
-        $name = uniqid('foundation_profile-') . '.' . $input['foundation_profile']->extension();
-        $input['foundation_profile'] = isset($input['foundation_profile']) ? \Storage::disk('uploads')->putFileAs('foundation_profile', $input['foundation_profile'], $name) : '';
+        $pname = uniqid('foundation_profile-') . '.' . $input['foundation_profile']->extension();
+        $input['foundation_profile'] = isset($input['foundation_profile']) ? \Storage::disk('uploads')->putFileAs('foundation_profile', $input['foundation_profile'], $pname) : '';
         //Certificate
-        $name = uniqid('foundation_certificate-') . '.' . $input['foundation_certificate']->extension();
-        $input['foundation_certificate'] = isset($input['foundation_certificate']) ? \Storage::disk('uploads')->putFileAs('foundation_certificate', $input['foundation_certificate'], $name) : '';
+        $cname = uniqid('foundation_certificate-') . '.' . $input['foundation_certificate']->extension();
+        $input['foundation_certificate'] = isset($input['foundation_certificate']) ? \Storage::disk('uploads')->putFileAs('foundation_certificate', $input['foundation_certificate'], $cname) : '';
 
-        $foundation = Foundation::create([
-            'name' => $request['founder'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-          'foundation_profile'=>$input['foundation_profile'],
-          'foundation_name' => $request['foundation_name'],
-          'year_picker'=>$request['year_picker'],
-          'month_picker'=>$request['month_picker'],
-          'day_picker'=>$request['day_picker'],
-          'address' => $request['address'],
-          'phone' => $request['phone'],
-          'president_name'=>$request['president_name'],
-          'foundation_certificate'=>$input['foundation_certificate'],
-          'member_count'=>$request['member_count'],
-        ]);
-        return view('login/foundation');
+//        $foundation = Foundation::create([
+//            'name' => $request['founder'],
+//            'email' => $request['email'],
+//            'password' => Hash::make($request['password']),
+//          'foundation_profile'=>$input['foundation_profile'],
+//          'foundation_name' => $request['foundation_name'],
+//          'year_picker'=>$request['year_picker'],
+//          'month_picker'=>$request['month_picker'],
+//          'day_picker'=>$request['day_picker'],
+//          'address' => $request['address'],
+//          'phone' => $request['phone'],
+//          'president_name'=>$request['president_name'],
+//          'foundation_certificate'=>$input['foundation_certificate'],
+//          'member_count'=>$request['member_count'],
+//        ]);
+        $foundation=new Foundation();
+        $foundation->name=$request['founder'];
+        $foundation-> email=$request['email'];
+        $foundation->password = Hash::make($request['password']);
+        $foundation->foundation_profile =$input['foundation_profile'];
+        $foundation->foundation_name =$request['foundation_name'];
+        $foundation->year_picker =$request['year_picker'];
+        $foundation->month_picker =$request['month_picker'];
+        $foundation-> day_picker=$request['day_picker'];
+        $foundation-> address=$request['address'];
+        $foundation-> phone=$request['phone'];
+        $foundation->president_name =$request['president_name'];
+        $foundation->foundation_certificate =$input['foundation_certificate'];
+        $foundation-> member_count=$request['member_count'];
+        $foundation->save();
+        return view('auth.login.foundation');
     }
     protected function createPeople(PeopleRegisterRequest $request)
     {
