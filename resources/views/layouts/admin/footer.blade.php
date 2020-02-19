@@ -2,7 +2,7 @@
    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 text-right">
-                <p class="design">Powered By<a href="http://www.apexsoftmm.com" target="_blank">&nbsp;APEX</a></p>
+                <p class="design">Powered By<a href="#" target="_blank">&nbsp;Easy Donate</a></p>
             </div>
         </div>
     </div>

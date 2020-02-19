@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Royal Gold Star</title>
+    <title>Easy Donate</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('fontawesome-free-5.8.2-web/css/all.css') }}">

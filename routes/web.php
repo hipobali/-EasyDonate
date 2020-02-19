@@ -15,14 +15,13 @@
 use Illuminate\Support\Facades\Auth;
 
 //Home
-Route::get('redirect',function(){
-   return view('auth.login');
-});
+
+
 Route::group(['middleware'=>['auth']],function (){
     Route::get('/home', 'HomeController@index')->name('home');
 
-
 });
+
 //Welcome
 Route::get('/','welcomeController@getWelcome')->name('/');
 
@@ -70,6 +69,7 @@ Route::group(['prefix'=>'foundation','middleware'=>'foundation'],function (){
     Auth::routes(
         [ 'register' => false,]
     );
+
     Route::get('/login/view','FoundationController@getFoundationLogin')->name('foundation_login_view');
     Route::get('/request/view/','FoundationController@getFoundationRequestView')->name('foundation_request_view');
     Route::post('/request/post/{id}','FoundationController@postFoundationRequest')->name('foundation_request_post');
@@ -96,9 +96,11 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Auth::routes(
         [ 'register' => false,]
     );
+
     Route::get('/register',function (){
         return view('admin_register');
     });
+
     Route::post('/register/post','adminController@postAdminRegister')->name('admin_register');
     Route::get('/foundation/data','adminController@getFoundationData')->name('admin_foundation_data');
     Route::get('foundation_data/profile/{foundation_profile}','adminController@getFoundationProfile')->name('getFoundationProfile');

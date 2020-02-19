@@ -5,7 +5,7 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="{{ url('dashboard') }}">Royal Gold Star</a>
+        <a href="{{ url('/admin') }}">Easy Donate</a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
@@ -27,7 +27,7 @@
             <span>General</span>
           </li>
           <li>
-            <a href="{{ url('dashboard') }}">
+            <a href="{{ url('/admin') }}">
               <span>Dashboard</span>
             </a>
           </li>

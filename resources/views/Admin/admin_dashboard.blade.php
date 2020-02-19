@@ -60,45 +60,45 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
-{{--      <!-- Modal body -->--}}
-{{--      	<form id="edit_form" method="post" enctype="multipart/form-data">--}}
-{{--      	@csrf--}}
-{{--      	<input type="hidden" name="user_id" id="user_id">--}}
-{{--	      <div class="modal-body">--}}
-{{--	        <div class="input-group row">--}}
-{{--		        <span class="col-sm-4 mt-2">--}}
-{{--		          	<label>Name</label>--}}
-{{--		        </span>--}}
-{{--          		<div class="col-sm-8">--}}
-{{--          			<input type="text" class="form-control" placeholder="Name" name="name" required="true" id="name" value="{{ Auth::user()->name }}"/>--}}
-{{--          		</div>--}}
-{{--	        </div>--}}
-{{--	        <div class="input-group row">--}}
-{{--		        <span class="col-sm-4 mt-2">--}}
-{{--		            <label>Password</label>--}}
-{{--		        </span>--}}
-{{--          		<div class="col-sm-8">--}}
-{{--	          		<input type="password" class="form-control" placeholder="Password" name="password" id="password"/>--}}
-{{--	          	</div>--}}
-{{--	        </div>--}}
-{{--	        <div class="input-group row">--}}
-{{--		        <span class="col-sm-4 mt-2">--}}
-{{--		            <label>Confirm Password</label>--}}
-{{--		        </span>--}}
-{{--          		<div class="col-sm-8">--}}
-{{--	          		<input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password" onchange="check();"/>--}}
-{{--	          		<span id='error_message'></span>--}}
-{{--	          	</div>--}}
-{{--	        </div>--}}
-{{--	      </div>--}}
+      <!-- Modal body -->
+      	<form id="edit_form" method="post" enctype="multipart/form-data">
+      	@csrf
+      	<input type="hidden" name="user_id" id="user_id">
+	      <div class="modal-body">
+	        <div class="input-group row">
+		        <span class="col-sm-4 mt-2">
+		          	<label>Name</label>
+		        </span>
+          		<div class="col-sm-8">
+          			<input type="text" class="form-control" placeholder="Name" name="name" required="true" id="name" value=""/>
+          		</div>
+	        </div>
+	        <div class="input-group row">
+		        <span class="col-sm-4 mt-2">
+		            <label>Password</label>
+		        </span>
+          		<div class="col-sm-8">
+	          		<input type="password" class="form-control" placeholder="Password" name="password" id="password"/>
+	          	</div>
+	        </div>
+	        <div class="input-group row">
+		        <span class="col-sm-4 mt-2">
+		            <label>Confirm Password</label>
+		        </span>
+          		<div class="col-sm-8">
+	          		<input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password" onchange="check();"/>
+	          		<span id='error_message'></span>
+	          	</div>
+	        </div>
+	      </div>
 
-{{--	      <!-- Modal footer -->--}}
-{{--	      <div class="modal-footer">--}}
-{{--	        <input type="submit" class="btn btn-primary" value="Save" id="change_password">--}}
-{{--	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>--}}
+	      <!-- Modal footer -->
+	      <div class="modal-footer">
+	        <input type="submit" class="btn btn-primary" value="Save" id="change_password">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-{{--	      </div>--}}
-{{--        </form>--}}
+	      </div>
+        </form>
     </div>
   </div>
 </div>
