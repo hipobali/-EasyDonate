@@ -15,6 +15,9 @@
 use Illuminate\Support\Facades\Auth;
 
 //Home
+Route::get('redirect',function(){
+   return view('auth.login');
+});
 Route::group(['middleware'=>['auth']],function (){
     Route::get('/home', 'HomeController@index')->name('home');
 

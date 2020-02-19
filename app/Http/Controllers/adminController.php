@@ -29,7 +29,7 @@ class adminController extends Controller
         $admin->secret=$request['secret'];
         if ($request['secret']=='easydonate@5'){
             $admin->save();
-            return redirect()->back()->with(['success'=>'Your account have been created successfully']);
+            return view('auth.login.admin');
         }else{
             return redirect()->back()->with(['error'=>'Your secret code is invalid']);
         }

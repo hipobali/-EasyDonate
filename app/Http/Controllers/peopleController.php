@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Storage;
 class peopleController extends Controller
 {
 
-
     public function getPeopleRegister()
     {
         return view('people_register');
@@ -47,7 +46,7 @@ class peopleController extends Controller
         $people->user_gender=$request['user_gender'];
         $people->save();
         Storage::disk('user_profile')->put($img_user_profile_name,file::get($img_user_profile_file));
-        return redirect()->back()->with(['success'=>'Your account have been created successfully.']);
+        return view('auth.login.people');
 
     }
     public function postPeopleRequest(Request $request){

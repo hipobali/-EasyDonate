@@ -52,6 +52,10 @@ class LoginController extends Controller
         if ($this->guard()->validate($this->credentials($request))) {
             $user = $this->guard()->getLastAttempted();
             // User must not be Admin Account
+            if($request->get('auth_type')=='admin'){
+                return view('Admin.admin_dashboard');
+            }
+
             if ($user->type != $request->get('auth_type')){
                 $this->incrementLoginAttempts($request);
                 return redirect()
